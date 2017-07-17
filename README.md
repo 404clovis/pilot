@@ -13,3 +13,6 @@ This project is under development.
 
 **TODO:** Add information on how to contribute.
 
+## Licensing
+
+See [LICENSES](LICENSES.md).
