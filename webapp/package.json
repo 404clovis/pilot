@@ -4,12 +4,16 @@
   "private": true,
   "dependencies": {
     "@storybook/addon-actions": "3.2.0",
+    "@storybook/addon-storyshots": "3.2.0",
+    "@storybook/addons": "3.2.0",
+    "@storybook/channels": "3.2.0",
     "@storybook/react": "3.2.4",
     "autoprefixer": "7.1.2",
     "babel-core": "6.25.0",
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
     "babel-loader": "7.1.1",
+    "babel-polyfill": "6.26.0",
     "babel-preset-react-app": "3.0.2",
     "babel-runtime": "6.23.0",
     "case-sensitive-paths-webpack-plugin": "2.1.1",
@@ -28,15 +32,20 @@
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
     "object-assign": "4.1.1",
-    "postcss-flexbugs-fixes": "3.2.0",
+    "postcss-cssnext": "3.0.2",
+    "postcss-import": "10.0.0",
     "postcss-loader": "2.0.6",
     "promise": "8.0.1",
     "prop-types": "15.5.10",
+    "ramda": "0.24.1",
     "react": "15.6.1",
     "react-dev-utils": "3.1.0",
     "react-dom": "15.6.1",
     "react-error-overlay": "1.0.10",
+    "react-test-renderer": "15.6.1",
     "style-loader": "0.18.2",
+    "stylelint": "8.0.0",
+    "stylelint-config-pagarme-react": "1.0.3",
     "sw-precache-webpack-plugin": "0.11.4",
     "url-loader": "0.5.9",
     "webpack": "3.5.1",
@@ -47,6 +56,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "lint": "eslint './src/**/*.js'; stylelint './src/**/*.css'",
     "test": "node scripts/test.js --env=jsdom",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -59,8 +69,8 @@
       "<rootDir>/config/polyfills.js"
     ],
     "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.js?(x)",
-      "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
+      "<rootDir>/src/**/?(*.)(spec|test).js?(x)",
+      "<rootDir>/stories/storyshots.test.js"
     ],
     "testEnvironment": "node",
     "testURL": "http://localhost",
@@ -90,6 +100,9 @@
     ]
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "pagarme-react"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-pagarme-react"
   }
 }

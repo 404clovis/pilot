@@ -10,6 +10,7 @@ const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
+const stylelintFormatter = require('./stylelintFormatter');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
 
@@ -129,6 +130,22 @@ module.exports = {
         include: paths.appSrc,
       },
       {
+        test: /\.css$/,
+        enforce: 'pre',
+        use: [
+          {
+            options: {
+              formatter: stylelintFormatter,
+              plugins: () => [
+                require('stylelint'),
+              ],
+            },
+            loader: require.resolve('postcss-loader'),
+          },
+        ],
+        include: paths.appSrc,
+      },
+      {
         // "oneOf" will traverse all following loaders until one will
         // match the requirements. When no loader matches it will fall
         // back to the "file" loader at the end of the loader list.
@@ -188,16 +205,8 @@ module.exports = {
                         // https://github.com/facebookincubator/create-react-app/issues/2677
                         ident: 'postcss',
                         plugins: () => [
-                          require('postcss-flexbugs-fixes'),
-                          autoprefixer({
-                            browsers: [
-                              '>1%',
-                              'last 4 versions',
-                              'Firefox ESR',
-                              'not ie < 9', // React doesn't support IE8 anyway
-                            ],
-                            flexbox: 'no-2009',
-                          }),
+                          require('postcss-import'),
+                          require('postcss-cssnext'),
                         ],
                       },
                     },
