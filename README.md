@@ -105,5 +105,6 @@ See [LICENSES](LICENSES.md).
 [milestones]: https://github.com/pagarme/pilot/milestones
 [dashboard-pagarme]: https://dashboard.pagar.me
 [react-styleguide]: https://github.com/pagarme/react-style-guide
-
-[code-of-conduct]: /CODE_OF_CONDUCT.md
+[gitlab-handbook]: https://about.gitlab.com/handbook/
+[css-modules]: https://github.com/css-modules/css-modules
+[storybook]: https://github.com/storybooks/storybook
