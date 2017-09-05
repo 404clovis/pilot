@@ -108,3 +108,4 @@ See [LICENSES](LICENSES.md).
 [gitlab-handbook]: https://about.gitlab.com/handbook/
 [css-modules]: https://github.com/css-modules/css-modules
 [storybook]: https://github.com/storybooks/storybook
+[css-modules-commit]: https://github.com/pagarme/pilot/pull/178/commits
