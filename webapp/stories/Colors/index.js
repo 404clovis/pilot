@@ -26,15 +26,15 @@ const darkBackgroundColors = {
           'var(--color-dark-green-secondary-gradient)',
         ],
         [
-          'var(--color-dark-green-light-300)',
-          'var(--color-dark-green-light-200)',
-          'var(--color-dark-green-light-100)',
-          'var(--color-dark-green-light-gradient)',
+          'var(--color-dark-green-contrast-300)',
+          'var(--color-dark-green-contrast-200)',
+          'var(--color-dark-green-contrast-100)',
+          'var(--color-dark-green-contrast-gradient)',
         ],
         [
-          'var(--color-dark-green-light-accent-100)',
-          'var(--color-dark-green-light-accent-200)',
-          'var(--color-dark-green-light-accent-gradient)',
+          'var(--color-dark-green-accent-100)',
+          'var(--color-dark-green-accent-200)',
+          'var(--color-dark-green-accent-gradient)',
         ],
       ],
     },
@@ -128,6 +128,17 @@ const darkBackgroundColors = {
         ],
       ],
     },
+    {
+      title: 'Named Colors',
+      colors: [
+        [
+          'var(--color-dark-warning)',
+          'var(--color-dark-error)',
+          'var(--color-dark-info)',
+          'var(--color-dark-success)',
+        ]
+      ]
+    },
   ],
 }
 
@@ -138,12 +149,6 @@ const lightBackgroundColors = {
     {
       title: 'Green',
       colors: [
-        [
-          'var(--color-light-green-dark-300)',
-          'var(--color-light-green-dark-200)',
-          'var(--color-light-green-dark-100)',
-          'var(--color-light-green-dark-gradient)',
-        ],
         [
           'var(--color-light-green-primary-300)',
           'var(--color-light-green-primary-200)',
@@ -157,9 +162,15 @@ const lightBackgroundColors = {
           'var(--color-light-green-secondary-gradient)',
         ],
         [
-          'var(--color-light-green-dark-accent-100)',
-          'var(--color-light-green-dark-accent-200)',
-          'var(--color-light-green-dark-accent-gradient)',
+          'var(--color-light-green-contrast-300)',
+          'var(--color-light-green-contrast-200)',
+          'var(--color-light-green-contrast-100)',
+          'var(--color-light-green-contrast-gradient)',
+        ],
+        [
+          'var(--color-light-green-accent-100)',
+          'var(--color-light-green-accent-200)',
+          'var(--color-light-green-accent-gradient)',
         ],
       ],
     },
@@ -250,6 +261,17 @@ const lightBackgroundColors = {
           'var(--color-light-pink-accent-gradient)',
         ],
       ],
+    },
+    {
+      title: 'Named Colors',
+      colors: [
+        [
+          'var(--color-light-warning)',
+          'var(--color-light-error)',
+          'var(--color-light-info)',
+          'var(--color-light-success)',
+        ]
+      ]
     },
   ],
 }

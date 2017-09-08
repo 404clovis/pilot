@@ -1,11 +1,1486 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Button primary 1`] = `
-<button
+exports[`Storyshots Alerts/dark error 1`] = `
+<div
   className={undefined}
 >
-  Primary Button
-</button>
+  <div
+    className=""
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "color": undefined,
+          "verticalAlign": "middle",
+        }
+      }
+      viewBox="0 0 40 40"
+      width="1em"
+    >
+      <g>
+        <path
+          d="m31.6 10.7l-9.3 9.3 9.3 9.3-2.3 2.3-9.3-9.3-9.3 9.3-2.3-2.3 9.3-9.3-9.3-9.3 2.3-2.3 9.3 9.3 9.3-9.3z"
+        />
+      </g>
+    </svg>
+  </div>
+  <div
+    className={undefined}
+  >
+    <p>
+      <strong>
+        Error
+      </strong>
+       something went wrong!
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Alerts/dark info 1`] = `
+<div
+  className={undefined}
+>
+  <div
+    className=""
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "color": undefined,
+          "verticalAlign": "middle",
+        }
+      }
+      viewBox="0 0 40 40"
+      width="1em"
+    >
+      <g>
+        <path
+          d="m18.4 15v-3.4h3.2v3.4h-3.2z m1.6 18.4c7.3 0 13.4-6.1 13.4-13.4s-6.1-13.4-13.4-13.4-13.4 6.1-13.4 13.4 6.1 13.4 13.4 13.4z m0-30c9.2 0 16.6 7.4 16.6 16.6s-7.4 16.6-16.6 16.6-16.6-7.4-16.6-16.6 7.4-16.6 16.6-16.6z m-1.6 25v-10h3.2v10h-3.2z"
+        />
+      </g>
+    </svg>
+  </div>
+  <div
+    className={undefined}
+  >
+    <p>
+      <strong>
+        Info
+      </strong>
+       you can do it better!
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Alerts/dark success 1`] = `
+<div
+  className={undefined}
+>
+  <div
+    className=""
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "color": undefined,
+          "verticalAlign": "middle",
+        }
+      }
+      viewBox="0 0 40 40"
+      width="1em"
+    >
+      <g>
+        <path
+          d="m15 27l17.7-17.7 2.3 2.3-20 20-9.3-9.3 2.3-2.3z"
+        />
+      </g>
+    </svg>
+  </div>
+  <div
+    className={undefined}
+  >
+    <p>
+      <strong>
+        Success
+      </strong>
+       awesome, it worked!
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Alerts/dark warning 1`] = `
+<div
+  className={undefined}
+>
+  <div
+    className=""
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "color": undefined,
+          "verticalAlign": "middle",
+        }
+      }
+      viewBox="0 0 40 40"
+      width="1em"
+    >
+      <g>
+        <path
+          d="m21.6 23.4v-6.8h-3.2v6.8h3.2z m0 6.6v-3.4h-3.2v3.4h3.2z m-20 5l18.4-31.6 18.4 31.6h-36.8z"
+        />
+      </g>
+    </svg>
+  </div>
+  <div
+    className={undefined}
+  >
+    <p>
+      <strong>
+        Warning
+      </strong>
+       something is going on!
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Alerts/light error 1`] = `
+<div
+  className={undefined}
+>
+  <div
+    className=""
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "color": undefined,
+          "verticalAlign": "middle",
+        }
+      }
+      viewBox="0 0 40 40"
+      width="1em"
+    >
+      <g>
+        <path
+          d="m31.6 10.7l-9.3 9.3 9.3 9.3-2.3 2.3-9.3-9.3-9.3 9.3-2.3-2.3 9.3-9.3-9.3-9.3 2.3-2.3 9.3 9.3 9.3-9.3z"
+        />
+      </g>
+    </svg>
+  </div>
+  <div
+    className={undefined}
+  >
+    <p>
+      <strong>
+        Error
+      </strong>
+       something went wrong!
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Alerts/light info 1`] = `
+<div
+  className={undefined}
+>
+  <div
+    className=""
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "color": undefined,
+          "verticalAlign": "middle",
+        }
+      }
+      viewBox="0 0 40 40"
+      width="1em"
+    >
+      <g>
+        <path
+          d="m18.4 15v-3.4h3.2v3.4h-3.2z m1.6 18.4c7.3 0 13.4-6.1 13.4-13.4s-6.1-13.4-13.4-13.4-13.4 6.1-13.4 13.4 6.1 13.4 13.4 13.4z m0-30c9.2 0 16.6 7.4 16.6 16.6s-7.4 16.6-16.6 16.6-16.6-7.4-16.6-16.6 7.4-16.6 16.6-16.6z m-1.6 25v-10h3.2v10h-3.2z"
+        />
+      </g>
+    </svg>
+  </div>
+  <div
+    className={undefined}
+  >
+    <p>
+      <strong>
+        Info
+      </strong>
+       you can do it better!
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Alerts/light success 1`] = `
+<div
+  className={undefined}
+>
+  <div
+    className=""
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "color": undefined,
+          "verticalAlign": "middle",
+        }
+      }
+      viewBox="0 0 40 40"
+      width="1em"
+    >
+      <g>
+        <path
+          d="m15 27l17.7-17.7 2.3 2.3-20 20-9.3-9.3 2.3-2.3z"
+        />
+      </g>
+    </svg>
+  </div>
+  <div
+    className={undefined}
+  >
+    <p>
+      <strong>
+        Success
+      </strong>
+       awesome, it worked!
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Alerts/light warning 1`] = `
+<div
+  className={undefined}
+>
+  <div
+    className=""
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "color": undefined,
+          "verticalAlign": "middle",
+        }
+      }
+      viewBox="0 0 40 40"
+      width="1em"
+    >
+      <g>
+        <path
+          d="m21.6 23.4v-6.8h-3.2v6.8h3.2z m0 6.6v-3.4h-3.2v3.4h3.2z m-20 5l18.4-31.6 18.4 31.6h-36.8z"
+        />
+      </g>
+    </svg>
+  </div>
+  <div
+    className={undefined}
+  >
+    <p>
+      <strong>
+        Warning
+      </strong>
+       something is going on!
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Botão/Aplicações Base Clara Contorno 1`] = `
+<div
+  className={undefined}
+  style={
+    Object {
+      "background": "#FFF",
+      "padding": "20px",
+    }
+  }
+>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Contorno
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Contorno
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Contorno
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Contorno
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Contorno
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Contorno
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Contorno
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Contorno
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Contorno
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Contorno
+  </button>
+</div>
+`;
+
+exports[`Storyshots Botão/Aplicações Base Clara Gradiente 1`] = `
+<div
+  className={undefined}
+  style={
+    Object {
+      "background": "#FFF",
+      "padding": "20px",
+    }
+  }
+>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Gradiente
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Gradiente
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Gradiente
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Gradiente
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Gradiente
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Gradiente
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Gradiente
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Gradiente
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Gradiente
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Gradiente
+  </button>
+</div>
+`;
+
+exports[`Storyshots Botão/Aplicações Base Clara Plano (padrão) 1`] = `
+<div
+  className={undefined}
+  style={
+    Object {
+      "background": "#FFF",
+      "padding": "20px",
+    }
+  }
+>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Plano (padrão)
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Plano (padrão)
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Plano (padrão)
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Plano (padrão)
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Plano (padrão)
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Plano (padrão)
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Plano (padrão)
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Plano (padrão)
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Plano (padrão)
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Plano (padrão)
+  </button>
+</div>
+`;
+
+exports[`Storyshots Botão/Aplicações Base Clara Sem fundo 1`] = `
+<div
+  className={undefined}
+  style={
+    Object {
+      "background": "#FFF",
+      "padding": "20px",
+    }
+  }
+>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Sem fundo
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Sem fundo
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Sem fundo
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Sem fundo
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Sem fundo
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Sem fundo
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Sem fundo
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Sem fundo
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Sem fundo
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Sem fundo
+  </button>
+</div>
+`;
+
+exports[`Storyshots Botão/Aplicações Base Clara Tracejado 1`] = `
+<div
+  className={undefined}
+  style={
+    Object {
+      "background": "#FFF",
+      "padding": "20px",
+    }
+  }
+>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Tracejado
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Tracejado
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Tracejado
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Tracejado
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Tracejado
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Tracejado
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Tracejado
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Tracejado
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Tracejado
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Tracejado
+  </button>
+</div>
+`;
+
+exports[`Storyshots Botão/Aplicações Base Escura Contorno 1`] = `
+<div
+  className={undefined}
+  style={
+    Object {
+      "background": "#333",
+      "padding": "20px",
+    }
+  }
+>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Contorno
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Contorno
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Contorno
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Contorno
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Contorno
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Contorno
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Contorno
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Contorno
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Contorno
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Contorno
+  </button>
+</div>
+`;
+
+exports[`Storyshots Botão/Aplicações Base Escura Gradiente 1`] = `
+<div
+  className={undefined}
+  style={
+    Object {
+      "background": "#333",
+      "padding": "20px",
+    }
+  }
+>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Gradiente
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Gradiente
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Gradiente
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Gradiente
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Gradiente
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Gradiente
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Gradiente
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Gradiente
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Gradiente
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Gradiente
+  </button>
+</div>
+`;
+
+exports[`Storyshots Botão/Aplicações Base Escura Plano (padrão) 1`] = `
+<div
+  className={undefined}
+  style={
+    Object {
+      "background": "#333",
+      "padding": "20px",
+    }
+  }
+>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Plano (padrão)
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Plano (padrão)
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Plano (padrão)
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Plano (padrão)
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Plano (padrão)
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Plano (padrão)
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Plano (padrão)
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Plano (padrão)
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Plano (padrão)
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Plano (padrão)
+  </button>
+</div>
+`;
+
+exports[`Storyshots Botão/Aplicações Base Escura Sem fundo 1`] = `
+<div
+  className={undefined}
+  style={
+    Object {
+      "background": "#333",
+      "padding": "20px",
+    }
+  }
+>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Sem fundo
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Sem fundo
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Sem fundo
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Sem fundo
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Sem fundo
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Sem fundo
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Sem fundo
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Sem fundo
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Sem fundo
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Sem fundo
+  </button>
+</div>
+`;
+
+exports[`Storyshots Botão/Aplicações Base Escura Tracejado 1`] = `
+<div
+  className={undefined}
+  style={
+    Object {
+      "background": "#333",
+      "padding": "20px",
+    }
+  }
+>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Tracejado
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Tracejado
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Tracejado
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Tracejado
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Tracejado
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Tracejado
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Tracejado
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Tracejado
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Tracejado
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão Tracejado
+  </button>
+</div>
+`;
+
+exports[`Storyshots Botão/Tamanhos e Formas Bloco 1`] = `
+<div
+  className={undefined}
+>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão
+     
+    Bloco
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão
+     
+    Bloco
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão
+     
+    Bloco
+  </button>
+</div>
+`;
+
+exports[`Storyshots Botão/Tamanhos e Formas Com ícones 1`] = `
+<div
+  className={undefined}
+>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "color": undefined,
+          "verticalAlign": "middle",
+        }
+      }
+      viewBox="0 0 40 40"
+      width="1em"
+    >
+      <g>
+        <path
+          d="m20 33.4c7.3 0 13.4-6.1 13.4-13.4 0-1.3-0.3-2.6-0.6-3.7-1.2 0.3-2.4 0.3-3.7 0.3-5.7 0-10.6-2.7-13.6-7-1.7 4-4.9 7.3-8.8 9-0.1 0.5-0.1 0.9-0.1 1.4 0 7.3 6.1 13.4 13.4 13.4z m0-30c9.2 0 16.6 7.4 16.6 16.6s-7.4 16.6-16.6 16.6-16.6-7.4-16.6-16.6 7.4-16.6 16.6-16.6z m5 16.2c1.2 0 2.1 0.9 2.1 2s-0.9 2.2-2.1 2.2-2.1-1-2.1-2.2 0.9-2 2.1-2z m-10 0c1.2 0 2.1 0.9 2.1 2s-0.9 2.2-2.1 2.2-2.1-1-2.1-2.2 0.9-2 2.1-2z"
+        />
+      </g>
+    </svg>
+    Minha Conta
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "color": undefined,
+          "verticalAlign": "middle",
+        }
+      }
+      viewBox="0 0 40 40"
+      width="1em"
+    >
+      <g>
+        <path
+          d="m37.3 20q0 3.5-1.4 6.7t-3.6 5.4-5.5 3.7-6.7 1.3-6.6-1.3-5.5-3.7-3.6-5.4-1.4-6.7q0-4.1 1.8-7.7t5-6q1-0.7 2.2-0.5t1.8 1.1q0.8 0.9 0.6 2.1t-1.1 1.9q-2.2 1.6-3.4 4t-1.2 5.1q0 2.3 0.9 4.4t2.5 3.7 3.6 2.4 4.4 0.9 4.5-0.9 3.6-2.4 2.5-3.7 0.9-4.4q0-2.7-1.2-5.1t-3.4-4q-0.9-0.7-1.1-1.9t0.5-2.1q0.7-1 1.9-1.1t2.1 0.5q3.3 2.4 5.1 6t1.8 7.7z m-14.3-17.1v14.2q0 1.2-0.8 2.1t-2.1 0.8-2-0.8-0.8-2.1v-14.2q0-1.2 0.8-2.1t2-0.8 2.1 0.8 0.8 2.1z"
+        />
+      </g>
+    </svg>
+    Desconectar
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "color": undefined,
+          "verticalAlign": "middle",
+        }
+      }
+      viewBox="0 0 40 40"
+      width="1em"
+    >
+      <g>
+        <path
+          d="m31.4 20.7v7.2q0 2.6-1.9 4.5t-4.5 1.9h-18.6q-2.6 0-4.5-1.9t-1.9-4.5v-18.6q0-2.7 1.9-4.6t4.5-1.8h15.7q0.4 0 0.6 0.2t0.2 0.5v1.4q0 0.3-0.2 0.5t-0.6 0.2h-15.7q-1.4 0-2.5 1.1t-1 2.5v18.6q0 1.4 1 2.5t2.5 1h18.6q1.5 0 2.5-1t1.1-2.5v-7.2q0-0.3 0.2-0.5t0.5-0.2h1.4q0.3 0 0.5 0.2t0.2 0.5z m8.6-19.3v11.5q0 0.5-0.4 1t-1 0.4-1-0.4l-4-4-14.5 14.6q-0.2 0.2-0.5 0.2t-0.5-0.2l-2.6-2.6q-0.2-0.2-0.2-0.5t0.2-0.5l14.6-14.5-4-4q-0.4-0.4-0.4-1t0.4-1 1-0.4h11.5q0.6 0 1 0.4t0.4 1z"
+        />
+      </g>
+    </svg>
+    Exportar
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "color": undefined,
+          "verticalAlign": "middle",
+        }
+      }
+      viewBox="0 0 40 40"
+      width="1em"
+    >
+      <g>
+        <path
+          d="m31.6 35v-23.4h-18.2v23.4h18.2z m0-26.6c1.8 0 3.4 1.4 3.4 3.2v23.4c0 1.8-1.6 3.4-3.4 3.4h-18.2c-1.8 0-3.4-1.6-3.4-3.4v-23.4c0-1.8 1.6-3.2 3.4-3.2h18.2z m-5-6.8v3.4h-20v23.4h-3.2v-23.4c0-1.8 1.4-3.4 3.2-3.4h20z"
+        />
+      </g>
+    </svg>
+    Copiar
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "color": undefined,
+          "verticalAlign": "middle",
+        }
+      }
+      viewBox="0 0 40 40"
+      width="1em"
+    >
+      <g>
+        <path
+          d="m33.5 29.5q0 0.9-0.7 1.5l-3 3.1q-0.6 0.6-1.5 0.6t-1.5-0.6l-6.6-6.6-6.5 6.6q-0.7 0.6-1.6 0.6t-1.5-0.6l-3-3.1q-0.6-0.6-0.6-1.5t0.6-1.5l6.5-6.6-6.5-6.5q-0.6-0.7-0.6-1.6t0.6-1.5l3-3q0.6-0.6 1.5-0.6t1.6 0.6l6.5 6.6 6.6-6.6q0.6-0.6 1.5-0.6t1.5 0.6l3.1 3q0.6 0.7 0.6 1.5t-0.6 1.6l-6.6 6.5 6.6 6.6q0.6 0.6 0.6 1.5z"
+        />
+      </g>
+    </svg>
+    Excluir
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "color": undefined,
+          "verticalAlign": "middle",
+        }
+      }
+      viewBox="0 0 40 40"
+      width="1em"
+    >
+      <g>
+        <path
+          d="m35.9 16.4v4.3q0 0.9-0.6 1.5t-1.5 0.7h-9.3v9.2q0 0.9-0.6 1.6t-1.5 0.6h-4.3q-0.9 0-1.5-0.6t-0.7-1.6v-9.2h-9.3q-0.9 0-1.5-0.7t-0.6-1.5v-4.3q0-0.9 0.6-1.5t1.5-0.6h9.3v-9.3q0-0.9 0.7-1.5t1.5-0.6h4.3q0.9 0 1.5 0.6t0.6 1.5v9.3h9.3q0.9 0 1.5 0.6t0.6 1.5z"
+        />
+      </g>
+    </svg>
+    Adicionar
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "color": undefined,
+          "verticalAlign": "middle",
+        }
+      }
+      viewBox="0 0 40 40"
+      width="1em"
+    >
+      <g>
+        <path
+          d="m35 30.9v-19.3c-1.8-0.5-3.8-0.7-5.9-0.7-2.8 0-6.8 1.1-9.1 2.5v19.1c2.3-1.4 6.3-2.5 9.1-2.5 2.1 0 4.1 0.3 5.9 0.9z m-5.9-23.4c3.5 0 7.1 0.9 9.3 2.5v24.3c0 0.4-0.5 0.9-0.9 0.9-0.2 0-0.2 0-0.4-0.1-2.3-1.3-5.2-1.7-8-1.7-2.8 0-6.8 1.1-9.1 2.5-2.4-1.8-5.9-2.5-9.1-2.5-2.5 0-5.7 0.7-8 1.8-0.2 0-0.2 0-0.4 0-0.4 0-0.9-0.4-0.9-0.7v-24.5c2.5-1.8 6-2.5 9.3-2.5s6.7 0.7 9.1 2.5c2.4-1.8 5.9-2.5 9.1-2.5z"
+        />
+      </g>
+    </svg>
+    Documentação
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "color": undefined,
+          "verticalAlign": "middle",
+        }
+      }
+      viewBox="0 0 40 40"
+      width="1em"
+    >
+      <g>
+        <path
+          d="m28.4 15v-3.4h-16.8v3.4h16.8z m0 6.6v-3.2h-16.8v3.2h16.8z m-5 6.8v-3.4h-11.8v3.4h11.8z m-3.4-23.4c-0.9 0-1.6 0.7-1.6 1.6s0.7 1.8 1.6 1.8 1.6-0.8 1.6-1.8-0.7-1.6-1.6-1.6z m11.6 0c1.8 0 3.4 1.6 3.4 3.4v23.2c0 1.8-1.6 3.4-3.4 3.4h-23.2c-1.8 0-3.4-1.6-3.4-3.4v-23.2c0-1.8 1.6-3.4 3.4-3.4h6.9c0.7-2 2.5-3.4 4.7-3.4s4 1.4 4.7 3.4h6.9z"
+        />
+      </g>
+    </svg>
+    Carta de Circulação
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        Object {
+          "color": undefined,
+          "verticalAlign": "middle",
+        }
+      }
+      viewBox="0 0 40 40"
+      width="1em"
+    >
+      <g>
+        <path
+          d="m8.4 30h23.2v3.4h-23.2v-3.4z m6.6-3.4v-10h-6.6l11.6-11.6 11.6 11.6h-6.6v10h-10z"
+        />
+      </g>
+    </svg>
+    Fazer Upload
+  </button>
+</div>
+`;
+
+exports[`Storyshots Botão/Tamanhos e Formas Tamanhos 1`] = `
+<div
+  className={undefined}
+>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão
+  </button>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    Botão
+  </button>
+</div>
+`;
+
+exports[`Storyshots Cards Graphic, title, text and actions 1`] = `
+<div
+  className={undefined}
+>
+  <div
+    className={undefined}
+  >
+    <div
+      className={undefined}
+    >
+      <img
+        alt="placeholder"
+        src="https://maxicharts.com/wp-content/uploads/2017/07/banner-1544x500.png"
+      />
+    </div>
+    <div
+      className={undefined}
+    >
+      <h3>
+        Lorem ipsum dolor sit amet
+      </h3>
+    </div>
+    <div
+      className={undefined}
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris venenatis placerat lacus et pretium. Aenean porttitor mi odio, vel blandit nulla malesuada et. Duis a tellus quis est iaculis accumsan. In diam est, egestas eu lobortis eu, laoreet ut tortor. Sed mattis sapien vel malesuada sodales. Curabitur hendrerit purus sed ex feugiat hendrerit. Vivamus eleifend odio a congue consectetur.
+    </div>
+    <div
+      className={undefined}
+    >
+      <button
+        className=""
+        onClick={null}
+      >
+        Action
+      </button>
+      <button
+        className=""
+        onClick={null}
+      >
+        Action
+      </button>
+      <button
+        className=""
+        onClick={null}
+      >
+        Action
+      </button>
+      <button
+        className=""
+        onClick={null}
+      >
+        Action
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Cards Title and text 1`] = `
+<div
+  className={undefined}
+>
+  <div
+    className={undefined}
+  >
+    <div
+      className={undefined}
+    >
+      <h3>
+        Lorem ipsum dolor sit amet
+      </h3>
+    </div>
+    <div
+      className={undefined}
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris venenatis placerat lacus et pretium. Aenean porttitor mi odio, vel blandit nulla malesuada et. Duis a tellus quis est iaculis accumsan. In diam est, egestas eu lobortis eu, laoreet ut tortor. Sed mattis sapien vel malesuada sodales. Curabitur hendrerit purus sed ex feugiat hendrerit. Vivamus eleifend odio a congue consectetur.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Cards Title, text and actions 1`] = `
+<div
+  className={undefined}
+>
+  <div
+    className={undefined}
+  >
+    <div
+      className={undefined}
+    >
+      <h3>
+        Lorem ipsum dolor sit amet
+      </h3>
+    </div>
+    <div
+      className={undefined}
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris venenatis placerat lacus et pretium. Aenean porttitor mi odio, vel blandit nulla malesuada et. Duis a tellus quis est iaculis accumsan. In diam est, egestas eu lobortis eu, laoreet ut tortor. Sed mattis sapien vel malesuada sodales. Curabitur hendrerit purus sed ex feugiat hendrerit. Vivamus eleifend odio a congue consectetur.
+    </div>
+    <div
+      className={undefined}
+    >
+      <button
+        className=""
+        onClick={null}
+      >
+        Action
+      </button>
+      <button
+        className=""
+        onClick={null}
+      >
+        Action
+      </button>
+      <button
+        className=""
+        onClick={null}
+      >
+        Action
+      </button>
+      <button
+        className=""
+        onClick={null}
+      >
+        Action
+      </button>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Storyshots Colors Dark background color 1`] = `
@@ -169,14 +1644,14 @@ exports[`Storyshots Colors Dark background color 1`] = `
             className={undefined}
             style={
               Object {
-                "background": "var(--color-dark-green-light-300)",
+                "background": "var(--color-dark-green-contrast-300)",
               }
             }
           >
             <div
               className={undefined}
             >
-              --color-dark-green-light-300
+              --color-dark-green-contrast-300
             </div>
           </div>
         </div>
@@ -185,14 +1660,14 @@ exports[`Storyshots Colors Dark background color 1`] = `
             className={undefined}
             style={
               Object {
-                "background": "var(--color-dark-green-light-200)",
+                "background": "var(--color-dark-green-contrast-200)",
               }
             }
           >
             <div
               className={undefined}
             >
-              --color-dark-green-light-200
+              --color-dark-green-contrast-200
             </div>
           </div>
         </div>
@@ -201,14 +1676,14 @@ exports[`Storyshots Colors Dark background color 1`] = `
             className={undefined}
             style={
               Object {
-                "background": "var(--color-dark-green-light-100)",
+                "background": "var(--color-dark-green-contrast-100)",
               }
             }
           >
             <div
               className={undefined}
             >
-              --color-dark-green-light-100
+              --color-dark-green-contrast-100
             </div>
           </div>
         </div>
@@ -217,14 +1692,14 @@ exports[`Storyshots Colors Dark background color 1`] = `
             className={undefined}
             style={
               Object {
-                "background": "var(--color-dark-green-light-gradient)",
+                "background": "var(--color-dark-green-contrast-gradient)",
               }
             }
           >
             <div
               className={undefined}
             >
-              --color-dark-green-light-gradient
+              --color-dark-green-contrast-gradient
             </div>
           </div>
         </div>
@@ -237,14 +1712,14 @@ exports[`Storyshots Colors Dark background color 1`] = `
             className={undefined}
             style={
               Object {
-                "background": "var(--color-dark-green-light-accent-100)",
+                "background": "var(--color-dark-green-accent-100)",
               }
             }
           >
             <div
               className={undefined}
             >
-              --color-dark-green-light-accent-100
+              --color-dark-green-accent-100
             </div>
           </div>
         </div>
@@ -253,14 +1728,14 @@ exports[`Storyshots Colors Dark background color 1`] = `
             className={undefined}
             style={
               Object {
-                "background": "var(--color-dark-green-light-accent-200)",
+                "background": "var(--color-dark-green-accent-200)",
               }
             }
           >
             <div
               className={undefined}
             >
-              --color-dark-green-light-accent-200
+              --color-dark-green-accent-200
             </div>
           </div>
         </div>
@@ -269,14 +1744,14 @@ exports[`Storyshots Colors Dark background color 1`] = `
             className={undefined}
             style={
               Object {
-                "background": "var(--color-dark-green-light-accent-gradient)",
+                "background": "var(--color-dark-green-accent-gradient)",
               }
             }
           >
             <div
               className={undefined}
             >
-              --color-dark-green-light-accent-gradient
+              --color-dark-green-accent-gradient
             </div>
           </div>
         </div>
@@ -946,6 +2421,83 @@ exports[`Storyshots Colors Dark background color 1`] = `
       </div>
     </div>
   </div>
+  <div>
+    <h1>
+      Named Colors
+    </h1>
+    <div
+      className={undefined}
+    >
+      <div
+        className={undefined}
+      >
+        <div>
+          <div
+            className={undefined}
+            style={
+              Object {
+                "background": "var(--color-dark-warning)",
+              }
+            }
+          >
+            <div
+              className={undefined}
+            >
+              --color-dark-warning
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            className={undefined}
+            style={
+              Object {
+                "background": "var(--color-dark-error)",
+              }
+            }
+          >
+            <div
+              className={undefined}
+            >
+              --color-dark-error
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            className={undefined}
+            style={
+              Object {
+                "background": "var(--color-dark-info)",
+              }
+            }
+          >
+            <div
+              className={undefined}
+            >
+              --color-dark-info
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            className={undefined}
+            style={
+              Object {
+                "background": "var(--color-dark-success)",
+              }
+            }
+          >
+            <div
+              className={undefined}
+            >
+              --color-dark-success
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
@@ -966,74 +2518,6 @@ exports[`Storyshots Colors Light background color 1`] = `
     <div
       className={undefined}
     >
-      <div
-        className={undefined}
-      >
-        <div>
-          <div
-            className={undefined}
-            style={
-              Object {
-                "background": "var(--color-light-green-dark-300)",
-              }
-            }
-          >
-            <div
-              className={undefined}
-            >
-              --color-light-green-dark-300
-            </div>
-          </div>
-        </div>
-        <div>
-          <div
-            className={undefined}
-            style={
-              Object {
-                "background": "var(--color-light-green-dark-200)",
-              }
-            }
-          >
-            <div
-              className={undefined}
-            >
-              --color-light-green-dark-200
-            </div>
-          </div>
-        </div>
-        <div>
-          <div
-            className={undefined}
-            style={
-              Object {
-                "background": "var(--color-light-green-dark-100)",
-              }
-            }
-          >
-            <div
-              className={undefined}
-            >
-              --color-light-green-dark-100
-            </div>
-          </div>
-        </div>
-        <div>
-          <div
-            className={undefined}
-            style={
-              Object {
-                "background": "var(--color-light-green-dark-gradient)",
-              }
-            }
-          >
-            <div
-              className={undefined}
-            >
-              --color-light-green-dark-gradient
-            </div>
-          </div>
-        </div>
-      </div>
       <div
         className={undefined}
       >
@@ -1178,14 +2662,14 @@ exports[`Storyshots Colors Light background color 1`] = `
             className={undefined}
             style={
               Object {
-                "background": "var(--color-light-green-dark-accent-100)",
+                "background": "var(--color-light-green-contrast-300)",
               }
             }
           >
             <div
               className={undefined}
             >
-              --color-light-green-dark-accent-100
+              --color-light-green-contrast-300
             </div>
           </div>
         </div>
@@ -1194,14 +2678,14 @@ exports[`Storyshots Colors Light background color 1`] = `
             className={undefined}
             style={
               Object {
-                "background": "var(--color-light-green-dark-accent-200)",
+                "background": "var(--color-light-green-contrast-200)",
               }
             }
           >
             <div
               className={undefined}
             >
-              --color-light-green-dark-accent-200
+              --color-light-green-contrast-200
             </div>
           </div>
         </div>
@@ -1210,14 +2694,82 @@ exports[`Storyshots Colors Light background color 1`] = `
             className={undefined}
             style={
               Object {
-                "background": "var(--color-light-green-dark-accent-gradient)",
+                "background": "var(--color-light-green-contrast-100)",
               }
             }
           >
             <div
               className={undefined}
             >
-              --color-light-green-dark-accent-gradient
+              --color-light-green-contrast-100
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            className={undefined}
+            style={
+              Object {
+                "background": "var(--color-light-green-contrast-gradient)",
+              }
+            }
+          >
+            <div
+              className={undefined}
+            >
+              --color-light-green-contrast-gradient
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className={undefined}
+      >
+        <div>
+          <div
+            className={undefined}
+            style={
+              Object {
+                "background": "var(--color-light-green-accent-100)",
+              }
+            }
+          >
+            <div
+              className={undefined}
+            >
+              --color-light-green-accent-100
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            className={undefined}
+            style={
+              Object {
+                "background": "var(--color-light-green-accent-200)",
+              }
+            }
+          >
+            <div
+              className={undefined}
+            >
+              --color-light-green-accent-200
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            className={undefined}
+            style={
+              Object {
+                "background": "var(--color-light-green-accent-gradient)",
+              }
+            }
+          >
+            <div
+              className={undefined}
+            >
+              --color-light-green-accent-gradient
             </div>
           </div>
         </div>
@@ -1855,5 +3407,1228 @@ exports[`Storyshots Colors Light background color 1`] = `
       </div>
     </div>
   </div>
+  <div>
+    <h1>
+      Named Colors
+    </h1>
+    <div
+      className={undefined}
+    >
+      <div
+        className={undefined}
+      >
+        <div>
+          <div
+            className={undefined}
+            style={
+              Object {
+                "background": "var(--color-light-warning)",
+              }
+            }
+          >
+            <div
+              className={undefined}
+            >
+              --color-light-warning
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            className={undefined}
+            style={
+              Object {
+                "background": "var(--color-light-error)",
+              }
+            }
+          >
+            <div
+              className={undefined}
+            >
+              --color-light-error
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            className={undefined}
+            style={
+              Object {
+                "background": "var(--color-light-info)",
+              }
+            }
+          >
+            <div
+              className={undefined}
+            >
+              --color-light-info
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            className={undefined}
+            style={
+              Object {
+                "background": "var(--color-light-success)",
+              }
+            }
+          >
+            <div
+              className={undefined}
+            >
+              --color-light-success
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Progress/Circular disabled 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "height": "100%",
+      "paddingBottom": "1em",
+      "paddingTop": "1em",
+      "width": "100%",
+    }
+  }
+>
+  <div
+    className={undefined}
+  >
+    <svg
+      viewBox="0 0 200 200"
+    >
+      <defs>
+        <linearGradient
+          id="linear-light"
+          x1="0%"
+          x2="100%"
+          y1="0%"
+          y2="0%"
+        >
+          <stop
+            offset="0%"
+            stopColor="rgb(100, 100, 100)"
+          />
+          <stop
+            offset="100%"
+            stopColor="red"
+          />
+        </linearGradient>
+      </defs>
+      <path
+        className={undefined}
+        d="M 40,160A 90 90 0 1 1 160 160"
+        fill="transparent"
+        stroke="#cccccc"
+      />
+      <path
+        className={undefined}
+        d="M 40,160A 90 90 0 1 1 160 160"
+        fill="transparent"
+        stroke="url(#linear-light)"
+        style={
+          Object {
+            "strokeDashoffset": "730px",
+          }
+        }
+      />
+    </svg>
+    <div
+      className={undefined}
+    >
+      <span
+        style={
+          Object {
+            "color": "rgba(67, 197, 216, 1)",
+          }
+        }
+      >
+        0%
+      </span>
+    </div>
+    <div
+      className="undefined"
+    >
+      Lorem Label
+    </div>
+  </div>
+  <div
+    className={undefined}
+  >
+    <svg
+      viewBox="0 0 200 200"
+    >
+      <defs>
+        <linearGradient
+          id="linear-light"
+          x1="0%"
+          x2="100%"
+          y1="0%"
+          y2="0%"
+        >
+          <stop
+            offset="0%"
+            stopColor="rgb(100, 100, 100)"
+          />
+          <stop
+            offset="100%"
+            stopColor="red"
+          />
+        </linearGradient>
+      </defs>
+      <path
+        className={undefined}
+        d="M 40,160A 90 90 0 1 1 160 160"
+        fill="transparent"
+        stroke="#cccccc"
+      />
+      <path
+        className={undefined}
+        d="M 40,160A 90 90 0 1 1 160 160"
+        fill="transparent"
+        stroke="url(#linear-light)"
+        style={
+          Object {
+            "strokeDashoffset": "730px",
+          }
+        }
+      />
+    </svg>
+    <div
+      className={undefined}
+    >
+      <span
+        style={
+          Object {
+            "color": "rgba(67, 197, 216, 1)",
+          }
+        }
+      >
+        0%
+      </span>
+    </div>
+    <div
+      className="undefined"
+    >
+      Lorem Label
+    </div>
+  </div>
+  <div
+    className={undefined}
+  >
+    <svg
+      viewBox="0 0 200 200"
+    >
+      <defs>
+        <linearGradient
+          id="linear-light"
+          x1="0%"
+          x2="100%"
+          y1="0%"
+          y2="0%"
+        >
+          <stop
+            offset="0%"
+            stopColor="rgb(100, 100, 100)"
+          />
+          <stop
+            offset="100%"
+            stopColor="red"
+          />
+        </linearGradient>
+      </defs>
+      <path
+        className={undefined}
+        d="M 40,160A 90 90 0 1 1 160 160"
+        fill="transparent"
+        stroke="#cccccc"
+      />
+      <path
+        className={undefined}
+        d="M 40,160A 90 90 0 1 1 160 160"
+        fill="transparent"
+        stroke="url(#linear-light)"
+        style={
+          Object {
+            "strokeDashoffset": "730px",
+          }
+        }
+      />
+    </svg>
+    <div
+      className={undefined}
+    >
+      <span
+        style={
+          Object {
+            "color": "rgba(67, 197, 216, 1)",
+          }
+        }
+      >
+        0%
+      </span>
+    </div>
+    <div
+      className="undefined"
+    >
+      Lorem Label
+    </div>
+  </div>
+  <div
+    className={undefined}
+  >
+    <svg
+      viewBox="0 0 200 200"
+    >
+      <defs>
+        <linearGradient
+          id="linear-light"
+          x1="0%"
+          x2="100%"
+          y1="0%"
+          y2="0%"
+        >
+          <stop
+            offset="0%"
+            stopColor="rgb(100, 100, 100)"
+          />
+          <stop
+            offset="100%"
+            stopColor="red"
+          />
+        </linearGradient>
+      </defs>
+      <path
+        className={undefined}
+        d="M 40,160A 90 90 0 1 1 160 160"
+        fill="transparent"
+        stroke="#cccccc"
+      />
+      <path
+        className={undefined}
+        d="M 40,160A 90 90 0 1 1 160 160"
+        fill="transparent"
+        stroke="url(#linear-light)"
+        style={
+          Object {
+            "strokeDashoffset": "730px",
+          }
+        }
+      />
+    </svg>
+    <div
+      className={undefined}
+    >
+      <span
+        style={
+          Object {
+            "color": "rgba(67, 197, 216, 1)",
+          }
+        }
+      >
+        0%
+      </span>
+    </div>
+    <div
+      className="undefined"
+    >
+      Lorem Label
+    </div>
+  </div>
+  <div
+    className={undefined}
+  >
+    <svg
+      viewBox="0 0 200 200"
+    >
+      <defs>
+        <linearGradient
+          id="linear-light"
+          x1="0%"
+          x2="100%"
+          y1="0%"
+          y2="0%"
+        >
+          <stop
+            offset="0%"
+            stopColor="rgb(100, 100, 100)"
+          />
+          <stop
+            offset="100%"
+            stopColor="red"
+          />
+        </linearGradient>
+      </defs>
+      <path
+        className={undefined}
+        d="M 40,160A 90 90 0 1 1 160 160"
+        fill="transparent"
+        stroke="#cccccc"
+      />
+      <path
+        className={undefined}
+        d="M 40,160A 90 90 0 1 1 160 160"
+        fill="transparent"
+        stroke="url(#linear-light)"
+        style={
+          Object {
+            "strokeDashoffset": "730px",
+          }
+        }
+      />
+    </svg>
+    <div
+      className={undefined}
+    >
+      <span
+        style={
+          Object {
+            "color": "rgba(67, 197, 216, 1)",
+          }
+        }
+      >
+        0%
+      </span>
+    </div>
+    <div
+      className="undefined"
+    >
+      Lorem Label
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Progress/Circular normal 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "height": "100%",
+      "paddingBottom": "1em",
+      "paddingTop": "1em",
+      "width": "100%",
+    }
+  }
+>
+  <div
+    className={undefined}
+  >
+    <svg
+      viewBox="0 0 200 200"
+    >
+      <defs>
+        <linearGradient
+          id="linear-light"
+          x1="0%"
+          x2="100%"
+          y1="0%"
+          y2="0%"
+        >
+          <stop
+            offset="0%"
+            stopColor="rgba(67, 197, 216, 1)"
+          />
+          <stop
+            offset="100%"
+            stopColor="rgba(166, 122, 255, 1)"
+          />
+        </linearGradient>
+      </defs>
+      <path
+        className={undefined}
+        d="M 40,160A 90 90 0 1 1 160 160"
+        fill="transparent"
+        stroke="#cccccc"
+      />
+      <path
+        className={undefined}
+        d="M 40,160A 90 90 0 1 1 160 160"
+        fill="transparent"
+        stroke="url(#linear-light)"
+        style={
+          Object {
+            "strokeDashoffset": "730px",
+          }
+        }
+      />
+    </svg>
+    <div
+      className={undefined}
+    >
+      <span
+        style={
+          Object {
+            "color": "rgba(67, 197, 216, 1)",
+          }
+        }
+      >
+        0%
+      </span>
+    </div>
+    <div
+      className=""
+    >
+      Lorem Label
+    </div>
+  </div>
+  <div
+    className={undefined}
+  >
+    <svg
+      viewBox="0 0 200 200"
+    >
+      <defs>
+        <linearGradient
+          id="linear-light"
+          x1="0%"
+          x2="100%"
+          y1="0%"
+          y2="0%"
+        >
+          <stop
+            offset="0%"
+            stopColor="rgba(67, 197, 216, 1)"
+          />
+          <stop
+            offset="100%"
+            stopColor="rgba(166, 122, 255, 1)"
+          />
+        </linearGradient>
+      </defs>
+      <path
+        className={undefined}
+        d="M 40,160A 90 90 0 1 1 160 160"
+        fill="transparent"
+        stroke="#cccccc"
+      />
+      <path
+        className={undefined}
+        d="M 40,160A 90 90 0 1 1 160 160"
+        fill="transparent"
+        stroke="url(#linear-light)"
+        style={
+          Object {
+            "strokeDashoffset": "730px",
+          }
+        }
+      />
+    </svg>
+    <div
+      className={undefined}
+    >
+      <span
+        style={
+          Object {
+            "color": "rgba(67, 197, 216, 1)",
+          }
+        }
+      >
+        0%
+      </span>
+    </div>
+    <div
+      className=""
+    >
+      Lorem Label
+    </div>
+  </div>
+  <div
+    className={undefined}
+  >
+    <svg
+      viewBox="0 0 200 200"
+    >
+      <defs>
+        <linearGradient
+          id="linear-light"
+          x1="0%"
+          x2="100%"
+          y1="0%"
+          y2="0%"
+        >
+          <stop
+            offset="0%"
+            stopColor="rgba(67, 197, 216, 1)"
+          />
+          <stop
+            offset="100%"
+            stopColor="rgba(166, 122, 255, 1)"
+          />
+        </linearGradient>
+      </defs>
+      <path
+        className={undefined}
+        d="M 40,160A 90 90 0 1 1 160 160"
+        fill="transparent"
+        stroke="#cccccc"
+      />
+      <path
+        className={undefined}
+        d="M 40,160A 90 90 0 1 1 160 160"
+        fill="transparent"
+        stroke="url(#linear-light)"
+        style={
+          Object {
+            "strokeDashoffset": "730px",
+          }
+        }
+      />
+    </svg>
+    <div
+      className={undefined}
+    >
+      <span
+        style={
+          Object {
+            "color": "rgba(67, 197, 216, 1)",
+          }
+        }
+      >
+        0%
+      </span>
+    </div>
+    <div
+      className=""
+    >
+      Lorem Label
+    </div>
+  </div>
+  <div
+    className={undefined}
+  >
+    <svg
+      viewBox="0 0 200 200"
+    >
+      <defs>
+        <linearGradient
+          id="linear-light"
+          x1="0%"
+          x2="100%"
+          y1="0%"
+          y2="0%"
+        >
+          <stop
+            offset="0%"
+            stopColor="rgba(67, 197, 216, 1)"
+          />
+          <stop
+            offset="100%"
+            stopColor="rgba(166, 122, 255, 1)"
+          />
+        </linearGradient>
+      </defs>
+      <path
+        className={undefined}
+        d="M 40,160A 90 90 0 1 1 160 160"
+        fill="transparent"
+        stroke="#cccccc"
+      />
+      <path
+        className={undefined}
+        d="M 40,160A 90 90 0 1 1 160 160"
+        fill="transparent"
+        stroke="url(#linear-light)"
+        style={
+          Object {
+            "strokeDashoffset": "730px",
+          }
+        }
+      />
+    </svg>
+    <div
+      className={undefined}
+    >
+      <span
+        style={
+          Object {
+            "color": "rgba(67, 197, 216, 1)",
+          }
+        }
+      >
+        0%
+      </span>
+    </div>
+    <div
+      className=""
+    >
+      Lorem Label
+    </div>
+  </div>
+  <div
+    className={undefined}
+  >
+    <svg
+      viewBox="0 0 200 200"
+    >
+      <defs>
+        <linearGradient
+          id="linear-light"
+          x1="0%"
+          x2="100%"
+          y1="0%"
+          y2="0%"
+        >
+          <stop
+            offset="0%"
+            stopColor="rgba(67, 197, 216, 1)"
+          />
+          <stop
+            offset="100%"
+            stopColor="rgba(166, 122, 255, 1)"
+          />
+        </linearGradient>
+      </defs>
+      <path
+        className={undefined}
+        d="M 40,160A 90 90 0 1 1 160 160"
+        fill="transparent"
+        stroke="#cccccc"
+      />
+      <path
+        className={undefined}
+        d="M 40,160A 90 90 0 1 1 160 160"
+        fill="transparent"
+        stroke="url(#linear-light)"
+        style={
+          Object {
+            "strokeDashoffset": "730px",
+          }
+        }
+      />
+    </svg>
+    <div
+      className={undefined}
+    >
+      <span
+        style={
+          Object {
+            "color": "rgba(67, 197, 216, 1)",
+          }
+        }
+      >
+        0%
+      </span>
+    </div>
+    <div
+      className=""
+    >
+      Lorem Label
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Progress/Linear disabled 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "height": "100%",
+      "paddingBottom": "1em",
+      "paddingTop": "1em",
+      "width": "100%",
+    }
+  }
+>
+  <div>
+    <div
+      className={undefined}
+    >
+      <div>
+        <div
+          className="undefined"
+        >
+          <div
+            className="undefined"
+            style={
+              Object {
+                "width": "0%",
+              }
+            }
+          />
+        </div>
+        <div
+          className="undefined"
+          style={
+            Object {
+              "width": "0%",
+            }
+          }
+        >
+          <div
+            className={undefined}
+            style={
+              Object {
+                "marginRight": "-1em",
+              }
+            }
+          >
+            0%
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      className={undefined}
+    >
+      <div>
+        <div
+          className="undefined"
+        >
+          <div
+            className="undefined"
+            style={
+              Object {
+                "width": "0%",
+              }
+            }
+          />
+        </div>
+        <div
+          className="undefined"
+          style={
+            Object {
+              "width": "0%",
+            }
+          }
+        >
+          <div
+            className={undefined}
+            style={
+              Object {
+                "marginRight": "-1em",
+              }
+            }
+          >
+            0%
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      className={undefined}
+    >
+      <div>
+        <div
+          className="undefined"
+        >
+          <div
+            className="undefined"
+            style={
+              Object {
+                "width": "0%",
+              }
+            }
+          />
+        </div>
+        <div
+          className="undefined"
+          style={
+            Object {
+              "width": "0%",
+            }
+          }
+        >
+          <div
+            className={undefined}
+            style={
+              Object {
+                "marginRight": "-1em",
+              }
+            }
+          >
+            0%
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      className={undefined}
+    >
+      <div>
+        <div
+          className="undefined"
+        >
+          <div
+            className="undefined"
+            style={
+              Object {
+                "width": "0%",
+              }
+            }
+          />
+        </div>
+        <div
+          className="undefined"
+          style={
+            Object {
+              "width": "0%",
+            }
+          }
+        >
+          <div
+            className={undefined}
+            style={
+              Object {
+                "marginRight": "-1em",
+              }
+            }
+          >
+            0%
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      className={undefined}
+    >
+      <div>
+        <div
+          className="undefined"
+        >
+          <div
+            className="undefined"
+            style={
+              Object {
+                "width": "0%",
+              }
+            }
+          />
+        </div>
+        <div
+          className="undefined"
+          style={
+            Object {
+              "width": "0%",
+            }
+          }
+        >
+          <div
+            className={undefined}
+            style={
+              Object {
+                "marginRight": "-1em",
+              }
+            }
+          >
+            0%
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Progress/Linear normal 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "height": "100%",
+      "paddingBottom": "1em",
+      "paddingTop": "1em",
+      "width": "100%",
+    }
+  }
+>
+  <div>
+    <div
+      className={undefined}
+    >
+      <div>
+        <div
+          className=""
+        >
+          <div
+            className=""
+            style={
+              Object {
+                "width": "0%",
+              }
+            }
+          />
+        </div>
+        <div
+          className=""
+          style={
+            Object {
+              "width": "0%",
+            }
+          }
+        >
+          <div
+            className={undefined}
+            style={
+              Object {
+                "marginRight": "-1em",
+              }
+            }
+          >
+            0%
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      className={undefined}
+    >
+      <div>
+        <div
+          className=""
+        >
+          <div
+            className=""
+            style={
+              Object {
+                "width": "0%",
+              }
+            }
+          />
+        </div>
+        <div
+          className=""
+          style={
+            Object {
+              "width": "0%",
+            }
+          }
+        >
+          <div
+            className={undefined}
+            style={
+              Object {
+                "marginRight": "-1em",
+              }
+            }
+          >
+            0%
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      className={undefined}
+    >
+      <div>
+        <div
+          className=""
+        >
+          <div
+            className=""
+            style={
+              Object {
+                "width": "0%",
+              }
+            }
+          />
+        </div>
+        <div
+          className=""
+          style={
+            Object {
+              "width": "0%",
+            }
+          }
+        >
+          <div
+            className={undefined}
+            style={
+              Object {
+                "marginRight": "-1em",
+              }
+            }
+          >
+            0%
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      className={undefined}
+    >
+      <div>
+        <div
+          className=""
+        >
+          <div
+            className=""
+            style={
+              Object {
+                "width": "0%",
+              }
+            }
+          />
+        </div>
+        <div
+          className=""
+          style={
+            Object {
+              "width": "0%",
+            }
+          }
+        >
+          <div
+            className={undefined}
+            style={
+              Object {
+                "marginRight": "-1em",
+              }
+            }
+          >
+            0%
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      className={undefined}
+    >
+      <div>
+        <div
+          className=""
+        >
+          <div
+            className=""
+            style={
+              Object {
+                "width": "0%",
+              }
+            }
+          />
+        </div>
+        <div
+          className=""
+          style={
+            Object {
+              "width": "0%",
+            }
+          }
+        >
+          <div
+            className={undefined}
+            style={
+              Object {
+                "marginRight": "-1em",
+              }
+            }
+          >
+            0%
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Switch checked 1`] = `
+<div>
+  <p>
+    <div>
+      <div
+        className=""
+      >
+        <input
+          checked={true}
+          className={undefined}
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <span
+          className={undefined}
+        >
+          on
+        </span>
+      </div>
+    </div>
+  </p>
+  <p>
+    <div>
+      <div
+        className=""
+      >
+        <input
+          checked={false}
+          className={undefined}
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <span
+          className={undefined}
+        >
+          off
+        </span>
+      </div>
+    </div>
+  </p>
+</div>
+`;
+
+exports[`Storyshots Switch disabled 1`] = `
+<div>
+  <p>
+    <div>
+      <div
+        className="undefined"
+      >
+        <input
+          checked={true}
+          className={undefined}
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <span
+          className={undefined}
+        >
+          on
+        </span>
+      </div>
+    </div>
+  </p>
+  <p>
+    <div>
+      <div
+        className="undefined"
+      >
+        <input
+          checked={false}
+          className={undefined}
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <span
+          className={undefined}
+        >
+          off
+        </span>
+      </div>
+    </div>
+  </p>
 </div>
 `;

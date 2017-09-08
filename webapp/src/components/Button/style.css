@@ -1,15 +1,92 @@
+@import "./colors.css";
+
 .button {
   border: none;
   border-radius: 3px;
-  padding: 8px 16px;
-  background-color: #0000ff;
-  color: #000000;
-  font-size: 15px;
-  font-family: "Uni Neue";
+  font-family: var(--button-font-family);
   font-weight: 600;
   letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
-.primary {
-  background-color: #ff0000;
+.button:focus {
+  outline: none;
+}
+
+.flat {
+  background-image: none;
+}
+
+.gradient {
+  background-color: none;
+}
+
+.light-flat,
+.light-flat:hover,
+.light-gradient,
+.light-gradient:hover {
+  color: var(--color-text-light);
+}
+
+.dark-flat,
+.dark-flat:hover,
+.dark-gradient,
+.dark-gradient:hover {
+  color: var(--color-text-dark);
+}
+
+.dashed {
+  border: dashed 1px;
+}
+
+.outline {
+  border: solid 1px;
+}
+
+.dashed,
+.dashed:hover,
+.outline,
+.outline:hover,
+.clean,
+.clean:hover {
+  background-color: transparent;
+  background-image: none;
+}
+
+.block,
+.block:hover {
+  width: 100%;
+  color: var(--color-text-grey);
+  background: var(--color-background-grey);
+  border-radius: 0;
+}
+
+.button svg {
+  margin: -3px 10px 0 0;
+}
+
+.micro {
+  padding: var(--button-padding-micro);
+  font-size: var(--button-font-size-micro);
+}
+
+.tiny {
+  padding: var(--button-padding-tiny);
+  font-size: var(--button-font-size-tiny);
+}
+
+.small {
+  padding: var(--button-padding-small);
+  font-size: var(--button-font-size-small);
+}
+
+.medium {
+  padding: var(--button-padding-medium);
+  font-size: var(--button-font-size-medium);
+}
+
+.large {
+  padding: var(--button-padding-large);
+  font-size: var(--button-font-size-large);
 }
