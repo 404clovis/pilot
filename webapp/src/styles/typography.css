@@ -1,0 +1,90 @@
+@import "./webfonts/unineue/index.css";
+@import "./webfonts/opensans/index.css";
+@import "./spacing.css";
+@import "./colors.css";
+
+:root {
+  --headline-font-size: 30px;
+  --display-1-font-size: 36px;
+  --display-2-font-size: 48px;
+  --display-3-font-size: 60px;
+  --display-4-font-size: 72px;
+  --caption-font-size: 12px;
+  --body-font-size: 16px;
+  --blockquote-border-radius: 2px;
+  --blockquote-border: 5px solid var(--color-light-green-accent-100);
+
+  --title-font-family: "Uni Neue";
+  --title-font-weight: bold;
+  --title-font-style: italic;
+  --body-font-family: "Open Sans";
+  --body-link-color: var(--color-light-green-accent-100);
+}
+
+/* stylelint-disable */
+body {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size);
+  color: var(--color-text-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display,
+.headline {
+  font-family: var(--title-font-family);
+  font-weight: var(--title-font-weight);
+  font-style: var(--title-font-style);
+  color: var(--color-text-title);
+}
+
+h1 {
+  font-size: 24px;
+  margin: var(--spacing-medium) 0;
+}
+
+h2 {
+  font-size: 20px;
+  margin: var(--spacing-medium) 0;
+}
+
+h3 {
+  font-size: 18px;
+  margin: var(--spacing-small) 0;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+a {
+  font-weight: bold;
+  color: var(--body-link-color);
+  text-decoration: unset;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul,
+ol {
+  padding: 0 var(--spacing-medium);
+}
+
+li {
+  list-style-type: disc;
+}
+
+blockquote {
+  border-radius: var(--blockquote-border-radius);
+  border-left: var(--blockquote-border);
+  padding-left: var(--spacing-small);
+  margin: 0;
+}
+/* stylelint-enable */
+
