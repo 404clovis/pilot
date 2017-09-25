@@ -1,13 +1,14 @@
+import { BrowserRouter } from 'react-router-dom'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import registerServiceWorker from './registerServiceWorker'
+import Orders from './pages/Orders'
 
 import './style.css'
 
-const App = () =>
-  <h1>Hello world</h1>
-
-
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render((
+  <BrowserRouter>
+    <Orders />
+  </BrowserRouter>
+), document.getElementById('root'))
 registerServiceWorker()
-
