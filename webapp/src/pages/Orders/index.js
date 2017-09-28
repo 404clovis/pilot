@@ -2,7 +2,12 @@ import React from 'react'
 import ReactJson from 'react-json-view'
 import Customer from '../../containers/Customer'
 import Billing from '../../containers/Billing'
+import Shipping from '../../containers/Shipping'
 import Payment from '../../containers/Payment'
+import Products from '../../containers/Products'
+import Credits from '../../containers/Credits'
+import Seller from '../../containers/Seller'
+import Device from '../../containers/Device'
 
 
 class Orders extends React.Component {
@@ -15,14 +20,14 @@ class Orders extends React.Component {
   }
 
   componentDidMount () {
-    fetch('http://localhost:8000/orders/ABASTECEAI-IPIRANGA-5ff344a59b674282a1e2b3cec3b9b822')
+    fetch('http://localhost:8000/orders/BELVINOLTDA-df7a3d7d17074620934fb7ffcb39e051')
       .then(response => response.json())
       .then(response => this.setState({ orders: response }))
       .catch(errors => this.setState({ errors }))
   }
 
   render () {
-    if (!this.state.orders.source || !this.state.orders.source.payment) {
+    if (!this.state.orders.source) {
       return false
     }
 
@@ -31,9 +36,12 @@ class Orders extends React.Component {
     const source = orders.source
     const customer = source.customer
     const billing = source.billing
+    const shipping = source.shipping
     const payment = source.payment
-
-    console.log(JSON.stringify(payment.transactions, null, 2))
+    const products = source.products
+    const credits = source.credits
+    const seller = source.seller
+    const device = source.device
 
     return (
       <div>
@@ -49,9 +57,41 @@ class Orders extends React.Component {
               <Customer customer={customer} />
             </div>
             <hr />
-            <div className="order-billing">
-              <Billing billing={billing} />
+            {billing &&
+              <div className="order-billing">
+                <Billing billing={billing} />
+              </div>
+            }
+            <hr />
+            {shipping &&
+            <div className="order-shipping">
+              <Shipping shipping={shipping} />
             </div>
+            }
+            <hr />
+            {products &&
+            <div className="order-products">
+              <Products products={products} />
+            </div>
+            }
+            <hr />
+            {credits &&
+            <div className="credits">
+              <Credits credits={credits} />
+            </div>
+            }
+            <hr />
+            {seller &&
+            <div className="seller">
+              <Seller seller={seller} />
+            </div>
+            }
+            <hr />
+            {device &&
+            <div className="order-device">
+              <Device device={device} />
+            </div>
+            }
             <hr />
             <div className="order-payment">
               <Payment payment={payment} />
