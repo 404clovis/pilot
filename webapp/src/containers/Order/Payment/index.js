@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Transactions from '../Transactions'
+import Transactions from '../Transactions/index'
 
 
 const Payment = props => (

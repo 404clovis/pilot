@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Documents from '../../containers/Address'
+import Documents from '../Address'
 
 
 const Customer = props => (

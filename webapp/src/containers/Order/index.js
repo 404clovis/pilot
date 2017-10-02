@@ -1,16 +1,16 @@
 import React from 'react'
 import ReactJson from 'react-json-view'
-import Customer from '../../containers/Order/Customer'
-import Billing from '../../containers/Order/Billing'
-import Shipping from '../../containers/Order/Shipping'
-import Payment from '../../containers/Order/Payment'
-import Products from '../../containers/Order/Products'
-import Credits from '../../containers/Order/Credits'
-import Seller from '../../containers/Order/Seller'
-import Device from '../../containers/Order/Device'
+import Customer from './Customer'
+import Billing from './Billing'
+import Shipping from './Shipping'
+import Payment from './Payment'
+import Products from './Products'
+import Credits from './Credits'
+import Seller from './Seller'
+import Device from './Device'
 
 
-class Orders extends React.Component {
+class Order extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -58,9 +58,9 @@ class Orders extends React.Component {
             </div>
             <hr />
             {billing &&
-              <div className="order-billing">
-                <Billing billing={billing} />
-              </div>
+            <div className="order-billing">
+              <Billing billing={billing} />
+            </div>
             }
             <hr />
             {shipping &&
@@ -111,4 +111,4 @@ class Orders extends React.Component {
   }
 }
 
-export default Orders
+export default Order

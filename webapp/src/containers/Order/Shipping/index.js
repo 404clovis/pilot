@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Address from '../../containers/Address'
-import Phones from '../../containers/Phones'
+import Address from '../Address'
+import Phones from '../Phones'
 
 
 const Shipping = props => (

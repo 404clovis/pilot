@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import PurchaseIds from './PurchaseIds'
-import CreditUsage from './CreditUsage'
+import PurchaseIds from './PurchaseIds/index'
+import CreditUsage from './CreditUsage/index'
 
 
 const Credits = props => (

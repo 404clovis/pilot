@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Address from '../../containers/Address'
-import Documents from '../../containers/Documents'
-import Phones from '../../containers/Phones'
+import Address from '../Address'
+import Documents from '../Documents/index'
+import Phones from '../Phones/index'
 
 
 const Billing = props => (
