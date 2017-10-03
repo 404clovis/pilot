@@ -8,11 +8,17 @@ import Products from './Products'
 import Credits from './Credits'
 import Seller from './Seller'
 import Device from './Device'
+import Analysis from '../Analysis'
 
 
 class Order extends React.Component {
   constructor (props) {
     super(props)
+
+    const url = 'http://localhost:8000/clients/'.concat(this.props.match.params.sentinela)
+
+    console.log(url)
+
     this.state = {
       orders: {},
       errors: {},
@@ -20,7 +26,7 @@ class Order extends React.Component {
   }
 
   componentDidMount () {
-    fetch('http://localhost:8000/orders/BELVINOLTDA-df7a3d7d17074620934fb7ffcb39e05')
+    fetch('http://localhost:8000/orders/'.concat(this.props.match.params.sentinela.toString()))
       .then(response => response.json())
       .then(response => this.setState({ orders: response }))
       .catch(errors => this.setState({ errors }))
@@ -46,12 +52,10 @@ class Order extends React.Component {
     return (
       <div>
         <div>
+          <Analysis />
           <div className="orders">
-            <div className="orders-menu">
-              <ul>
-                <li>Menu</li>
-              </ul>
-              <hr />
+            <div className="order-id">
+              <h3>Código do pedido - {source.sentinela_id}</h3>
             </div>
             <div className="order-customer">
               <Customer customer={customer} />
@@ -109,6 +113,22 @@ class Order extends React.Component {
       </div>
     )
   }
+}
+
+Order.propTypes = {
+  match: React.PropTypes.shape({
+    params: React.PropTypes.shape({
+      sentinela: React.PropTypes.string,
+    }),
+  }),
+}
+
+Order.defaultProps = {
+  match: {
+    params: {
+      sentinela: null,
+    },
+  },
 }
 
 export default Order

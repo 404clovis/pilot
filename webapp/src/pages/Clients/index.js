@@ -1,50 +1,35 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
-import SpeedFilter from '../../components/SpeedFilter'
+import { Route, Switch } from 'react-router-dom'
+import ClientOrders from '../../containers/Clients/ClientOrders'
+import ListClients from '../../containers/Clients/ListClients'
+import Client from '../../containers/Clients/Client'
+import Order from '../../containers/Order'
+import NotFound from '../../containers/NotFound'
 
 
-class Clients extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      clients: [],
-      errors: {},
-    }
-  }
+const Clients = props => (
+  <div>
+    <h2>Clientes Rexlab - A razão</h2>
+    <Switch>
+      <Route exact path={`${props.match.url}`} component={ListClients} />
+      <Route exact path={`${props.match.url}/:client`} component={Client} />
+      <Route exact path={`${props.match.url}/:client/orders`} component={ClientOrders} />
+      <Route exact path={`${props.match.url}/:client/orders/:sentinela`} component={Order} />
+      <Route component={NotFound} />
+    </Switch>
+  </div>
+)
 
-  componentDidMount () {
-    fetch('http://localhost:8000/clients/')
-      .then(response => response.json())
-      .then(response => this.setState({ clients: response }))
-      .catch(errors => this.setState({ errors }))
-  }
+Clients.propTypes = {
+  match: React.PropTypes.shape({
+    url: React.PropTypes.string,
+  }),
+}
 
-  render () {
-    if (!this.state.clients) {
-      return false
-    }
-
-    return (
-      <div>
-        <div>
-          <h4>Filtrar clientes</h4>
-          <SpeedFilter />
-        </div>
-        <div>
-          {
-            this.state.clients.map(client => (
-              <div className="client">
-                <h2>{client.name}</h2>
-                <NavLink to={`/clients/${client.client_key}/orders`}>Ver orders</NavLink>
-                <br />
-                <NavLink to={`/clients/${client.client_key}`}>Ver detalhes</NavLink>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    )
-  }
+Clients.defaultProps = {
+  match: {
+    url: null,
+  },
 }
 
 export default Clients
