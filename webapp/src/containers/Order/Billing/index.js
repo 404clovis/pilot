@@ -3,12 +3,13 @@ import PropTypes from 'prop-types'
 import Address from '../Address'
 import Documents from '../Documents/index'
 import Phones from '../Phones/index'
+import style from './../style.css'
 
 
 const Billing = props => (
-  <div>
-    <p>{props.billing.name}</p>
-    <p>{props.billing.gender}</p>
+  <div className={style.billing}>
+    <span>{props.billing.name.toUpperCase()}</span>
+    <span>{props.billing.gender}</span>
     <Address address={props.billing.address} />
     <Documents documents={props.billing.documents} />
     <Phones phones={props.billing.phones} />
@@ -19,12 +20,14 @@ Billing.propTypes = {
   billing: PropTypes.shape({
     name: PropTypes.string,
     gender: PropTypes.string,
-    phones: PropTypes.shape({
-      phone_type: PropTypes.string,
-      area_code: PropTypes.string,
-      country_code: PropTypes.string,
-      number: PropTypes.string,
-    }),
+    phones: PropTypes.arrayOf(
+      PropTypes.shape({
+        phone_type: PropTypes.string,
+        area_code: PropTypes.string,
+        country_code: PropTypes.string,
+        number: PropTypes.string,
+      })
+    ),
     address: PropTypes.shape({
       city: PropTypes.string,
       complement: PropTypes.string,

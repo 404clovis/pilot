@@ -7,8 +7,8 @@ const Documents = props => (
     {
       props.documents.map(document => (
         <div className="documents">
-          <p>{document.document_type}</p>
-          <p>{document.number}</p>
+          <span>{document.document_type}</span>
+          <span>{document.number}</span>
         </div>
       ))
     }

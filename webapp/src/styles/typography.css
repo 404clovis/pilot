@@ -18,7 +18,7 @@
   --title-font-weight: bold;
   --title-font-style: italic;
   --body-font-family: "Open Sans";
-  --body-link-color: var(--color-light-green-accent-100);
+  --body-link-color: var(--color-light-plumb-100);
 }
 
 /* stylelint-disable */
@@ -87,4 +87,3 @@ blockquote {
   margin: 0;
 }
 /* stylelint-enable */
-

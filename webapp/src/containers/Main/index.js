@@ -3,23 +3,21 @@ import { NavLink } from 'react-router-dom'
 import { Grid, Row, Col } from '../../components/Grid'
 
 import logo from '../../logos/Rexlab/rex_logo_bw.svg'
-import './style.css'
+import style from './style.css'
 
 
 const Main = () => (
   <Grid>
     <Row>
-      <Col desk={3} tv={3} tablet={4} palm={4}>
+      <Col desk={9} tv={9} tablet={9} palm={9}>
         <main>
-          <Col desk={1} >
+          <div className={style.logo}>
             <img src={logo} className="Rexlab-logo" alt="RexLab Logotipo" />
-          </Col>
-          <h1>Bem-vindo ao Rex!</h1>
-          <h2>Inteligência contra fraudes</h2>
+          </div>
         </main>
       </Col>
-      <Col desk={9} tv={9} tablet={8} palm={8}>
-        <div className="navigation">
+      <Col desk={3} tv={3} tablet={3} palm={3}>
+        <div className={style.navigation}>
           <ul>
             <li><NavLink to="/clients">Clientes</NavLink></li>
             <li><NavLink to="/orders">Orders</NavLink></li>

@@ -2,4 +2,7 @@
   --spacing-large: 32px;
   --spacing-medium: 24px;
   --spacing-small: 16px;
+  --spacing-micro: 12px;
+  --spacing-nano: 8px;
+  --spacing-pico: 4px;
 }

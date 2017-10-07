@@ -2,16 +2,18 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Address from '../Address'
 import Phones from '../Phones'
+import style from './../style.css'
 
 
 const Shipping = props => (
-  <div>
-    <p>{props.shipping.scheduled_date}</p>
-    <p>{props.shipping.shipping_method}</p>
-    <p>{props.shipping.name}</p>
-    <p>{props.shipping.gender}</p>
+  <div className={style.shipping}>
+    <span>{props.shipping.scheduled_date}</span>
+    <span>{props.shipping.name.toUpperCase()}</span>
+    <span>{props.shipping.gender}</span>
     <Address address={props.shipping.address} />
     <Phones phones={props.shipping.phones} />
+    <span className={style.shippingMethod}>
+     Tipo de entrega: {props.shipping.shipping_method}</span>
   </div>
 )
 

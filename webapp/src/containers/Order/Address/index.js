@@ -1,16 +1,56 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import FlagIconFactory from 'react-flag-icon-css'
+import style from './../style.css'
+
+
+const FlagIcon = FlagIconFactory(React)
+
+const FormatZipCode = zip => (
+  <span className={style.zip}>
+    {zip.substring(0, 5).concat('-').concat(zip.substring(5))}
+  </span>
+)
+
+const FormatStreet = (street, number, complement) => (
+  <span className={style.street}>
+    {street.toUpperCase()} {number.toUpperCase()} {complement.toUpperCase()}
+  </span>
+)
+
+const FormatNeighborhood = neighborhood => (
+  <span className={style.neighborhood}>
+    {neighborhood.toUpperCase()}
+  </span>
+)
+
+const CountryFlag = country => (
+  <span className="countryFlag">
+    <FlagIcon code={country.toString().toLowerCase()} squared="true" />
+  </span>
+)
+
+const FormatCity = (city, state) => (
+  <span className={style.city}>
+    {city.toUpperCase()} - {state.toUpperCase()}
+  </span>
+)
+
+const AddressTitle = country => (
+  <span className={style.addressTitle}>
+    ENDEREÇO {country && CountryFlag(country)}
+  </span>
+)
 
 const Address = props => (
-  <div>
-    <p>{props.address.city}</p>
-    <p>{props.address.complement}</p>
-    <p>{props.address.country}</p>
-    <p>{props.address.neighborhood}</p>
-    <p>{props.address.number}</p>
-    <p>{props.address.state}</p>
-    <p>{props.address.street}</p>
-    <p>{props.address.zip_code}</p>
+  <div className={style.address}>
+    { props.address && AddressTitle(props.address.country) }
+    { props.address.street &&
+        FormatStreet(props.address.street, props.address.number, props.address.complement) }
+    {props.address.neighborhood && FormatNeighborhood(props.address.neighborhood)}
+    {props.address.city &&
+        FormatCity(props.address.city, props.address.state)}
+    {props.address.zip_code && FormatZipCode(props.address.zip_code)}
   </div>
 )
 
@@ -29,7 +69,7 @@ Address.propTypes = {
 
 Address.defaultProps = {
   address: {
-    zip_code: '',
+    zip_code: null,
   },
 }
 

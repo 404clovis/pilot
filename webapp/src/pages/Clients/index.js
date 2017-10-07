@@ -9,7 +9,7 @@ import NotFound from '../../containers/NotFound'
 
 const Clients = props => (
   <div>
-    <h2>Clientes Rexlab - A razão</h2>
+    <h4>Clientes Rexlab - A razão</h4>
     <Switch>
       <Route exact path={`${props.match.url}`} component={ListClients} />
       <Route exact path={`${props.match.url}/:client`} component={Client} />

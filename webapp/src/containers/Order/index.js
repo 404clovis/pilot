@@ -9,15 +9,19 @@ import Credits from './Credits'
 import Seller from './Seller'
 import Device from './Device'
 import Analysis from '../Analysis'
+import { Grid, Row, Col } from '../../components/Grid'
+
+
+import {
+  Card,
+  CardTitle,
+  CardContent,
+} from '../../components/Card'
 
 
 class Order extends React.Component {
   constructor (props) {
     super(props)
-
-    const url = 'http://localhost:8000/clients/'.concat(this.props.match.params.sentinela)
-
-    console.log(url)
 
     this.state = {
       orders: {},
@@ -38,7 +42,6 @@ class Order extends React.Component {
     }
 
     const orders = this.state.orders
-    const meta = orders.meta
     const source = orders.source
     const customer = source.customer
     const billing = source.billing
@@ -52,59 +55,131 @@ class Order extends React.Component {
     return (
       <div>
         <div>
-          <Analysis />
           <div className="orders">
             <div className="order-id">
-              <h3>Código do pedido - {source.sentinela_id}</h3>
+              <h2>Pedido - {source.sentinela_id}</h2>
             </div>
-            <div className="order-customer">
-              <Customer customer={customer} />
-            </div>
-            <hr />
-            {billing &&
-            <div className="order-billing">
-              <Billing billing={billing} />
-            </div>
-            }
-            <hr />
-            {shipping &&
-            <div className="order-shipping">
-              <Shipping shipping={shipping} />
-            </div>
-            }
-            <hr />
-            {products &&
-            <div className="order-products">
-              <Products products={products} />
-            </div>
-            }
-            <hr />
-            {credits &&
-            <div className="credits">
-              <Credits credits={credits} />
-            </div>
-            }
-            <hr />
-            {seller &&
-            <div className="seller">
-              <Seller seller={seller} />
-            </div>
-            }
-            <hr />
-            {device &&
-            <div className="order-device">
-              <Device device={device} />
-            </div>
-            }
-            <hr />
-            <div className="order-payment">
-              <Payment payment={payment} />
-            </div>
-            <hr />
-            <div className="order-meta-json-view">
-              <ReactJson src={meta} />
-            </div>
-            <hr />
+            <Grid>
+              <Row>
+                <Col tv={9} desk={9} tablet={12} palm={12}>
+                  <Row>
+                    {customer &&
+                    <Col>
+                      <div className="order-customer">
+                        <Card>
+                          <CardTitle
+                            title="Comprador"
+                          />
+                          <CardContent>
+                            <Customer customer={customer} device={device} />
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </Col>
+                    }
+                    {billing &&
+                      <Col>
+                        <div className="order-billing">
+                          <Card>
+                            <CardTitle
+                              title="Fatura"
+                            />
+                            <CardContent>
+                              <Billing billing={billing} />
+                            </CardContent>
+                          </Card>
+                        </div>
+                      </Col>
+                    }
+                    { shipping &&
+                    <Col>
+                      <div className="order-shipping">
+                        <Card>
+                          <CardTitle
+                            title="Entrega"
+                          />
+                          <CardContent>
+                            <Shipping shipping={shipping} />
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </Col>
+                    }
+                    {payment &&
+                    <Col>
+                      <div className="order-payment">
+                        <Card>
+                          <CardTitle
+                            title="Pagamento"
+                          />
+                          <CardContent>
+                            <Payment payment={payment} />
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </Col>
+                    }
+                    {products &&
+                    <Col>
+                      <div className="order-products">
+                        <Card>
+                          <CardTitle
+                            title="Produtos"
+                          />
+                          <CardContent>
+                            <Products products={products} />
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </Col>
+                    }
+                    {credits &&
+                    <Col>
+                      <div className="order-credits">
+                        <Card>
+                          <CardTitle
+                            title="Créditos"
+                          />
+                          <CardContent>
+                            <Credits credits={credits} />
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </Col>
+                    }
+                    {seller &&
+                    <Col>
+                      <div className="order-seller">
+                        <Card>
+                          <CardTitle
+                            title="Vendedor"
+                          />
+                          <CardContent>
+                            <Seller seller={seller} />
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </Col>
+                    }
+                    {!device &&
+                    <Col>
+                      <div className="order-device">
+                        <Card>
+                          <CardTitle
+                            title="Dispositivos"
+                          />
+                          <CardContent>
+                            <Device device={device} />
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </Col>
+                    }
+                  </Row>
+                </Col>
+              </Row>
+            </Grid>
+            <Analysis />
             <div className="order-source-json-view">
               <ReactJson src={source} />
             </div>
@@ -119,6 +194,7 @@ Order.propTypes = {
   match: React.PropTypes.shape({
     params: React.PropTypes.shape({
       sentinela: React.PropTypes.string,
+      client: React.PropTypes.string,
     }),
   }),
 }
@@ -127,6 +203,7 @@ Order.defaultProps = {
   match: {
     params: {
       sentinela: null,
+      client: null,
     },
   },
 }

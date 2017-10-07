@@ -1,22 +1,48 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import PaymentType from '../Converter/'
+import style from './style.css'
 
+const CentsToDollar = value => (
+  <span className="currency">
+    {(Number(value) / 100).toFixed(2).replace('.', ',')}
+  </span>
+)
+
+const FormatExpirationDate = value => (
+  <span className={style.expiration}>
+    ({value.substring(0, 2)
+      .concat('/')
+      .concat(value.substring(value.length - 2, value.length))})
+  </span>
+)
+
+const FormatInstallments = (value, installments) => (
+  <span className={style.installments}>
+    ({installments} x {CentsToDollar(
+      Number(value / Number(installments))
+    )})
+  </span>
+)
 
 const Transactions = props => (
-  <div className="transactions">
+  <div className={style.transactions}>
     {
       props.transactions.map(transaction => (
-        <div className="transaction">
-          <p>{transaction.amount}</p>
-          <p>{transaction.bin}</p>
-          <p>{transaction.last_4}</p>
-          <p>{transaction.nsu}</p>
-          <p>{transaction.card_name}</p>
-          <p>{transaction.expiration_date}</p>
-          <p>{transaction.installments}</p>
-          <p>{transaction.processor}</p>
-          <p>{transaction.response_code}</p>
-          <p>{transaction.payment_type}</p>
+        <div className={style.transaction}>
+          <span className={style.paymentType}>
+            {PaymentType(transaction.payment_type)}
+          </span>
+          <span className={style.paymentInfo}>{props.currency} {CentsToDollar(transaction.amount)}
+            {FormatInstallments(transaction.amount, transaction.installments)}
+          </span>
+          <span className={style.paymentCard}>
+            {transaction.bin} **** {transaction.last_4}
+            {FormatExpirationDate(transaction.expiration_date)}
+          </span>
+          <span className={style.paymentCardName}>
+            {transaction.card_name}
+          </span>
         </div>
       ))
     }
@@ -38,10 +64,12 @@ Transactions.propTypes = {
       payment_type: PropTypes.string,
     })
   ),
+  currency: PropTypes.string,
 }
 
 Transactions.defaultProps = {
   transactions: null,
+  currency: null,
 }
 
 export default Transactions

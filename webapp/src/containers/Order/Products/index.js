@@ -1,18 +1,36 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import style from './../style.css'
 
+const CentsToDollar = value => (
+  <span className="currency">
+    {(Number(value) / 100).toFixed(2).replace('.', ',')}
+  </span>
+)
+
+const DescriptionCard = props => (
+  <div className={style.descriptionCard}>
+    {props.productCode && <span className={style.descriptionCardElement}>
+      Código produto: {props.productCode}
+    </span>}
+    <span className={style.descriptionCardElement}>
+      Descrição: {props.description}
+    </span>
+  </div>
+)
 
 const Products = props => (
-  <div className="products">
+  <div className={style.products}>
     {
       props.products.map(product => (
-        <div className="product">
-          <p>{product.product_code}</p>
-          <p>{product.name}</p>
-          <p>{product.description}</p>
-          <p>{product.sku}</p>
-          <p>{product.quantity}</p>
-          <p>{product.unit_cost}</p>
+        <div className={style.products}>
+          <span>
+            ({product.quantity} x {CentsToDollar(product.unit_cost)}) {product.name}
+          </span>
+          <DescriptionCard
+            productCode={product.productCode}
+            description={product.description}
+          />
         </div>
       ))
     }
@@ -34,6 +52,16 @@ Products.propTypes = {
 
 Products.defaultProps = {
   products: null,
+}
+
+DescriptionCard.propTypes = {
+  productCode: PropTypes.string,
+  description: PropTypes.string,
+}
+
+DescriptionCard.defaultProps = {
+  productCode: null,
+  description: null,
 }
 
 export default Products

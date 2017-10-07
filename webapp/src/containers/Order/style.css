@@ -1,0 +1,234 @@
+@import "../../styles/typography.css";
+
+.payment p {
+    font-size: 12px;
+    margin: var(--spacing-small) 0;
+}
+
+.billing p {
+    font-size: 12px;
+    margin: var(--spacing-small) 0;
+}
+
+.billing span {
+    font-size: 12px;
+    margin: var(--spacing-small) 0;
+}
+
+.shipping p {
+    font-size: 12px;
+    margin: var(--spacing-small) 0;
+}
+
+.shipping span {
+    font-size: 12px;
+    margin: var(--spacing-small) 0;
+}
+
+span.shippingMethod {
+    font-size: 10px;
+    color: var(--color-light-plumb-300);
+    border-top: 1px solid var(--color-dark-plumb-300);
+    padding-top: 0.6em;
+}
+
+.address p {
+    font-size: 12px;
+    margin: var(--spacing-small) 0;
+}
+
+.address span {
+    font-size: 12px;
+    margin: var(--spacing-nano) 0;
+}
+
+.customer p {
+    font-size: 12px;
+    margin: var(--spacing-small) 0;
+}
+
+.customer span {
+    font-size: 12px;
+    margin: var(--spacing-small) 0;
+}
+
+.customerName {
+    color: var(--color-light-plumb-300);
+    font-style: normal;
+    display: block;
+}
+
+.customerEmail {
+    color: var(--color-light-plumb-300);
+    font-style: italic;
+    display: block;
+}
+
+.customerRegister {
+    color: var(--color-light-plumb-300);
+    font-style: normal;
+    display: block;
+}
+
+.customerInfo {
+    color: var(--color-light-plumb-300);
+    font-style: normal;
+    display: block;
+}
+
+.customerDevice {
+    color: var(--color-light-plumb-300);
+    font-style: normal;
+    display: block;
+}
+
+.customerDeviceTitle {
+
+    font-size: 12px;
+    color: var(--color-light-plumb-300);
+    font-style: normal;
+    display: block;
+}
+
+.device p {
+    font-size: 12px;
+    margin: var(--spacing-small) 0;
+}
+
+.products p {
+    font-size: 12px;
+    margin: var(--spacing-small) 0;
+}
+
+.products span {
+    font-size: 12px;
+    margin: var(--spacing-small) 0;
+}
+
+.street {
+    margin: var(--spacing-small) 0;
+}
+
+.zip {
+    margin: var(--spacing-small) 0;
+}
+
+.neighborhood {
+    margin: var(--spacing-small) 0;
+    display: block;
+}
+
+.city {
+    margin: var(--spacing-small) 0;
+    display: block;
+}
+
+.countryFlag {
+    margin: var(--spacing-small) 0;
+    text-align: right;
+    padding-left: 1em;
+}
+
+.phones {
+    font-style: normal;
+    font-size: 14px;
+    margin: var(--spacing-small) 0;
+    color: var(--color-light-plumb-100);
+    word-wrap: break-word;
+    display: block;
+}
+
+.phones span {
+    margin: var(--spacing-nano);
+}
+
+.phonesTitle {
+    font-style: normal;
+    font-size: 16px;
+    color: var(--color-light-plumb-300);
+    word-wrap: break-word;
+    display: block;
+}
+
+.phonesItem {
+    display: block;
+}
+
+.address {
+    font-style: normal;
+    font-size: 14px;
+    padding-bottom: 1em;
+    margin: var(--spacing-nano);
+    color: var(--color-light-plumb-100);
+    word-wrap: break-word;
+    display: block;
+}
+
+.addressTitle {
+    font-style: normal;
+    font-size: 16px;
+    color: var(--color-light-plumb-300);
+    word-wrap: break-word;
+    display: block;
+}
+
+
+.products span{
+    font-size: 12px;
+    margin: var(--spacing-small) 0;
+}
+
+.paymentStatus {
+    font-size: 12px;
+    margin: var(--spacing-nano) 0;
+    padding-bottom: 1em;
+}
+
+.paymentAmount {
+    font-size: 12px;
+    display: block;
+    margin: var(--spacing-nano) 0;
+}
+
+/*
+    INTERNAL CARD STYLE
+*/
+
+.descriptionCard {
+    border-top: 1px solid var(--color-dark-plumb-300);
+    font-size: 12px;
+    margin: var(--spacing-micro) 0;
+}
+
+.descriptionCardElement {
+    border-top: 1px solid var(--color-dark-plumb-300);
+    font-size: 12px;
+    margin: var(--spacing-small) 0;
+    color: var(--color-dark-plumb-300);
+}
+
+.internalCard {
+    border-top: 1px solid var(--color-dark-plumb-300);
+    padding-top: 1em;
+    font-size: 12px;
+    margin: var(--spacing-small) 0;
+}
+
+.internalCard * {
+    box-sizing: border-box;
+}
+
+.internalCard span {
+    margin: var(--spacing-pico) 0;
+}
+
+.internalCardTitle {
+    color: var(--color-dark-plumb-300);
+}
+
+.internalCardElement {
+    color: var(--color-dark-plumb-300);
+    display: block;
+    word-wrap: break-word;
+    margin: var(--spacing-small) 0;
+}

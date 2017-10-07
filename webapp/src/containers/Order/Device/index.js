@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import style from './../style.css'
 
 
 const Device = props => (
-  <div className="device">
+  <div className={style.device}>
     <p>{props.device.ip}</p>
     <p>{props.device.platform}</p>
     <p>{props.device.session_id}</p>

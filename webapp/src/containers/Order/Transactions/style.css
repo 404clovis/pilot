@@ -1,0 +1,45 @@
+@import '../../../styles/colors.css';
+
+.transactions
+
+.transaction {
+    font-size: 12px;
+    margin: 0;
+}
+
+.paymentType {
+    font-style: oblique;
+    font-size: 14px;
+    padding: 1em 0em;
+    margin: var(--spacing-small);
+    color: var(--color-light-plumb-300);
+    word-wrap: break-word;
+    display: block;
+}
+
+.paymentInfo {
+    padding-bottom: 0.5em;
+    display: block;
+}
+
+.paymentCard {
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+.paymentCardName {
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+.element {
+    font-size: 12px;
+}
+
+.expiration {
+    padding-left: 0.3em;
+}
+
+.installments {
+    padding-left: 0.3em;
+}

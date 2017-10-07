@@ -1,5 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { Grid, Row, Col } from '../../../components/Grid'
+
 
 class ListClients extends React.Component {
   constructor (props) {
@@ -24,21 +26,28 @@ class ListClients extends React.Component {
 
     return (
       <div>
-        <div>
-          <h4>Filtrar clientes</h4>
-        </div>
-        <div>
-          {
-            this.state.clients.map(client => (
-              <div className="client">
-                <h2>{client.name}</h2>
-                <NavLink to={`/clients/${client.client_key}/orders`}>Ver orders</NavLink>
-                <br />
-                <NavLink to={`/clients/${client.client_key}`}>Ver detalhes</NavLink>
+        <Grid>
+          <Row>
+            <Col desk={12} tv={12} tablet={12} palm={12}>
+              <div>
+                {
+                  this.state.clients.map(client => (
+                    <div className="client">
+                      <span>
+                        <NavLink to="clients/">{client.name}</NavLink>
+                      </span>
+                      <br />
+                      <span>
+                        <NavLink to={`/clients/${client.client_key}/orders`}>Orders</NavLink>
+                      </span>
+                      <hr />
+                    </div>
+                  ))
+                }
               </div>
-            ))
-          }
-        </div>
+            </Col>
+          </Row>
+        </Grid>
       </div>
     )
   }

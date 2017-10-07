@@ -1,17 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import style from '../style.css'
 
+const PhoneTypeConverter = { landline: 'FIXO', cellphone: 'CELULAR' }
+
+const PhoneType = input => PhoneTypeConverter[input]
 
 const Phones = props => (
-  <div className="phones">
+  <div className={style.phones}>
+    <span className={style.addressTitle}>
+      TELEFONES
+    </span>
     {
       props.phones.map(phone => (
-        <div>
-          <p>{phone.phone_type}</p>
-          <p>{phone.area_code}</p>
-          <p>{phone.country_code}</p>
-          <p>{phone.number}</p>
-        </div>
+        <span className={style.phonesItem}>
+          {PhoneType(phone.phone_type)}:
+          ({phone.area_code}) {phone.number}
+        </span>
       ))
     }
   </div>
