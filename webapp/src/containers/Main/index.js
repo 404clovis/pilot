@@ -7,26 +7,40 @@ import style from './style.css'
 
 
 const Main = () => (
-  <Grid>
-    <Row>
-      <Col desk={9} tv={9} tablet={9} palm={9}>
-        <main>
-          <div className={style.logo}>
-            <img src={logo} className="Rexlab-logo" alt="RexLab Logotipo" />
+  <div className={style.menu}>
+    <Grid>
+      <Row>
+        <Col desk={9} tv={9} tablet={9} palm={9}>
+          <main>
+            <div className={style.logo}>
+              <img src={logo} className="Rexlab-logo" alt="RexLab Logotipo" />
+            </div>
+          </main>
+        </Col>
+        <Col desk={3} tv={3} tablet={3} palm={3}>
+          <div className={style.navigation}>
+            <ul>
+              <li>
+                <h4 className={style.menuItem}>
+                  <NavLink to="/clients">Clientes</NavLink>
+                </h4>
+              </li>
+              <li>
+                <h4 className={style.menuItem}>
+                  <NavLink to="/orders">Orders</NavLink>
+                </h4>
+              </li>
+              <li>
+                <h4 className={style.menuItem}>
+                  <NavLink to="/queues" replace>Filas</NavLink>
+                </h4>
+              </li>
+            </ul>
           </div>
-        </main>
-      </Col>
-      <Col desk={3} tv={3} tablet={3} palm={3}>
-        <div className={style.navigation}>
-          <ul>
-            <li><NavLink to="/clients">Clientes</NavLink></li>
-            <li><NavLink to="/orders">Orders</NavLink></li>
-            <li><NavLink to="/queues" replace>Filas</NavLink></li>
-          </ul>
-        </div>
-      </Col>
-    </Row>
-  </Grid>
+        </Col>
+      </Row>
+    </Grid>
+  </div>
 )
 
 export default Main

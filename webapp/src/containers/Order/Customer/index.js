@@ -2,11 +2,13 @@ import React from 'react'
 import Moment from 'react-moment'
 import 'moment-timezone'
 import 'moment/locale/pt-br'
+import ReactScrollbar from 'react-scrollbar-js'
 import PropTypes from 'prop-types'
 import Documents from '../Documents'
 import Phones from '../Phones'
 import style from './../style.css'
 
+const SizeScrollbar = { height: 280, width: 260 }
 
 const InternalCard = props => (
   <div className={style.internalCard}>
@@ -29,22 +31,24 @@ const InternalCard = props => (
 )
 
 const Customer = props => (
-  <div className={style.customer}>
-    <span className={style.customerName}>{props.customer.name.toUpperCase()}</span>
-    <span className={style.customerEmail}>{props.customer.email}</span>
-    <span className={style.customerRegister}>{props.customer.register_id}</span>
-    <span>{props.customer.register_date}</span>
-    <span>{props.customer.number_of_previous_orders}</span>
-    <span>{props.customer.gender}</span>
-    {props.customer.date_of_birth &&
-      <span>
-        <Moment format="DD/MM/YYYY">{props.customer.date_of_birth}</Moment> (t
-        <Moment from={props.customer.date_of_birth}>{Date.now()}</Moment>)
-      </span>}
-    <Documents />
-    <Phones phones={props.customer.phones} />
-    {props.device && <InternalCard device={props.device} />}
-  </div>
+  <ReactScrollbar style={SizeScrollbar}>
+    <div className={style.customer}>
+      <span className={style.customerName}>{props.customer.name.toUpperCase()}</span>
+      <span className={style.customerEmail}>{props.customer.email}</span>
+      <span className={style.customerRegister}>{props.customer.register_id}</span>
+      <span>{props.customer.register_date}</span>
+      <span>{props.customer.number_of_previous_orders}</span>
+      <span>{props.customer.gender}</span>
+      {props.customer.date_of_birth &&
+        <span>
+          <Moment format="DD/MM/YYYY">{props.customer.date_of_birth}</Moment> (t
+          <Moment from={props.customer.date_of_birth}>{Date.now()}</Moment>)
+        </span>}
+      <Documents />
+      <Phones phones={props.customer.phones} />
+      {props.device && <InternalCard device={props.device} />}
+    </div>
+  </ReactScrollbar>
 )
 
 Customer.propTypes = {

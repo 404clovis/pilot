@@ -9,8 +9,9 @@ import Credits from './Credits'
 import Seller from './Seller'
 import Device from './Device'
 import Analysis from '../Analysis'
+import Details from '../Details'
 import { Grid, Row, Col } from '../../components/Grid'
-
+import style from '../style.css'
 
 import {
   Card,
@@ -55,13 +56,13 @@ class Order extends React.Component {
     return (
       <div>
         <div>
-          <div className="orders">
+          <div className={style.order}>
             <div className="order-id">
-              <h2>Pedido - {source.sentinela_id}</h2>
+              <h5>Pedido - {source.sentinela_id}</h5>
             </div>
             <Grid>
               <Row>
-                <Col tv={9} desk={9} tablet={12} palm={12}>
+                <Col tv={8} desk={8} tablet={12} palm={12}>
                   <Row>
                     {customer &&
                     <Col>
@@ -137,9 +138,7 @@ class Order extends React.Component {
                     <Col>
                       <div className="order-credits">
                         <Card>
-                          <CardTitle
-                            title="Créditos"
-                          />
+                          <CardTitle title="Créditos" className={style.cardOrderTitle} />
                           <CardContent>
                             <Credits credits={credits} />
                           </CardContent>
@@ -161,7 +160,7 @@ class Order extends React.Component {
                       </div>
                     </Col>
                     }
-                    {!device &&
+                    {!device && device &&
                     <Col>
                       <div className="order-device">
                         <Card>
@@ -176,6 +175,11 @@ class Order extends React.Component {
                     </Col>
                     }
                   </Row>
+                </Col>
+                <Col tv={4} desk={4} tablet={12} palm={12}>
+                  <div className={style.detailsTitle}>
+                    <Details documentNumber={customer.register_id} />
+                  </div>
                 </Col>
               </Row>
             </Grid>

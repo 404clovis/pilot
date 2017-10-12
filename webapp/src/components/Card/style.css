@@ -3,10 +3,9 @@
 
 .card {
   background: #ffffff;
-  box-shadow: var(--card-shadow);
   margin: 0;
   padding: 0;
-  border-radius: var(--card-border-radius);
+  border: 1px dotted var(--color-dark-silver-100);
   width: 100%;
   height: auto;
   overflow: hidden;
@@ -43,7 +42,7 @@
 }
 
 .title > h3 {
-  color: var(--color-light-green-accent-100);
+  color: var(--color-light-plumb-300);
   margin-right: var(--card-title-icon-margin);
 }
 

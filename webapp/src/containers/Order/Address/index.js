@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import FlagIconFactory from 'react-flag-icon-css'
+import CopyToClipboard from 'react-copy-to-clipboard'
 import style from './../style.css'
 
 
@@ -42,17 +43,39 @@ const AddressTitle = country => (
   </span>
 )
 
-const Address = props => (
-  <div className={style.address}>
-    { props.address && AddressTitle(props.address.country) }
-    { props.address.street &&
-        FormatStreet(props.address.street, props.address.number, props.address.complement) }
-    {props.address.neighborhood && FormatNeighborhood(props.address.neighborhood)}
-    {props.address.city &&
-        FormatCity(props.address.city, props.address.state)}
-    {props.address.zip_code && FormatZipCode(props.address.zip_code)}
-  </div>
-)
+class Address extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      value: {},
+      copied: false,
+      errors: {},
+    }
+  }
+
+  render () {
+    return (
+      <div className={style.address}>
+        <CopyToClipboard
+          text={this.state.value}
+          onCopy={() => this.setState({ copied: true })}
+        >
+          { this.props.address && AddressTitle(this.props.address.country) }
+        </CopyToClipboard>
+        { this.props.address.street &&
+        FormatStreet(
+          this.props.address.street,
+          this.props.address.number,
+          this.props.address.complement) }
+        {this.props.address.neighborhood && FormatNeighborhood(this.props.address.neighborhood)}
+        {this.props.address.city &&
+        FormatCity(this.props.address.city, this.props.address.state)}
+        {this.props.address.zip_code && FormatZipCode(this.props.address.zip_code)}
+      </div>
+    )
+  }
+}
 
 Address.propTypes = {
   address: PropTypes.shape({

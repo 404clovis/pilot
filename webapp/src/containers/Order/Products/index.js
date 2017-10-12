@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import ReactScrollbar from 'react-scrollbar-js'
 import style from './../style.css'
 
 const CentsToDollar = value => (
@@ -19,22 +20,26 @@ const DescriptionCard = props => (
   </div>
 )
 
+const SizeScrollbar = { height: 160, width: 400 }
+
 const Products = props => (
-  <div className={style.products}>
-    {
-      props.products.map(product => (
-        <div className={style.products}>
-          <span>
-            ({product.quantity} x {CentsToDollar(product.unit_cost)}) {product.name}
-          </span>
-          <DescriptionCard
-            productCode={product.productCode}
-            description={product.description}
-          />
-        </div>
-      ))
-    }
-  </div>
+  <ReactScrollbar style={SizeScrollbar}>
+    <div className={style.products}>
+      {
+        props.products.map(product => (
+          <div className={style.products}>
+            <span>
+              ({product.quantity} x {CentsToDollar(product.unit_cost)}) {product.name}
+            </span>
+            <DescriptionCard
+              productCode={product.productCode}
+              description={product.description}
+            />
+          </div>
+        ))
+      }
+    </div>
+  </ReactScrollbar>
 )
 
 Products.propTypes = {

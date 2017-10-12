@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import ReactScrollbar from 'react-scrollbar-js'
 import Transactions from '../Transactions/index'
+
 import style from './../style.css'
 
 const PaymentCurrencyConverter = {
@@ -27,23 +29,27 @@ const ShippingAmount = value => (
 const PaymentCurrency = input => PaymentCurrencyConverter[input]
 const PaymentStatus = input => PaymentStatusConverter[input]
 
+const SizeScrollbar = { height: 160 }
+
 const Payment = props => (
-  <div className={style.payment}>
-    <span className={style.paymentAmount}>
-      <span className="currency-code">{PaymentCurrency(props.payment.currency)} </span>
-      <span className="total-amount">{CentsToDollar(props.payment.total_amount)} </span>
-      <span className="shipping-amount">
-        {ShippingAmount(props.payment.shipping_amount)}
+  <ReactScrollbar style={SizeScrollbar}>
+    <div className={style.payment}>
+      <span className={style.paymentAmount}>
+        <span className="currency-code">{PaymentCurrency(props.payment.currency)} </span>
+        <span className="total-amount">{CentsToDollar(props.payment.total_amount)} </span>
+        <span className="shipping-amount">
+          {ShippingAmount(props.payment.shipping_amount)}
+        </span>
       </span>
-    </span>
-    {/* <p>{props.payment.card_fingerprint}</p>
-    <p>{props.payment.is_recurrence}</p> */}
-    <span className={style.paymentStatus}>{PaymentStatus(props.payment.status)}</span>
-    <Transactions
-      transactions={props.payment.transactions}
-      currency={PaymentCurrency(props.payment.currency)}
-    />
-  </div>
+      {/* <p>{props.payment.card_fingerprint}</p>
+      <p>{props.payment.is_recurrence}</p> */}
+      <span className={style.paymentStatus}>{PaymentStatus(props.payment.status)}</span>
+      <Transactions
+        transactions={props.payment.transactions}
+        currency={PaymentCurrency(props.payment.currency)}
+      />
+    </div>
+  </ReactScrollbar>
 )
 
 Payment.propTypes = {

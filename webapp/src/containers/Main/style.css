@@ -1,22 +1,51 @@
+@import '../../style.css';
+
+
 .navigation {
-    list-style: none;
-    margin: 0;
+  list-style: none;
+  margin: 0;
 }
 
 .navigation a {
-    text-decoration: none;
-    display: block;
-    padding: 1em;
+  text-decoration: none;
+  display: block;
 }
 
 .navigation ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-.navigation ul li { display: inline-block }
+.navigation ul li {
+  display: inline-block
+}
 
 div.logo {
-    padding-left: 1em;
+  padding-left: 1em;
+  padding-top: 0.2em;
+}
+
+.menu {
+  background-color: var(--color-background-light);
+}
+
+.menu a {
+  color: var(--color-dark-silver-accent-100);
+}
+
+.menu a:hover {
+  color: var(--color-dark-green-secondary-100);
+  text-decoration: none;
+}
+
+.menu {
+  -webkit-box-shadow: 0 0 1px 1px var(--color-dark-silver-100);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    0 0 1px 1px var(--color-dark-silver-100);  /* Firefox 3.5 - 3.6 */
+  box-shadow:         0 0 1px 1px var(--color-dark-silver-100);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+.menuItem {
+  margin: 0;
+  padding: 1em;
 }

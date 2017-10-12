@@ -1,0 +1,37 @@
+@import "../styles/typography.css";
+@import "../styles/fixed-data-table.css";
+
+.order {
+  margin: 0 var(--spacing-micro);
+}
+
+.details p {
+  font-size: 12px;
+  margin: var(--spacing-small) 0;
+}
+
+.details span {
+  font-size: 11px;
+  margin: var(--spacing-small) 0;
+}
+
+.detailsTitle {
+  padding: 0;
+}
+
+.detailsService {
+  padding: 0px 3px;
+}
+
+.cardOrderTitle > h3 {
+  color: var(--color-light-plumb-300);
+  margin-right: var(--card-title-icon-margin);
+}
+
+span.transactionStatusApp {
+  font-size: 8px;
+  background-color: var(--color-dark-green-accent-100);
+  color: var(--color-background-light);
+  padding: 4px;
+  border-radius: 2px;
+}

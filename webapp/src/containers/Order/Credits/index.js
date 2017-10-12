@@ -2,13 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import PurchaseIds from './PurchaseIds/index'
 import CreditUsage from './CreditUsage/index'
-
+import style from '../style.css'
 
 const Credits = props => (
-  <div className="credits">
-    <p>{props.credits.credit_type}</p>
-    <p>{props.credits.description}</p>
-    <p>{props.credits.amount}</p>
+  <div className={style.credits}>
+    <span>{props.credits.credit_type}</span>
+    <span>{props.credits.description}</span>
+    <span>{props.credits.amount}</span>
     <span>Purchases</span>
     <PurchaseIds PurchaseIds={props.credits.purchase_ids} />
     <span>Credit Usage</span>

@@ -1,19 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import ReactScrollbar from 'react-scrollbar-js'
 import Address from '../Address'
 import Documents from '../Documents/index'
 import Phones from '../Phones/index'
 import style from './../style.css'
 
+const SizeScrollbar = { height: 280, width: 260 }
 
 const Billing = props => (
-  <div className={style.billing}>
-    <span>{props.billing.name.toUpperCase()}</span>
-    <span>{props.billing.gender}</span>
-    <Address address={props.billing.address} />
-    <Documents documents={props.billing.documents} />
-    <Phones phones={props.billing.phones} />
-  </div>
+  <ReactScrollbar style={SizeScrollbar}>
+    <div className={style.billing}>
+      <span>{props.billing.name.toUpperCase()}</span>
+      <span>{props.billing.gender}</span>
+      <Address address={props.billing.address} />
+      <Documents documents={props.billing.documents} />
+      <Phones phones={props.billing.phones} />
+    </div>
+  </ReactScrollbar>
 )
 
 Billing.propTypes = {

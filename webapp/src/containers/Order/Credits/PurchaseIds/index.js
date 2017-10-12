@@ -7,8 +7,8 @@ const PurchaseIds = props => (
     {
       props.PurchaseIds.map(PurchaseId => (
         <div className="purchaseId">
-          <p>{PurchaseId.purchase_type}</p>
-          <p>{PurchaseId.value}</p>
+          <span>{PurchaseId.purchase_type}</span>
+          <span>{PurchaseId.value}</span>
         </div>
       ))
     }

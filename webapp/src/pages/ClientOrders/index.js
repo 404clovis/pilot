@@ -1,6 +1,6 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import { Table, Column, Cell } from 'fixed-data-table'
 
 
 class ClientOrders extends React.Component {
@@ -25,13 +25,32 @@ class ClientOrders extends React.Component {
     }
 
     return (
-      <div>
-        {
-          this.state.client_orders.map(order => (
-            <NavLink to={`${order.sentinela_id}`}>{order.external_id}</NavLink>
-          ))
-        }
-      </div>
+      <Table
+        rowHeight={12}
+        rowsCount={40}
+        width={10}
+        height={12}
+        headerHeight={10}
+      >
+        <Column
+          header={<Cell>Name</Cell>}
+          cell={props => (
+            <Cell {...props}>
+              {this.state.client_orders[props.rowIndex].sentinela_id}
+            </Cell>
+          )}
+          width={200}
+        />
+        <Column
+          header={<Cell>Email</Cell>}
+          cell={props => (
+            <Cell {...props}>
+              {this.state.client_orders[props.rowIndex].external_id}
+            </Cell>
+          )}
+          width={200}
+        />
+      </Table>
     )
   }
 }
