@@ -29,3 +29,41 @@
 .tableItemRight {
   text-align: right;
 }
+
+table.rexTable {
+  font-size: 12px;
+  background: var(--color-background-light);
+  color: var(--color-light-plumb-300);
+  overflow: hidden;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.rexTable tr {
+  color: var(--color-light-plumb-300);
+}
+
+.rexTable td:before {
+  width: 6.5em;
+  display: inline-block;
+}
+
+.rexTable th, .rexTable td {
+  text-align: left;
+  border-bottom: 1px solid var(--color-dark-plumb-100);
+}
+
+.greyColor {
+  /*background-color: var(--color-dark-silver-100);*/
+}
+
+@media (min-width: 480px) {
+  .rexTable th, .rexTable td {
+    padding: 1em !important;
+  }
+}
+
+.rexTable th, .rexTable td:before {
+  color: var(--color-light-plumb-300);
+}

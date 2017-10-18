@@ -24,6 +24,13 @@
 div.logo {
   padding-left: 1em;
   padding-top: 0.2em;
+  filter: grayscale(100%);
+  transition: 1s;
+}
+
+div.logo:hover {
+  filter: none;
+  transition: 1s;
 }
 
 .menu {
@@ -49,3 +56,4 @@ div.logo {
   margin: 0;
   padding: 1em;
 }
+

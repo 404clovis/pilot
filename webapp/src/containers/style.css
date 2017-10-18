@@ -1,8 +1,20 @@
 @import "../styles/typography.css";
 @import "../styles/fixed-data-table.css";
 
+.loading {
+  display: flex;
+  flex-direction: row;     /* make main axis horizontal (default setting) */
+  justify-content: center; /* center items horizontally, in this case */
+  align-items: center;     /* center items vertically, in this case */
+  color: var(--color-dark-silver-100);
+}
+
 .order {
   margin: 0 var(--spacing-micro);
+}
+
+.details {
+  width: 100%;
 }
 
 .details p {

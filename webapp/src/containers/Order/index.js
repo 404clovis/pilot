@@ -178,7 +178,10 @@ class Order extends React.Component {
                 </Col>
                 <Col tv={4} desk={4} tablet={12} palm={12}>
                   <div className={style.detailsTitle}>
-                    <Details documentNumber={customer.register_id} />
+                    <Details
+                      documentNumber={customer.register_id}
+                      emailAddress={customer.email}
+                    />
                   </div>
                 </Col>
               </Row>

@@ -1,15 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Address from '../Address'
+import style from '../style.css'
 
 
 const Seller = props => (
-  <div className="seller">
-    <p>{props.seller.seller_id}</p>
-    <p>{props.seller.name}</p>
-    <p>{props.seller.document_number}</p>
-    <Address address={props.seller.address} />
-    <p>{props.seller.created_at}</p>
+  <div className={style.seller}>
+    {props.seller.seller_id && <span>Identificador: {props.seller.seller_id}</span>}
+    {props.seller.name && <span>Nome: {props.seller.name}</span>}
+    {props.seller.document_number && <span>Documento: {props.seller.document_number}</span>}
+    {props.seller.address && <Address address={props.seller.address} />}
+    {props.seller.created_at && <span>Criado em: {props.seller.created_at}</span>}
   </div>
 )
 

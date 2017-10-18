@@ -6,13 +6,17 @@ import style from '../style.css'
 
 const Credits = props => (
   <div className={style.credits}>
-    <span>{props.credits.credit_type}</span>
-    <span>{props.credits.description}</span>
-    <span>{props.credits.amount}</span>
-    <span>Purchases</span>
-    <PurchaseIds PurchaseIds={props.credits.purchase_ids} />
-    <span>Credit Usage</span>
-    <CreditUsage CreditUsage={props.credits.credit_usage} />
+    {props.credits.credit_type && <span>{props.credits.credit_type}</span>}
+    {props.credits.description && <span>{props.credits.description}</span>}
+    {props.credits.amount && <span>{props.credits.amount}</span>}
+    {props.credits.purchase_ids &&
+      <span>Compras</span> &&
+      <PurchaseIds PurchaseIds={props.credits.purchase_ids} />
+    }
+    {props.credits.credit_usage &&
+      <span>Uso de créditos</span> &&
+      <CreditUsage CreditUsage={props.credits.credit_usage} />
+    }
   </div>
 )
 

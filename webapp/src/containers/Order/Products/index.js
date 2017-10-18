@@ -15,7 +15,7 @@ const DescriptionCard = props => (
       Código produto: {props.productCode}
     </span>}
     <span className={style.descriptionCardElement}>
-      Descrição: {props.description}
+      Descrição: {props.description.trim()}
     </span>
   </div>
 )

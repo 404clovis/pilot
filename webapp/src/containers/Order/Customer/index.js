@@ -2,13 +2,16 @@ import React from 'react'
 import Moment from 'react-moment'
 import 'moment-timezone'
 import 'moment/locale/pt-br'
+import FacebookIcon from 'react-icons/lib/fa/facebook-official'
 import ReactScrollbar from 'react-scrollbar-js'
 import PropTypes from 'prop-types'
 import Documents from '../Documents'
 import Phones from '../Phones'
 import style from './../style.css'
 
+
 const SizeScrollbar = { height: 280, width: 260 }
+
 
 const InternalCard = props => (
   <div className={style.internalCard}>
@@ -34,7 +37,15 @@ const Customer = props => (
   <ReactScrollbar style={SizeScrollbar}>
     <div className={style.customer}>
       <span className={style.customerName}>{props.customer.name.toUpperCase()}</span>
-      <span className={style.customerEmail}>{props.customer.email}</span>
+      <span className={style.customerEmail}>{props.customer.email}
+        <a
+          className={style.facebookIcon}
+          href={'https://www.facebook.com/search/people/?q='.concat(props.customer.register_id)}
+          target="_blank"
+        >
+          <FacebookIcon />
+        </a>
+      </span>
       <span className={style.customerRegister}>{props.customer.register_id}</span>
       <span>{props.customer.register_date}</span>
       <span>{props.customer.number_of_previous_orders}</span>

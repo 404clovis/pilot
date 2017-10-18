@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import FacebookIcon from 'react-icons/lib/fa/facebook-official'
 import style from '../style.css'
 
 const PhoneTypeConverter = { landline: 'FIXO', cellphone: 'CELULAR' }
@@ -16,6 +17,9 @@ const Phones = props => (
         <span className={style.phonesItem}>
           {PhoneType(phone.phone_type)}:
           ({phone.area_code}) {phone.number}
+          <a className={style.facebookIcon} href={'https://www.facebook.com/search/people/?q='.concat(phone.area_code).concat(phone.number)} target="_blank" >
+            <FacebookIcon />
+          </a>
         </span>
       ))
     }
