@@ -2,9 +2,8 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import ReactLoading from 'react-loading'
 import Moment from 'react-moment'
-import PropTypes from 'prop-types'
 import style from './style.css'
-import { Grid, Row, Col } from '../../../components/Grid'
+import { Grid, Row, Col } from '../../components/Grid'
 
 
 const PaymentCurrencyConverter = {
@@ -22,23 +21,23 @@ const CentsToDollar = value => (
 
 const PaymentCurrency = input => PaymentCurrencyConverter[input]
 
-class ClientOrders extends React.Component {
+class Orders extends React.Component {
   constructor (props) {
     super(props)
 
-    console.log('http://localhost:8000/clients/'.concat(this.props.match.params.client.toString()).concat('/orders'))
+    console.log('http://localhost:8000/orders/')
 
     this.state = {
-      client_orders: [],
+      orders: [],
       loading: true,
       errors: {},
     }
   }
 
   componentDidMount () {
-    fetch('http://localhost:8000/clients/'.concat(this.props.match.params.client.toString()).concat('/orders'))
+    fetch('http://localhost:8000/orders/')
       .then(response => response.json())
-      .then(response => this.setState({ client_orders: response, loading: false }))
+      .then(response => this.setState({ orders: response, loading: false }))
       .catch(errors => this.setState({ errors }))
   }
 
@@ -53,7 +52,9 @@ class ClientOrders extends React.Component {
     return (
       <div>
         <div>
-          <h3>Lista de Orders</h3>
+          <h3>
+            Número de Pedidos {Object.keys(this.state.orders).length}
+          </h3>
         </div>
         <Grid>
           <Row>
@@ -72,9 +73,9 @@ class ClientOrders extends React.Component {
                 </thead>
                 <tbody>
                   {
-                    this.state.client_orders.map(order => (
+                    this.state.orders.map(order => (
                       <tr className={style.greyColor}>
-                        <td><NavLink to={`orders/${order.sentinela_id}`}>{order.sentinela_id.substr(0, 10)}...{order.sentinela_id.substr(18, 25)}</NavLink></td>
+                        <td><NavLink to={`/clients/${order.client_key}/orders/${order.sentinela_id}`}>{order.sentinela_id.substr(0, 10)}...{order.sentinela_id.substr(18, 25)}</NavLink></td>
                         <td>{order.customer_name.toUpperCase()}</td>
                         <td>{order.customer_email}</td>
                         <td>{(Number(order.rex_score)).toFixed(2)}</td>
@@ -99,12 +100,4 @@ class ClientOrders extends React.Component {
   }
 }
 
-ClientOrders.propTypes = {
-  match: React.PropTypes.shape({
-    params: PropTypes.shape({
-      client: PropTypes.string.isRequired,
-    }),
-  }).isRequired,
-}
-
-export default ClientOrders
+export default Orders

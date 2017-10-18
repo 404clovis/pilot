@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import FlagIconFactory from 'react-flag-icon-css'
 import CopyToClipboard from 'react-copy-to-clipboard'
+import MapsIcon from 'react-icons/lib/fa/map-marker'
 import style from './../style.css'
 
 
@@ -57,6 +58,25 @@ class Address extends React.Component {
   render () {
     return (
       <div className={style.address}>
+        <a
+          className={style.mapsIcon}
+          href={'https://maps.google.com/?q='
+            .concat(this.props.address.street)
+            .concat(', ')
+            .concat(this.props.address.number)
+            .concat(', ')
+            .concat(this.props.address.zip_code)
+            .concat(', ')
+            .concat(this.props.address.city)
+            .concat(', ')
+            .concat(this.props.address.state)
+            .concat(', ')
+            .concat(this.props.address.country)
+          }
+          target="_blank"
+        >
+          <MapsIcon />
+        </a>
         <CopyToClipboard
           text={this.state.value}
           onCopy={() => this.setState({ copied: true })}

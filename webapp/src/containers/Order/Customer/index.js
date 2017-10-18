@@ -5,7 +5,6 @@ import 'moment/locale/pt-br'
 import FacebookIcon from 'react-icons/lib/fa/facebook-official'
 import ReactScrollbar from 'react-scrollbar-js'
 import PropTypes from 'prop-types'
-import Documents from '../Documents'
 import Phones from '../Phones'
 import style from './../style.css'
 
@@ -36,17 +35,18 @@ const InternalCard = props => (
 const Customer = props => (
   <ReactScrollbar style={SizeScrollbar}>
     <div className={style.customer}>
-      <span className={style.customerName}>{props.customer.name.toUpperCase()}</span>
+      <span className={style.customerName}>
+        {props.customer.name.toUpperCase()} ({props.customer.register_id})
+      </span>
       <span className={style.customerEmail}>{props.customer.email}
         <a
           className={style.facebookIcon}
-          href={'https://www.facebook.com/search/people/?q='.concat(props.customer.register_id)}
+          href={'https://www.facebook.com/search/people/?q='.concat(props.customer.email)}
           target="_blank"
         >
           <FacebookIcon />
         </a>
       </span>
-      <span className={style.customerRegister}>{props.customer.register_id}</span>
       <span>{props.customer.register_date}</span>
       <span>{props.customer.number_of_previous_orders}</span>
       <span>{props.customer.gender}</span>
@@ -55,7 +55,6 @@ const Customer = props => (
           <Moment format="DD/MM/YYYY">{props.customer.date_of_birth}</Moment> (t
           <Moment from={props.customer.date_of_birth}>{Date.now()}</Moment>)
         </span>}
-      <Documents />
       <Phones phones={props.customer.phones} />
       {props.device && <InternalCard device={props.device} />}
     </div>
@@ -77,6 +76,12 @@ Customer.propTypes = {
         area_code: PropTypes.string,
         country_code: PropTypes.string,
         number: PropTypes.string,
+      })
+    ),
+    documents: PropTypes.arrayOf(
+      PropTypes.shape({
+        document_type: PropTypes.string,
+        document_number: PropTypes.string,
       })
     ),
   }),

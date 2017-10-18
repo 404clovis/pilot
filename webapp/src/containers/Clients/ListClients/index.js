@@ -27,7 +27,7 @@ class ListClients extends React.Component {
     if (this.state.loading) {
       return (
         <div className={style.loading}>
-          <ReactLoading type="spin" color="#888" height="30" width="30" />
+          <ReactLoading type="spin" color="#a9d25d" height="30" width="30" />
         </div>
       )
     }
@@ -43,14 +43,15 @@ class ListClients extends React.Component {
                 <th><h3>Numero de pedidos</h3></th>
                 <th><h3>Conversão</h3></th>
                 <th><h3>SLA médio</h3></th>
-                <th><h3>Pedidos do cliente</h3></th>
               </thead>
               <tbody>
                 {
                   this.state.clients.map(client => (
                     <tr>
                       <td>
-                        <NavLink to="clients/">{client.name.toUpperCase()}</NavLink>
+                        <NavLink to={`/clients/${client.client_key}/orders`}>
+                          {client.name.toUpperCase()}
+                        </NavLink>
                       </td>
                       <td>
                         <span className={style.listItemItalic}>{client.client_key}</span>
@@ -63,13 +64,6 @@ class ListClients extends React.Component {
                       </td>
                       <td>
                         <span>3.5h</span>
-                      </td>
-                      <td className={style.tableItemCentered}>
-                        <span>
-                          <NavLink to={`/clients/${client.client_key}/orders`}>
-                            Ver pedidos
-                          </NavLink>
-                        </span>
                       </td>
                     </tr>
                   ))

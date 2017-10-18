@@ -53,7 +53,6 @@ span.shippingMethod {
 }
 
 .customerName {
-  color: var(--color-light-plumb-300);
   font-style: normal;
   display: block;
 }
@@ -83,7 +82,6 @@ span.shippingMethod {
 }
 
 .customerDeviceTitle {
-
   font-size: 12px;
   color: var(--color-light-plumb-300);
   font-style: normal;
@@ -261,4 +259,25 @@ span.shippingMethod {
   float: right;
   padding: 0;
   margin: 0;
+  color: var(--color-dark-silver-100);
+}
+
+.facebookIcon:hover {
+  float: right;
+  padding: 0;
+  margin: 0;
+  color: rgb(74,110,169);
+}
+
+.mapsIcon {
+  float: right;
+  padding: 0;
+  margin: 0;
+  color: var(--color-dark-silver-100);
+}
+
+.mapsIcon:hover {
+  padding: 0;
+  margin: 0;
+  color: rgb(232,30,37);
 }
