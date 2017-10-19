@@ -1,0 +1,7 @@
+@import "../../styles/colors.css";
+@import "../../styles/typography.css";
+@import "./properties.css";
+
+.rexSearch {
+  margin-top: var(--button-padding-tiny);
+}

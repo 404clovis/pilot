@@ -88,7 +88,7 @@ class Details extends React.Component {
                 <thead>
                   <tr>
                     <th>
-                      <span>Ferejei documento</span>
+                      <span>Farejei documento</span>
                     </th>
                   </tr>
                 </thead>

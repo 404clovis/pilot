@@ -15,6 +15,6 @@
   padding: 1px;
   box-shadow: var(--toolitem-box-shadow);
   font-family: var(--toolitem-font-family);
-  font-size: var(--toolitem-font-size: 14px);
+  font-size: var(--toolitem-font-size);
 }
 

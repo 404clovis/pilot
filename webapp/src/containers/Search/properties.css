@@ -1,0 +1,10 @@
+
+
+:root {
+  --toolitem-border-color: #e5e5e5;
+  --toolitem-background-color: var(--color-background-light);
+  --toolitem-font-family: var(--title-font-family);
+  --toolitem-font-size: 16px;
+  --toolitem-box-shadow: var(--box-shadow);
+  --toolitem-active-background: var(--color-light-red-gradient);
+}

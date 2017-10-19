@@ -1,5 +1,8 @@
 import React from 'react'
 import ReactLoading from 'react-loading'
+import Moment from 'react-moment'
+import 'moment-timezone'
+import 'moment/locale/pt-br'
 import { NavLink } from 'react-router-dom'
 import { Grid, Row, Col } from '../../../components/Grid'
 
@@ -38,11 +41,13 @@ class ListClients extends React.Component {
           <Col desk={12} tv={12} tablet={12} palm={12}>
             <table className={style.rexTable}>
               <thead>
-                <th><h3>Nome do cliente</h3></th>
-                <th><h3>Chave do cliente</h3></th>
-                <th><h3>Numero de pedidos</h3></th>
-                <th><h3>Conversão</h3></th>
-                <th><h3>SLA médio</h3></th>
+                <tr>
+                  <th><h3>Nome do cliente</h3></th>
+                  <th><h3>Chave do cliente</h3></th>
+                  <th><h3>Numero de pedidos</h3></th>
+                  <th><h3>SLA médio</h3></th>
+                  <th><h3>SLA máximo</h3></th>
+                </tr>
               </thead>
               <tbody>
                 {
@@ -60,10 +65,18 @@ class ListClients extends React.Component {
                         <span>{client.orders_in_queue}</span>
                       </td>
                       <td>
-                        <span>90%</span>
+                        <span>
+                          <Moment locale="pt-br" format="HH:ss">
+                            {client.avg_sla * 1000}
+                          </Moment>
+                        </span>
                       </td>
                       <td>
-                        <span>3.5h</span>
+                        <span>
+                          <Moment locale="pt-br" format="HH:ss">
+                            {client.max_sla * 1000}
+                          </Moment>
+                        </span>
                       </td>
                     </tr>
                   ))
