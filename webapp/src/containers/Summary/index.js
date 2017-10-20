@@ -1,6 +1,5 @@
 import React from 'react'
 import FaUserSecret from 'react-icons/lib/fa/user-secret'
-import Button from '../../components/Button'
 import style from './style.css'
 
 class Summary extends React.Component {
@@ -43,14 +42,6 @@ class Summary extends React.Component {
               placeholder="Escreva o resumo aqui..."
               rows={10}
             />
-            <div className={style.finalization}>
-              <Button className={style.btnApprove} size="tiny" color="blue">
-                Converte
-              </Button>
-              <Button className={style.btnDecline} size="tiny" color="pink">
-                Morde, Rex!
-              </Button>
-            </div>
           </form>
         </div>
       </div>
