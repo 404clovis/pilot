@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import FacebookIcon from 'react-icons/lib/fa/facebook-official'
+import SkypeIcon from 'react-icons/lib/fa/skype'
 import CellPhone from 'react-icons/lib/md/phone-iphone'
 import LandLine from 'react-icons/lib/md/local-phone'
 import BillingIcon from 'react-icons/lib/fa/credit-card-alt'
@@ -36,6 +37,9 @@ const Phones = props => (
             .concat(phone.number.substring((phone.number.length - 4), phone.number.length))}
           <a className={style.facebookIcon} href={'https://www.facebook.com/search/people/?q='.concat(phone.area_code).concat(phone.number)} target="_blank" >
             <FacebookIcon />
+          </a>
+          <a className={style.skypeIcon} href={'tel:'.concat(phone.area_code).concat(phone.number)} >
+            <SkypeIcon />
           </a>
         </span>
       ))
