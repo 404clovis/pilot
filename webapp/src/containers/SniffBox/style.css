@@ -1,0 +1,53 @@
+@import "../../styles/typography.css";
+@import '../../styles/colors.css';
+
+.summary {
+    text-align: center;
+    font-weight: bold;
+    font-size: medium;
+    font-family: var(--body-font-family);
+    margin-bottom: var(--spacing-nano);
+}
+
+.head {
+    text-align: center;
+    color: var(--color-dark-green-primary-300);
+    font-weight: bold;
+    font-size: x-large;
+    font-family: var(--body-font-family);
+    margin: var(--spacing-nano);
+}
+
+.textResult {
+    width: 100%;
+    padding: var(--spacing-nano);
+    resize: vertical;
+}
+
+.finalization {
+    padding-left: 5%;
+    padding-top: var(--spacing-nano);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.finalizationMargin {
+    margin: 5px;
+}
+
+.clientParams {
+    margin: 0 var(--spacing-small) ;
+    color: var(--color-dark-plumb-300);
+    display: block;
+}
+
+.separator {
+    border: 1px solid var(--color-light-plumb-300);
+    margin: var(--spacing-medium);
+}
+
+.result {
+    width: 90%;
+    padding: var(--spacing-small);
+}

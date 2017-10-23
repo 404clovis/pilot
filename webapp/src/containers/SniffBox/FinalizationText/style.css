@@ -1,0 +1,39 @@
+@import "../../../styles/typography.css";
+
+.summary {
+    margin: auto;
+}
+
+.head {
+    margin: var(--spacing-nano) 0;
+}
+
+.result {
+    width: 90%;
+    padding: var(--spacing-small);
+}
+
+.btnApprove {
+    float: left;
+}
+
+.btnDecline {
+    float: right;
+}
+
+.btnOption {
+    float: right;
+}
+
+.finalization {
+    text-align: center;
+}
+
+textarea {
+    resize: none;
+}
+
+.rexLogo {
+    color: var(--color-dark-green-secondary-200);
+    font-size: 18px;
+}
