@@ -51,3 +51,15 @@
     width: 90%;
     padding: var(--spacing-small);
 }
+
+.sniffBox {
+    text-align: center;
+}
+
+.sniffBoxButton {
+    padding-top: 8px;
+}
+
+.sniffBoxDropdown {
+    padding-top: 8px;
+}

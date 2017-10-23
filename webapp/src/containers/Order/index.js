@@ -2,14 +2,13 @@ import React from 'react'
 import ReactJson from 'react-json-view'
 import Customer from './Customer'
 import Billing from './Billing'
-import Shipping from './Shipping'
 import Payment from './Payment'
 import Products from './Products'
 import Credits from './Credits'
 import Seller from './Seller'
 import Device from './Device'
 import Analysis from '../Analysis'
-import Details from '../Details'
+import SniffBox from '../SniffBox'
 import { Grid, Row, Col } from '../../components/Grid'
 import style from '../style.css'
 
@@ -55,7 +54,7 @@ class Order extends React.Component {
 
     return (
       <div>
-        <div>
+        <div id="orderID">
           <div className={style.order}>
             <div className="order-id">
               <h5>Pedido - {source.sentinela_id}</h5>
@@ -83,28 +82,18 @@ class Order extends React.Component {
                         <div className="order-billing">
                           <Card>
                             <CardTitle
-                              title="Fatura"
+                              title="Dados da compra"
                             />
                             <CardContent>
-                              <Billing billing={billing} />
+                              <Billing
+                                billing={billing || {}}
+                                shipping={shipping || {}}
+                                customer={customer || {}}
+                              />
                             </CardContent>
                           </Card>
                         </div>
                       </Col>
-                    }
-                    { shipping &&
-                    <Col>
-                      <div className="order-shipping">
-                        <Card>
-                          <CardTitle
-                            title="Entrega"
-                          />
-                          <CardContent>
-                            <Shipping shipping={shipping} />
-                          </CardContent>
-                        </Card>
-                      </div>
-                    </Col>
                     }
                     {payment &&
                     <Col>
@@ -178,7 +167,7 @@ class Order extends React.Component {
                 </Col>
                 <Col tv={4} desk={4} tablet={12} palm={12}>
                   <div className={style.detailsTitle}>
-                    <Details
+                    <SniffBox
                       documentNumber={customer.register_id}
                       emailAddress={customer.email}
                     />

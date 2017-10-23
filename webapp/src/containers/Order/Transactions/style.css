@@ -37,9 +37,11 @@
 }
 
 .expiration {
-    padding-left: 0.3em;
+    display: block;
+    padding-top: 0.5em;
 }
 
 .installments {
     padding-left: 0.3em;
+
 }

@@ -24,13 +24,11 @@
 div.logo {
   padding-left: 1em;
   padding-top: 0.2em;
-  filter: grayscale(100%);
-  transition: 1s;
 }
 
 div.logo:hover {
-  filter: none;
   transition: 1s;
+  filter: grayscale(100%);
 }
 
 .menu {
@@ -38,11 +36,11 @@ div.logo:hover {
 }
 
 .menu a {
-  color: var(--color-dark-silver-accent-100);
+  color: var(--color-dark-green-secondary-100);
 }
 
 .menu a:hover {
-  color: var(--color-dark-green-secondary-100);
+  color: var(--color-dark-silver-accent-100);
   text-decoration: none;
 }
 

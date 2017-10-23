@@ -1,12 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import FlagIconFactory from 'react-flag-icon-css'
-import CopyToClipboard from 'react-copy-to-clipboard'
 import MapsIcon from 'react-icons/lib/fa/map-marker'
+import BillingIcon from 'react-icons/lib/fa/credit-card-alt'
+import ShippingIcon from 'react-icons/lib/md/local-shipping'
+import CustomerIcon from 'react-icons/lib/fa/home'
 import style from './../style.css'
 
-
-const FlagIcon = FlagIconFactory(React)
 
 const FormatZipCode = zip => (
   <span className={style.zip}>
@@ -14,33 +13,11 @@ const FormatZipCode = zip => (
   </span>
 )
 
-const FormatStreet = (street, number, complement) => (
+const FormatStreet = (street, number, complement, neighborhood, city, state, zipCode) => (
   <span className={style.street}>
     {street.toUpperCase()} {number.toUpperCase()} {complement.toUpperCase()}
-  </span>
-)
-
-const FormatNeighborhood = neighborhood => (
-  <span className={style.neighborhood}>
-    {neighborhood.toUpperCase()}
-  </span>
-)
-
-const CountryFlag = country => (
-  <span className="countryFlag">
-    <FlagIcon code={country.toString().toLowerCase()} squared="true" />
-  </span>
-)
-
-const FormatCity = (city, state) => (
-  <span className={style.city}>
-    {city.toUpperCase()} - {state.toUpperCase()}
-  </span>
-)
-
-const AddressTitle = country => (
-  <span className={style.addressTitle}>
-    ENDEREÇO {country && CountryFlag(country)}
+    {neighborhood.toUpperCase()} {city.toUpperCase()} - {state.toUpperCase()}
+    {zipCode && FormatZipCode(zipCode)}
   </span>
 )
 
@@ -58,6 +35,25 @@ class Address extends React.Component {
   render () {
     return (
       <div className={style.address}>
+        <span className={style.pointIcon}>
+          {(() => {
+            switch (this.props.typeAddress) {
+              case 'billing': return <BillingIcon />
+              case 'shipping': return <ShippingIcon />
+              case 'customer': return <CustomerIcon />
+              default: return <CustomerIcon />
+            }
+          })()}
+        </span>
+        { this.props.address.street &&
+        FormatStreet(
+          this.props.address.street,
+          this.props.address.number,
+          this.props.address.complement,
+          this.props.address.neighborhood,
+          this.props.address.city,
+          this.props.address.state,
+          this.props.address.zip_code)}
         <a
           className={style.mapsIcon}
           href={'https://maps.google.com/?q='
@@ -77,21 +73,6 @@ class Address extends React.Component {
         >
           <MapsIcon />
         </a>
-        <CopyToClipboard
-          text={this.state.value}
-          onCopy={() => this.setState({ copied: true })}
-        >
-          { this.props.address && AddressTitle(this.props.address.country) }
-        </CopyToClipboard>
-        { this.props.address.street &&
-        FormatStreet(
-          this.props.address.street,
-          this.props.address.number,
-          this.props.address.complement) }
-        {this.props.address.neighborhood && FormatNeighborhood(this.props.address.neighborhood)}
-        {this.props.address.city &&
-        FormatCity(this.props.address.city, this.props.address.state)}
-        {this.props.address.zip_code && FormatZipCode(this.props.address.zip_code)}
       </div>
     )
   }
@@ -108,12 +89,14 @@ Address.propTypes = {
     street: PropTypes.string,
     zip_code: PropTypes.string,
   }),
+  typeAddress: PropTypes.string,
 }
 
 Address.defaultProps = {
   address: {
     zip_code: null,
   },
+  typeAddress: null,
 }
 
 export default Address

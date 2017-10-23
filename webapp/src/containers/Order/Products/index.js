@@ -20,7 +20,7 @@ const DescriptionCard = props => (
   </div>
 )
 
-const SizeScrollbar = { height: 160, width: 400 }
+const SizeScrollbar = { height: 180, width: 400 }
 
 const Products = props => (
   <ReactScrollbar style={SizeScrollbar}>
@@ -29,7 +29,7 @@ const Products = props => (
         props.products.map(product => (
           <div className={style.products}>
             <span>
-              ({product.quantity} x {CentsToDollar(product.unit_cost)}) {product.name}
+              {product.name} ({product.quantity} x {CentsToDollar(product.unit_cost)})
             </span>
             <DescriptionCard
               productCode={product.productCode}
@@ -49,8 +49,8 @@ Products.propTypes = {
       name: PropTypes.string,
       description: PropTypes.string,
       sku: PropTypes.string,
-      quantity: PropTypes.string,
-      unit_cost: PropTypes.string,
+      quantity: PropTypes.number,
+      unit_cost: PropTypes.number,
     })
   ),
 }

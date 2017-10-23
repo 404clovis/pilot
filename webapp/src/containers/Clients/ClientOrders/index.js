@@ -61,20 +61,32 @@ class ClientOrders extends React.Component {
               <table className={style.rexTable}>
                 <thead>
                   <tr>
-                    <th><h3>Identificador do pedido</h3></th>
-                    <th><h3>Nome do comprador</h3></th>
-                    <th><h3>Email do comprador</h3></th>
-                    <th><h3>REXcore</h3></th>
-                    <th><h3>Score</h3></th>
-                    <th className={style.tableItemRight}><h3>Valor do pedido</h3></th>
-                    <th className={style.tableItemRight}><h3>Data do pedido</h3></th>
+                    <th><span className={style.headerTitle}>Identificador do pedido</span></th>
+                    <th><span className={style.headerTitle}>Nome do comprador</span></th>
+                    <th><span className={style.headerTitle}>Email do comprador</span></th>
+                    <th><span className={style.headerTitle}>REXcore</span></th>
+                    <th>
+                      <span className={style.headerTitle}>
+                        Score
+                      </span>
+                    </th>
+                    <th className={style.tableItemRight}>
+                      <span className={style.headerTitle}>
+                        Valor do pedido
+                      </span>
+                    </th>
+                    <th className={style.tableItemRight}>
+                      <span className={style.headerTitle}>
+                        Data do pedido
+                      </span>
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   {
                     this.state.client_orders.map(order => (
                       <tr className={style.greyColor}>
-                        <td><NavLink to={`orders/${order.sentinela_id}`}>{order.sentinela_id.substr(0, 10)}...{order.sentinela_id.substr(18, 25)}</NavLink></td>
+                        <td><NavLink to={`orders/${order.sentinela_id}`}>{order.sentinela_id.substr(0, 18)}...{order.sentinela_id.substr(18, 21)}</NavLink></td>
                         <td>{order.customer_name.toUpperCase()}</td>
                         <td>{order.customer_email}</td>
                         <td>{(Number(order.rex_score)).toFixed(2)}</td>

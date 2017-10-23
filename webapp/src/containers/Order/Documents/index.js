@@ -3,16 +3,15 @@ import PropTypes from 'prop-types'
 
 
 const Documents = props => (
-  <div className="documents">
+  <span className="documents">
     {
       props.documents.map(document => (
-        <div className="documents">
-          <span>{document.document_type}</span>
-          <span>{document.number}</span>
+        <div>
+          <span>{document.document_type}: {document.number}</span>
         </div>
       ))
     }
-  </div>
+  </span>
 )
 
 Documents.propTypes = {

@@ -5,11 +5,11 @@ import 'moment/locale/pt-br'
 import FacebookIcon from 'react-icons/lib/fa/facebook-official'
 import ReactScrollbar from 'react-scrollbar-js'
 import PropTypes from 'prop-types'
-import Phones from '../Phones'
+import Documents from '../Documents'
 import style from './../style.css'
 
 
-const SizeScrollbar = { height: 280, width: 260 }
+const SizeScrollbar = { height: 250, width: 200 }
 
 
 const InternalCard = props => (
@@ -50,12 +50,12 @@ const Customer = props => (
       <span>{props.customer.register_date}</span>
       <span>{props.customer.number_of_previous_orders}</span>
       <span>{props.customer.gender}</span>
+      <Documents documents={props.customer.documents} />
       {props.customer.date_of_birth &&
         <span>
           <Moment format="DD/MM/YYYY">{props.customer.date_of_birth}</Moment> (t
           <Moment from={props.customer.date_of_birth}>{Date.now()}</Moment>)
         </span>}
-      <Phones phones={props.customer.phones} />
       {props.device && <InternalCard device={props.device} />}
     </div>
   </ReactScrollbar>
@@ -78,6 +78,16 @@ Customer.propTypes = {
         number: PropTypes.string,
       })
     ),
+    address: PropTypes.shape({
+      city: PropTypes.string,
+      complement: PropTypes.string,
+      country: PropTypes.string,
+      neighborhood: PropTypes.string,
+      number: PropTypes.string,
+      state: PropTypes.string,
+      street: PropTypes.string,
+      zip_code: PropTypes.string,
+    }),
     documents: PropTypes.arrayOf(
       PropTypes.shape({
         document_type: PropTypes.string,
@@ -92,6 +102,12 @@ Customer.propTypes = {
     lat: PropTypes.string,
     lng: PropTypes.string,
   }),
+  documents: PropTypes.arrayOf(
+    PropTypes.shape({
+      document_type: PropTypes.string,
+      document_number: PropTypes.string,
+    })
+  ),
 }
 
 Customer.defaultProps = {
@@ -99,6 +115,7 @@ Customer.defaultProps = {
     email: '',
     number_of_previous_orders: 0,
   },
+  documents: null,
   device: {
     ip: null,
   },

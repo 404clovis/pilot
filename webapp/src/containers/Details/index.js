@@ -62,7 +62,8 @@ class Details extends React.Component {
 
   render () {
     const SizeScrollbar = {
-      height: 250,
+      height: 220,
+      width: 450,
     }
 
     if (this.state.loading) {

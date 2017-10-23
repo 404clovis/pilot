@@ -2,10 +2,6 @@ import React from 'react'
 import style from '../style.css'
 import { Grid, Row, Col } from '../../../components/Grid'
 import Button from '../../../components/Button'
-import {
-  Card,
-  CardContent,
-} from '../../../components/Card'
 
 class OrderFinalization extends React.Component {
   constructor (props) {
@@ -23,14 +19,14 @@ class OrderFinalization extends React.Component {
     this.setState({ text: 'Qual o motivo de reprovação?' })
     this.setState({ btn: () => (
       <div className={style.finalizationMargin}>
-        <Button base="light" color="yellow" variant="outline">
+        <Button>
           Reprovado por Impossibilidade de Contato
         </Button>
       </div>
     ) })
     this.setState({ btn2: () => (
       <div className={style.finalizationMargin}>
-        <Button base="light" color="yellow" variant="outline">
+        <Button>
           Reprovado por Segurança
         </Button>
       </div>
@@ -42,14 +38,14 @@ class OrderFinalization extends React.Component {
     this.setState({ text: 'Qual o motivo do cancelamento? ' })
     this.setState({ btn: () => (
       <div className={style.finalizationMargin}>
-        <Button base="dark" color="pink" variant="outline">
+        <Button>
           Duplicidade
         </Button>
       </div>
     ) })
     this.setState({ btn2: () => (
       <div className={style.finalizationMargin}>
-        <Button base="dark" color="pink" variant="outline">
+        <Button>
           Pelo Cliente
         </Button>
       </div>
@@ -66,51 +62,37 @@ class OrderFinalization extends React.Component {
               <div className={style.finalization}>
                 <div className={style.finalizationMargin}>
                   <Button
-                    base="light"
-                    color="green-primary"
-                    variant="outline"
-                  >Aprovado</Button>
+                    color="blue"
+                  >Aprovar</Button>
                 </div>
                 <div className={style.finalizationMargin}>
                   <Button
                     onClick={this.handleReprove}
-                    base="light"
-                    color="yellow"
-                    variant="outline"
-                  >Reprovado</Button>
+                    color="pink"
+                  >Reprovar</Button>
                 </div>
                 <div className={style.finalizationMargin}>
                   <Button
                     onClick={this.handleCancel}
-                    base="dark"
-                    color="pink"
-                    variant="outline"
-                  >Cancelado</Button>
+                    color="plumb"
+                  >Cancelar</Button>
                 </div>
                 <div className={style.finalizationMargin}>
                   <Button
-                    base="light"
-                    color="red"
-                    variant="outline"
+                    color="silver"
                   >Suspeito</Button>
                 </div>
                 <div className={style.finalizationMargin}>
                   <Button
-                    base="light"
-                    color="pink"
-                    variant="outline"
+                    color="purple"
                   >Fraude Confirmada</Button>
                 </div>
               </div>
             </Col>
-            <Col v={6} desk={6} tablet={12} palm={12}>
-              <Card>
-                <CardContent>
-                  {this.state.text}
-                  {this.state.btn()}
-                  {this.state.btn2()}
-                </CardContent>
-              </Card>
+            <Col tv={6} desk={6} tablet={12} palm={12}>
+              <span>{this.state.text}</span>
+              {this.state.btn()}
+              {this.state.btn2()}
             </Col>
           </Row>
         </Grid>
