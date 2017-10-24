@@ -11,6 +11,8 @@ import Analysis from '../Analysis'
 import SniffBox from '../SniffBox'
 import { Grid, Row, Col } from '../../components/Grid'
 import style from '../style.css'
+import SearchMaps from '../Maps/SearchMaps'
+
 
 import {
   Card,
@@ -51,6 +53,7 @@ class Order extends React.Component {
     const credits = source.credits
     const seller = source.seller
     const device = source.device
+    const billingAddress = source.billing.address.city
 
     return (
       <div>
@@ -163,6 +166,13 @@ class Order extends React.Component {
                       </div>
                     </Col>
                     }
+                    <Col>
+                      <div className="order-device">
+                        <SearchMaps
+                          address={billingAddress}
+                        />
+                      </div>
+                    </Col>
                   </Row>
                 </Col>
                 <Col tv={4} desk={4} tablet={12} palm={12}>
