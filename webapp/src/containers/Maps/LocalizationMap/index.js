@@ -7,18 +7,30 @@ import {
 
 } from 'react-google-maps'
 
-const LocalizationMap = withScriptjs(withGoogleMap((props => (
-  <div>
-    <GoogleMap
-      defaultZoom={11}
-      defaultCenter={{ lat: props.lat, lng: props.lng }}
-    >
-      <Marker
-        position={{ lat: props.lat, lng: props.lng }}
-      />
-    </GoogleMap>
-  </div>
-))))
+const LocalizationMap =
+  withScriptjs(
+    withGoogleMap(
+      ({ shippingLat, shippingLng, billingLat, billingLng, customerLat, customerLng }) => (
+        <div>
+          <GoogleMap
+            defaultZoom={11}
+            defaultCenter={{ lat: shippingLat, lng: shippingLng }}
+          >
+            <Marker
+              position={{ lat: shippingLat, lng: shippingLng }}
+              icon={'http://maps.google.com/mapfiles/kml/shapes/caution.png'}
+            />
+            <Marker
+              position={{ lat: billingLat, lng: billingLng }}
+              icon={'http://maps.google.com/mapfiles/kml/shapes/road_shield1.png'}
+            />
+            <Marker
+              position={{ lat: customerLat, lng: customerLng }}
+              icon={'http://maps.google.com/mapfiles/kml/shapes/horsebackriding.png'}
+            />
+          </GoogleMap>
+        </div>
+      )))
 
 
 export default LocalizationMap

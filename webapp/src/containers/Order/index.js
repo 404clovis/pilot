@@ -13,7 +13,6 @@ import { Grid, Row, Col } from '../../components/Grid'
 import style from '../style.css'
 import SearchMaps from '../Maps/SearchMaps'
 
-
 import {
   Card,
   CardTitle,
@@ -53,7 +52,27 @@ class Order extends React.Component {
     const credits = source.credits
     const seller = source.seller
     const device = source.device
-    const billingAddress = source.billing.address.city
+    const billingAddress = source.billing.address.street
+      .concat(' ')
+      .concat(source.billing.address.number)
+      .concat(' ')
+      .concat(source.billing.address.city)
+      .concat(' ')
+      .concat(source.billing.address.state)
+    const shippingAddress = source.shipping.address.street
+      .concat(' ')
+      .concat(source.shipping.address.number)
+      .concat(' ')
+      .concat(source.shipping.address.city)
+      .concat(' ')
+      .concat(source.shipping.address.state)
+    const customerAddress = source.customer.address.street
+      .concat(' ')
+      .concat(source.customer.address.number)
+      .concat(' ')
+      .concat(source.customer.address.city)
+      .concat(' ')
+      .concat(source.customer.address.state)
 
     return (
       <div>
@@ -169,7 +188,9 @@ class Order extends React.Component {
                     <Col>
                       <div className="order-device">
                         <SearchMaps
-                          address={billingAddress}
+                          billingAddress={billingAddress}
+                          shippingAddress={shippingAddress}
+                          customerAddress={customerAddress}
                         />
                       </div>
                     </Col>
