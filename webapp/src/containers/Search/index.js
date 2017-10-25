@@ -10,6 +10,8 @@ class RexSearch extends React.Component {
     super(props)
     this.state = {
       value: '',
+      data: {},
+      errors: {},
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -21,6 +23,10 @@ class RexSearch extends React.Component {
   }
 
   handleSubmit (event) {
+    fetch('http://localhost:8000/orders/'.concat(this.state.value))
+      .then(response => response.json())
+      .then(response => this.setState({ data: response }))
+      .catch(errors => this.setState({ errors }))
     alert('A search was submitted: '.concat(this.state.value))
     event.preventDefault()
   }
@@ -38,9 +44,11 @@ class RexSearch extends React.Component {
                 placeholder="Busca"
                 type="search"
               />
-              <Link to={'/search'} className={style.button}>
-                <IconSearch />
-              </Link>
+              <button className={style.button}>
+                <Link to={'/search'}>
+                  <IconSearch />
+                </Link>
+              </button>
             </div>
           </label>
         </form>
