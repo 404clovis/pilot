@@ -1,7 +1,40 @@
 @import "../../styles/colors.css";
 @import "../../styles/typography.css";
 @import "./properties.css";
+@import "../../components/Toolbar/properties.css";
+@import "../../components/Toolbar/RexSearchField/properties.css";
+
+.input {
+  padding: var(--search-field-input-padding);
+  border: none;
+}
+
+.button {
+  background: var(--search-field-button-background);
+  border: none;
+  display: flex;
+  font-size: var(--search-field-button-icon-size);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--search-field-button-color);
+}
+
+.input:disabled,
+.input:disabled + .button {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.input:focus ~ .button {
+  background-image: var(--color-dark-silver-100);
+  color: var(--toolitem-background-color);
+}
+
+.button:active {
+  background-color: var(--search-field-button-active-background-color);
+}
 
 .rexSearch {
-  margin-top: var(--button-padding-tiny);
+  margin-top: var(--spacing-nano);
 }

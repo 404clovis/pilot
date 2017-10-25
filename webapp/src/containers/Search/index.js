@@ -1,6 +1,7 @@
 import React from 'react'
-import RexFieldSearch from '../../components/Toolbar/RexSearchField'
+import IconSearch from 'react-icons/lib/md/search'
 import style from './style.css'
+import toolItemStyle from '../../components/Toolbar/style.css'
 
 class RexSearch extends React.Component {
   constructor (props) {
@@ -12,7 +13,6 @@ class RexSearch extends React.Component {
   }
 
   handleChange (event) {
-    event.preventDefault()
     this.setState({ value: event.target.value })
   }
 
@@ -26,10 +26,18 @@ class RexSearch extends React.Component {
       <div className={style.rexSearch}>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="search">
-            <RexFieldSearch
-              onChange={this.handleChange}
-              value={this.state.value}
-            />
+            <div className={toolItemStyle.root}>
+              <input
+                onChange={this.handleChange}
+                value={this.state.value}
+                className={style.input}
+                placeholder="Busca"
+                type="search"
+              />
+              <button className={style.button}>
+                <IconSearch />
+              </button>
+            </div>
           </label>
         </form>
       </div>
