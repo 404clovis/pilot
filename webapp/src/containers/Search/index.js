@@ -1,12 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import IconSearch from 'react-icons/lib/md/search'
 import style from './style.css'
 import toolItemStyle from '../../components/Toolbar/style.css'
 
+
 class RexSearch extends React.Component {
   constructor (props) {
     super(props)
-    this.state = { value: '' }
+    this.state = {
+      value: '',
+    }
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -34,9 +38,9 @@ class RexSearch extends React.Component {
                 placeholder="Busca"
                 type="search"
               />
-              <button className={style.button}>
+              <Link to={'/search'} className={style.button}>
                 <IconSearch />
-              </button>
+              </Link>
             </div>
           </label>
         </form>
@@ -44,5 +48,6 @@ class RexSearch extends React.Component {
     )
   }
 }
+
 
 export default RexSearch
