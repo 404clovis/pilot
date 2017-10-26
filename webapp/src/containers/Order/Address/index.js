@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import MapsIcon from 'react-icons/lib/fa/map-marker'
 import BillingIcon from 'react-icons/lib/fa/credit-card-alt'
 import ShippingIcon from 'react-icons/lib/md/local-shipping'
 import CustomerIcon from 'react-icons/lib/fa/home'
@@ -54,25 +53,6 @@ class Address extends React.Component {
           this.props.address.city,
           this.props.address.state,
           this.props.address.zip_code)}
-        <a
-          className={style.mapsIcon}
-          href={'https://maps.google.com/?q='
-            .concat(this.props.address.street)
-            .concat(', ')
-            .concat(this.props.address.number)
-            .concat(', ')
-            .concat(this.props.address.zip_code)
-            .concat(', ')
-            .concat(this.props.address.city)
-            .concat(', ')
-            .concat(this.props.address.state)
-            .concat(', ')
-            .concat(this.props.address.country)
-          }
-          target="_blank"
-        >
-          <MapsIcon />
-        </a>
       </div>
     )
   }

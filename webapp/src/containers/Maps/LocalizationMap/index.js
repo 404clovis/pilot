@@ -18,15 +18,15 @@ const LocalizationMap =
           >
             <Marker
               position={{ lat: shippingLat, lng: shippingLng }}
-              icon={'http://maps.google.com/mapfiles/kml/shapes/caution.png'}
+              icon={'http://maps.google.com/mapfiles/kml/paddle/S.png'}
             />
             <Marker
               position={{ lat: billingLat, lng: billingLng }}
-              icon={'http://maps.google.com/mapfiles/kml/shapes/road_shield1.png'}
+              icon={'http://maps.google.com/mapfiles/kml/paddle/B.png'}
             />
             <Marker
               position={{ lat: customerLat, lng: customerLng }}
-              icon={'http://maps.google.com/mapfiles/kml/shapes/horsebackriding.png'}
+              icon={'http://maps.google.com/mapfiles/kml/paddle/C.png'}
             />
           </GoogleMap>
         </div>
