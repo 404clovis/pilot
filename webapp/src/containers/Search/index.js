@@ -44,11 +44,11 @@ class RexSearch extends React.Component {
                 placeholder="Busca"
                 type="search"
               />
-              <button className={style.button}>
-                <Link to={'/search'}>
+              <Link to={'/search/'.concat(this.state.value)}>
+                <button className={style.button}>
                   <IconSearch />
-                </Link>
-              </button>
+                </button>
+              </Link>
             </div>
           </label>
         </form>
@@ -56,6 +56,5 @@ class RexSearch extends React.Component {
     )
   }
 }
-
 
 export default RexSearch
