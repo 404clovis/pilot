@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Dropdown from 'react-dropdown'
 import IconSearch from 'react-icons/lib/md/search'
 import style from './style.css'
-import toolItemStyle from '../../components/Toolbar/style.css'
 
 
 class RexSearch extends React.Component {
@@ -28,15 +28,40 @@ class RexSearch extends React.Component {
       .then(response => this.setState({ data: response }))
       .catch(errors => this.setState({ errors }))
     alert('A search was submitted: '.concat(this.state.value))
+    console.log(this.state.value)
     event.preventDefault()
   }
 
   render () {
+    const options = [
+      {
+        name: 'Chave do pedido',
+        value: 'Chave do Pedido',
+      },
+      {
+        name: 'CPF',
+        value: 'CPF',
+      },
+      {
+        name: 'Chave',
+        value: 'Número do Cartão',
+      },
+      {
+        name: 'fe',
+        value: 'Endereço',
+      },
+    ]
+
     return (
       <div className={style.rexSearch}>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="search">
-            <div className={toolItemStyle.root}>
+            <div className={style.search}>
+              <Dropdown
+                className={style.dropdown}
+                options={options}
+                placeholder="Escolha o filtro"
+              />
               <input
                 onChange={this.handleChange}
                 value={this.state.value}

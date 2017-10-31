@@ -5,8 +5,9 @@
 @import "../../components/Toolbar/RexSearchField/properties.css";
 
 .input {
-  padding: var(--search-field-input-padding);
+  padding-right: var(--search-field-input-padding);
   border: none;
+  padding-left: 210px;
 }
 
 .button {
@@ -17,7 +18,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: var(--search-field-button-color);
+  color: white;
   padding: var(--spacing-nano);
 }
 
@@ -38,4 +39,30 @@
 
 .rexSearch {
   margin-top: var(--spacing-nano);
+  font-size: var(--search-field-button-icon-size);
+  height: 40px;
+  overflow: hidden;
+}
+
+.dropdown {
+  background: var(--color-light-green-contrast-300);
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  padding: var(--spacing-nano);
+  width: 180px;
+  position: absolute;
+}
+
+.search {
+  display: inline-flex;
+  background-color: var(--toolitem-background-color);
+  border-radius: 3px;
+  border: 1px solid var(--toolitem-border-color);
+  padding: 1px;
+  box-shadow: var(--toolitem-box-shadow);
+  height: 35px;
 }
