@@ -1,12 +1,14 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import ResultList from '../../containers/Search/ResultList'
+import SearchResult from '../../containers/Search/SearchResult'
 
 const Search = props => (
   <div>
     <h6>busca</h6>
     <Switch>
       <Route exact path={`${props.match.url}/:data`} component={ResultList} />
+      <Route exact path={`${props.match.url}/:data/:result`} component={SearchResult} />
     </Switch>
   </div>
 )

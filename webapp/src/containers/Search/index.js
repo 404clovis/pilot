@@ -42,14 +42,6 @@ class RexSearch extends React.Component {
         name: 'CPF',
         value: 'CPF',
       },
-      {
-        name: 'Chave',
-        value: 'Número do Cartão',
-      },
-      {
-        name: 'fe',
-        value: 'Endereço',
-      },
     ]
 
     return (
@@ -69,7 +61,7 @@ class RexSearch extends React.Component {
                 placeholder="Busca"
                 type="search"
               />
-              <Link to={'/search/'.concat(this.state.value)}>
+              <Link to={'/search/query='.concat(this.state.value)}>
                 <button className={style.button}>
                   <IconSearch />
                 </button>

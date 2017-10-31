@@ -24,7 +24,7 @@ class ResultList extends React.Component {
   constructor (props) {
     super(props)
 
-    console.log('http://localhost:8000/orders/')
+    console.log('http://localhost:8000/orders/'.concat(this.props.match.params.data.toString().slice(6)))
 
     this.state = {
       searchResult: [],
@@ -34,7 +34,7 @@ class ResultList extends React.Component {
   }
 
   componentDidMount () {
-    fetch('http://localhost:8000/orders/')
+    fetch('http://localhost:8000/orders')
       .then(response => response.json())
       .then(response => this.setState({ searchResult: response, loading: false }))
       .catch(errors => this.setState({ errors }))
@@ -74,7 +74,7 @@ class ResultList extends React.Component {
                   {
                     this.state.searchResult.map(order => (
                       <tr className={style.greyColor}>
-                        <td><NavLink to={`/clients/${order.client_key}/orders/${order.sentinela_id}`}>{order.sentinela_id.substr(0, 10)}...{order.sentinela_id.substr(18, 25)}</NavLink></td>
+                        <td><NavLink to={`/search/${this.props.match.params.data.toString()}/${order.sentinela_id}`}>{order.sentinela_id.substr(0, 10)}...{order.sentinela_id.substr(18, 25)}</NavLink></td>
                         <td>{order.customer_name.toUpperCase()}</td>
                         <td>{order.customer_email}</td>
                         <td>{(Number(order.rex_score)).toFixed(2)}</td>
@@ -97,6 +97,24 @@ class ResultList extends React.Component {
       </div>
     )
   }
+}
+
+ResultList.propTypes = {
+  match: React.PropTypes.shape({
+    params: React.PropTypes.shape({
+      data: React.PropTypes.string,
+      client: React.PropTypes.string,
+    }),
+  }),
+}
+
+ResultList.defaultProps = {
+  match: {
+    params: {
+      data: null,
+      client: null,
+    },
+  },
 }
 
 export default ResultList
