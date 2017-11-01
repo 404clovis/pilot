@@ -30,7 +30,7 @@ const Main = () => (
               </li>
               <li>
                 <h4 className={style.menuItem}>
-                  <NavLink to="/orders">Orders</NavLink>
+                  <NavLink to="/orders">Pedidos</NavLink>
                 </h4>
               </li>
               <li>

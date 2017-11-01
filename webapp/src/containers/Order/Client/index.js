@@ -12,7 +12,7 @@ class Client extends React.Component {
   }
 
   componentDidMount () {
-    fetch('http://localhost:8000/clients/REX-CLIENT-594aa41259f4a100208e89bf')
+    fetch(process.env.REACT_APP_DASH_API.concat('/clients/REX-CLIENT-594aa41259f4a100208e89bf'))
       .then(response => response.json())
       .then(response => this.setState({ client: response }))
       .catch(errors => this.setState({ errors }))

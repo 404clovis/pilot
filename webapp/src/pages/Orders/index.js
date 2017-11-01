@@ -20,7 +20,7 @@ class Orders extends React.Component {
   }
 
   componentDidMount () {
-    fetch('http://localhost:8000/orders/BELVINOLTDA-df7a3d7d17074620934fb7ffcb39e05')
+    fetch(process.env.REACT_APP_DASH_API.concat('/orders/BELVINOLTDA-df7a3d7d17074620934fb7ffcb39e05'))
       .then(response => response.json())
       .then(response => this.setState({ orders: response }))
       .catch(errors => this.setState({ errors }))

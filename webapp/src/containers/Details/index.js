@@ -49,13 +49,20 @@ class Details extends React.Component {
   }
 
   componentDidMount () {
-    fetch('http://localhost:8000/history/document/'.concat(this.props.documentNumber))
-      .then(response => response.json())
+    const sessionId = localStorage.getItem('sessionId')
+    fetch(process.env.REACT_APP_DASH_API.concat('/history/document/').concat(this.props.documentNumber), {
+      headers: {
+        SessionId: sessionId,
+      },
+    }).then(response => response.json())
       .then(response => this.setState({ historical: response, loading: false }))
       .catch(errors => this.setState({ errors }))
 
-    fetch('http://localhost:8000/history/email/'.concat(this.props.emailAddress))
-      .then(response => response.json())
+    fetch(process.env.REACT_APP_DASH_API.concat('/history/email/').concat(this.props.emailAddress), {
+      headers: {
+        SessionId: sessionId,
+      },
+    }).then(response => response.json())
       .then(response => this.setState({ historicalEmail: response, loading: false }))
       .catch(errors => this.setState({ errors }))
   }

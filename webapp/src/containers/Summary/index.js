@@ -39,7 +39,7 @@ class Summary extends React.Component {
               value={this.state.value}
               onChange={this.handleChange}
               className={style.result}
-              placeholder="Escreva o resumo aqui..."
+              placeholder="Escreva o Rexumo aqui..."
               rows={10}
             />
           </form>

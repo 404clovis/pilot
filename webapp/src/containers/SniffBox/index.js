@@ -1,22 +1,48 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import { Redirect } from 'react-router-dom'
 import Details from '../Details'
 import Dropdown from '../../components/Dropdown'
 import Button from '../../components/Button'
 import style from './style.css'
 
 
+const StatusConverter = {
+  aprovar: 'man_approved',
+  reprovar: 'man_declined',
+  cancelado: 'canceled',
+  suspeito: 'man_declined',
+  fraude: 'man_declined',
+  ataque: 'man_declined',
+}
+
+const Status = input => StatusConverter[input]
+
 class SniffBox extends React.Component {
   constructor (props) {
     super(props)
-    this.state = { selected: '' }
+    this.state = {
+      selected: '',
+      analized: false,
+      redirect: false,
+    }
+
+    this.handleFinalization = this.handleFinalization.bind(this)
   }
 
   handleFinalization (event) {
-    fetch('http://localhost:8000/history/document/'.concat(this.props.documentNumber))
-      .then(response => response.json())
-      .then(response => this.setState({ historical: response, loading: false }))
-      .catch(errors => this.setState({ errors }))
+    const sessionId = localStorage.getItem('sessionId')
+    fetch(process.env.REACT_APP_DASH_API.concat('/orders/').concat(this.props.sentinelaId), {
+      method: 'PUT',
+      headers: {
+        SessionId: sessionId,
+      },
+      body: JSON.stringify({
+        sentinela_id: this.props.sentinelaId,
+        order_id: this.props.orderId,
+        status: Status(this.state.selected.toLowerCase()) }),
+    }).then(res => console.log(res))
+      .then(() => this.setState({ redirect: true, analized: true }))
     event.preventDefault()
   }
 
@@ -39,7 +65,7 @@ class SniffBox extends React.Component {
         value: 'Suspeito',
       },
       {
-        name: 'Fraude confirmada',
+        name: 'Fraude',
         value: 'Fraude confirmada',
       },
       {
@@ -48,26 +74,29 @@ class SniffBox extends React.Component {
       },
     ]
 
+    if (this.state.redirect) {
+      return <Redirect to="/clients" />
+    }
+
     return (
       <div className={style.sniffBox}>
         <Details
           documentNumber={this.props.documentNumber}
           emailAddress={this.props.emailAddress}
         />
-        <span>
+        <span className={style.sniffBoxDropdown}>
           <Dropdown
             options={options}
             name="statusFinalizacao"
             label="Status de finalização"
+            value={this.state.selected}
             onChange={value => this.setState({ selected: value })}
           />
         </span>
         <span className={style.sniffBoxButton}>
-          { this.state.selected &&
-            <Button onClick={this.handleFinalization} size="tiny" color="blue">
-              {this.state.selected}
-            </Button>
-          }
+          <Button onClick={this.handleFinalization} size="micro" color="blue">
+            Finalizar Pedido
+          </Button>
         </span>
       </div>
     )
@@ -77,6 +106,8 @@ class SniffBox extends React.Component {
 SniffBox.propTypes = {
   documentNumber: PropTypes.string.isRequired,
   emailAddress: PropTypes.string.isRequired,
+  sentinelaId: PropTypes.string.isRequired,
+  orderId: PropTypes.string.isRequired,
 }
 
 export default SniffBox

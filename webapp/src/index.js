@@ -6,6 +6,8 @@ import Main from './containers/Main'
 import Queues from './containers/Queues'
 import Orders from './containers/Orders'
 import Clients from './pages/Clients'
+import Login from './pages/Login'
+
 
 import './style.css'
 
@@ -16,6 +18,7 @@ ReactDOM.render((
       <Route path="/clients" component={Clients} />
       <Route path="/orders" component={Orders} />
       <Route path="/queues" component={Queues} />
+      <Route path="/login" component={Login} />
     </div>
   </BrowserRouter>
 ), document.getElementById('root'))

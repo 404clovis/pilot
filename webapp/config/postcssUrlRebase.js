@@ -8,4 +8,3 @@ module.exports = function postcssUrlRewrite (asset, dir) {
 
   return `./${rebasedUrl}${asset.search}${asset.hash}`
 }
-

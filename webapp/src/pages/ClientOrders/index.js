@@ -13,7 +13,7 @@ class ClientOrders extends React.Component {
   }
 
   componentDidMount () {
-    fetch('http://localhost:8000/clients/'.concat(this.props.match.params.client.toString()).concat('/orders'))
+    fetch(process.env.REACT_APP_DASH_API.concat('/clients/').concat(this.props.match.params.client.toString()).concat('/orders'))
       .then(response => response.json())
       .then(response => this.setState({ client_orders: response }))
       .catch(errors => this.setState({ errors }))

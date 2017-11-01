@@ -25,7 +25,7 @@ class Orders extends React.Component {
   constructor (props) {
     super(props)
 
-    console.log('http://localhost:8000/orders/')
+    console.log(process.env.REACT_APP_DASH_API.concat('/orders/'))
 
     this.state = {
       orders: [],
@@ -35,8 +35,12 @@ class Orders extends React.Component {
   }
 
   componentDidMount () {
-    fetch('http://localhost:8000/orders/')
-      .then(response => response.json())
+    const sessionId = localStorage.getItem('sessionId')
+    fetch(process.env.REACT_APP_DASH_API.concat('/orders/'), {
+      headers: {
+        SessionId: sessionId,
+      },
+    }).then(response => response.json())
       .then(response => this.setState({ orders: response, loading: false }))
       .catch(errors => this.setState({ errors }))
   }

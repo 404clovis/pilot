@@ -26,7 +26,7 @@ class ClientOrders extends React.Component {
   constructor (props) {
     super(props)
 
-    console.log('http://localhost:8000/clients/'.concat(this.props.match.params.client.toString()).concat('/orders'))
+    console.log(process.env.REACT_APP_DASH_API.concat('/clients/').concat(this.props.match.params.client.toString()).concat('/orders'))
 
     this.state = {
       client_orders: [],
@@ -36,8 +36,12 @@ class ClientOrders extends React.Component {
   }
 
   componentDidMount () {
-    fetch('http://localhost:8000/clients/'.concat(this.props.match.params.client.toString()).concat('/orders'))
-      .then(response => response.json())
+    const sessionId = localStorage.getItem('sessionId')
+    fetch(process.env.REACT_APP_DASH_API.concat('/clients/').concat(this.props.match.params.client.toString()).concat('/orders'), {
+      headers: {
+        SessionId: sessionId,
+      },
+    }).then(response => response.json())
       .then(response => this.setState({ client_orders: response, loading: false }))
       .catch(errors => this.setState({ errors }))
   }

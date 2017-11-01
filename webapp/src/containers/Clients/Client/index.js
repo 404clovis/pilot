@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactJson from 'react-json-view'
 
-
 class Client extends React.Component {
   constructor (props) {
     super(props)
@@ -12,9 +11,10 @@ class Client extends React.Component {
   }
 
   componentDidMount () {
-    fetch('http://localhost:8000/clients/'.concat(this.props.match.params.client))
+    fetch(process.env.REACT_APP_DASH_API.concat('/clients/').concat(this.props.match.params.client))
       .then(response => response.json())
       .then(response => this.setState({ client: response }))
+      .then(response => this.setState({ status: response.statusCode() }))
       .catch(errors => this.setState({ errors }))
   }
 

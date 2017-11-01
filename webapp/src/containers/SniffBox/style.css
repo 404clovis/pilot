@@ -56,10 +56,14 @@
     text-align: center;
 }
 
-.sniffBoxButton {
+.sniffBox span {
     padding-top: 8px;
 }
 
+.sniffBoxButton {
+    margin-top: var(--spacing-small) 0;
+}
+
 .sniffBoxDropdown {
-    padding-top: 8px;
+    margin-bottom: var(--spacing-small) 0;
 }

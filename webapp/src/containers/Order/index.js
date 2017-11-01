@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactJson from 'react-json-view'
+import { Redirect } from 'react-router-dom'
 import Customer from './Customer'
 import Billing from './Billing'
 import Payment from './Payment'
@@ -7,7 +7,6 @@ import Products from './Products'
 import Credits from './Credits'
 import Seller from './Seller'
 import Device from './Device'
-import Analysis from '../Analysis'
 import SniffBox from '../SniffBox'
 import { Grid, Row, Col } from '../../components/Grid'
 import style from '../style.css'
@@ -25,18 +24,29 @@ class Order extends React.Component {
 
     this.state = {
       orders: {},
+      isAuthenticated: false,
+      userName: '',
+      token: '',
       errors: {},
     }
   }
 
   componentDidMount () {
-    fetch('http://localhost:8000/orders/'.concat(this.props.match.params.sentinela.toString()))
-      .then(response => response.json())
+    const sessionId = localStorage.getItem('sessionId')
+    fetch(process.env.REACT_APP_DASH_API.concat('/orders/').concat(this.props.match.params.sentinela.toString()), {
+      headers: {
+        SessionId: sessionId,
+      },
+    }).then(response => response.json())
       .then(response => this.setState({ orders: response }))
-      .catch(errors => this.setState({ errors }))
+      .catch(errors => this.setState({ errors, isAuthenticated: false }))
   }
 
   render () {
+    if (this.state.isAuthenticated) {
+      return <Redirect to="/login" />
+    }
+
     if (!this.state.orders.source) {
       return false
     }
@@ -170,15 +180,13 @@ class Order extends React.Component {
                     <SniffBox
                       documentNumber={customer.register_id}
                       emailAddress={customer.email}
+                      sentinelaId={source.sentinela_id}
+                      orderId={source.order_id}
                     />
                   </div>
                 </Col>
               </Row>
             </Grid>
-            <Analysis />
-            <div className="order-source-json-view">
-              <ReactJson src={source} />
-            </div>
           </div>
         </div>
       </div>

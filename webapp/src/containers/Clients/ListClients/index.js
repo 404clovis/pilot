@@ -15,14 +15,20 @@ class ListClients extends React.Component {
     this.state = {
       clients: [],
       loading: true,
-      errors: {},
+      errors: null,
     }
   }
 
   componentDidMount () {
-    fetch('http://localhost:8000/clients/')
-      .then(response => response.json())
+    const sessionId = localStorage.getItem('sessionId')
+    console.log(sessionId, null, 2)
+    fetch(process.env.REACT_APP_DASH_API.concat('/clients'), {
+      headers: {
+        SessionId: sessionId,
+      },
+    }).then(response => response.json())
       .then(response => this.setState({ clients: response, loading: false }))
+      .then(response => console.log(response, null, 2))
       .catch(errors => this.setState({ errors }))
   }
 
