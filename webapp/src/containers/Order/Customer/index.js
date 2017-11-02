@@ -48,7 +48,6 @@ const Customer = props => (
         </a>
       </span>
       <span>{props.customer.register_date}</span>
-      <span>{props.customer.number_of_previous_orders}</span>
       <span>{props.customer.gender}</span>
       <Documents documents={props.customer.documents} />
       {props.customer.date_of_birth &&

@@ -9,6 +9,7 @@ import Seller from './Seller'
 import Device from './Device'
 import SniffBox from '../SniffBox'
 import { Grid, Row, Col } from '../../components/Grid'
+import SearchMaps from '../Maps/SearchMaps'
 import style from '../style.css'
 
 import {
@@ -16,6 +17,21 @@ import {
   CardTitle,
   CardContent,
 } from '../../components/Card'
+
+function concatAddress (address) {
+  const addressCon = address.street.concat(', ')
+    .concat(address.number)
+    .concat(', ')
+    .concat(address.zip_code)
+    .concat(', ')
+    .concat(address.city)
+    .concat(', ')
+    .concat(address.state)
+    .concat(', ')
+    .concat(address.country)
+
+  return addressCon
+}
 
 
 class Order extends React.Component {
@@ -61,6 +77,22 @@ class Order extends React.Component {
     const credits = source.credits
     const seller = source.seller
     const device = source.device
+
+    let shippingAddress = ''
+    let billingAddress = ''
+    let customerAddress = ''
+
+    if (customer && customer.address) {
+      customerAddress = concatAddress(source.customer.address)
+    }
+
+    if (billing && billing.address) {
+      billingAddress = concatAddress(source.billing.address)
+    }
+
+    if (shipping && shipping.address) {
+      shippingAddress = concatAddress(source.shipping.address)
+    }
 
     return (
       <div>
@@ -173,6 +205,15 @@ class Order extends React.Component {
                       </div>
                     </Col>
                     }
+                    <Col>
+                      <div className="order-device">
+                        <SearchMaps
+                          billingAddress={billingAddress}
+                          shippingAddress={shippingAddress}
+                          customerAddress={customerAddress}
+                        />
+                      </div>
+                    </Col>
                   </Row>
                 </Col>
                 <Col tv={4} desk={4} tablet={12} palm={12}>

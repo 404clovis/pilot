@@ -90,7 +90,7 @@ class ClientOrders extends React.Component {
                   {
                     this.state.client_orders.map(order => (
                       <tr className={style.greyColor}>
-                        <td><NavLink to={`orders/${order.sentinela_id}`}>{order.sentinela_id.substr(0, 18)}...{order.sentinela_id.substr(18, 21)}</NavLink></td>
+                        <td><NavLink to={`orders/${order.sentinela_id}`}>{order.sentinela_id}</NavLink></td>
                         <td>{order.customer_name.toUpperCase()}</td>
                         <td>{order.customer_email}</td>
                         <td>{(Number(order.rex_score)).toFixed(2)}</td>

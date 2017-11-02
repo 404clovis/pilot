@@ -20,7 +20,7 @@ const DescriptionCard = props => (
   </div>
 )
 
-const SizeScrollbar = { height: 180, width: 350 }
+const SizeScrollbar = { height: 220, width: 350 }
 
 const Products = props => (
   <ReactScrollbar style={SizeScrollbar}>

@@ -29,7 +29,7 @@ const ShippingAmount = value => (
 const PaymentCurrency = input => PaymentCurrencyConverter[input]
 const PaymentStatus = input => PaymentStatusConverter[input]
 
-const SizeScrollbar = { width: 200, height: 180 }
+const SizeScrollbar = { width: 200, height: 220 }
 
 const Payment = props => (
   <ReactScrollbar style={SizeScrollbar}>
