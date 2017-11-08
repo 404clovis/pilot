@@ -15,7 +15,6 @@ class RexSearch extends React.Component {
     }
 
     this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
     this.handleSelectChange = this.handleSelectChange.bind(this)
   }
 
@@ -23,25 +22,15 @@ class RexSearch extends React.Component {
     this.setState({ value: event.target.value })
   }
 
-  handleSubmit (event) {
-    fetch('http://localhost:8000/orders/'.concat(this.state.value))
-      .then(response => response.json())
-      .then(response => this.setState({ data: response }))
-      .catch(errors => this.setState({ errors }))
-    alert('A search was submitted: '.concat(this.state.value))
-    console.log(this.state.value)
-    event.preventDefault()
-  }
 
   handleSelectChange (event) {
     this.setState({ selectValue: event.target.value })
-    console.log(this.state.selectValue)
   }
 
   render () {
     return (
       <div className={style.rexSearch}>
-        <form onSubmit={this.handleSubmit}>
+        <form>
           <label htmlFor="search">
             <div className={style.search}>
               <select
@@ -59,11 +48,11 @@ class RexSearch extends React.Component {
                 placeholder="Busca"
                 type="search"
               />
-              <Link to={'/search/?'.concat(this.state.selectValue).concat('=').concat(this.state.value)}>
-                <button className={style.button}>
+              <button className={style.button}>
+                <Link to={'/search/'.concat(this.state.selectValue).concat('=').concat(this.state.value)}>
                   <IconSearch />
-                </button>
-              </Link>
+                </Link>
+              </button>
             </div>
           </label>
         </form>

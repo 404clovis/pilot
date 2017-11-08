@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import ReactLoading from 'react-loading'
+import queryString from 'query-string'
 import Moment from 'react-moment'
 import style from '../../Orders/style.css'
 import { Grid, Row, Col } from '../../../components/Grid'
@@ -23,8 +24,15 @@ const PaymentCurrency = input => PaymentCurrencyConverter[input]
 class ResultList extends React.Component {
   constructor (props) {
     super(props)
-
-    console.log('http://localhost:8000/orders/'.concat(this.props.match.params.data.toString().slice(6)))
+    const parsed = queryString.parse(this.props.match.params.data.toString())
+    let query = ''
+    if (parsed.Key) {
+      query = parsed.Key
+    }
+    if (parsed.CPF) {
+      query = parsed.CPF
+    }
+    console.log('http://localhost:8000/orders/'.concat(query))
 
     this.state = {
       searchResult: [],
@@ -34,7 +42,31 @@ class ResultList extends React.Component {
   }
 
   componentDidMount () {
-    fetch('http://localhost:8000/orders')
+    const parsed = queryString.parse(this.props.match.params.data.toString())
+    let query = ''
+    if (parsed.Key) {
+      query = parsed.Key
+    }
+    if (parsed.CPF) {
+      query = parsed.CPF
+    }
+    fetch('http://localhost:8000/orders'.concat(query))
+      .then(response => response.json())
+      .then(response => this.setState({ searchResult: response, loading: false }))
+      .catch(errors => this.setState({ errors }))
+  }
+
+
+  componentWillReceiveProps (nextProps) {
+    const parsed = queryString.parse(nextProps.match.params.data.toString())
+    let query = ''
+    if (parsed.Key) {
+      query = parsed.Key
+    }
+    if (parsed.CPF) {
+      query = parsed.CPF
+    }
+    fetch('http://localhost:8000/orders'.concat(query))
       .then(response => response.json())
       .then(response => this.setState({ searchResult: response, loading: false }))
       .catch(errors => this.setState({ errors }))
