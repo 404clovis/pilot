@@ -8,7 +8,7 @@ import {
 import style from './style.css'
 import toolItemStyle from '../style.css'
 
-const SearchField = ({
+const RexFieldSearch = ({
   onChange,
   value,
 }) => (
@@ -20,16 +20,15 @@ const SearchField = ({
       placeholder="Busca"
       type="search"
     />
-
     <button className={style.button}>
       <IconSearch />
     </button>
   </div>
 )
 
-SearchField.propTypes = {
+RexFieldSearch.propTypes = {
   onChange: func.isRequired,
   value: string.isRequired,
 }
 
-export default SearchField
+export default RexFieldSearch
