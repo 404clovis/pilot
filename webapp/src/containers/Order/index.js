@@ -30,10 +30,11 @@ class Order extends React.Component {
   }
 
   componentDidMount () {
-    fetch('http://localhost:8000/orders/'.concat(this.props.match.params.sentinela.toString()))
+    fetch('http://localhost:8000/orders/'.concat(this.props.request.toString()))
       .then(response => response.json())
       .then(response => this.setState({ orders: response }))
       .catch(errors => this.setState({ errors }))
+    console.log('http://localhost:8000/orders/'.concat(this.props.request))
   }
 
   render () {
@@ -187,21 +188,8 @@ class Order extends React.Component {
 }
 
 Order.propTypes = {
-  match: React.PropTypes.shape({
-    params: React.PropTypes.shape({
-      sentinela: React.PropTypes.string,
-      client: React.PropTypes.string,
-    }),
-  }),
+  request: React.PropTypes.string.isRequired,
 }
 
-Order.defaultProps = {
-  match: {
-    params: {
-      sentinela: null,
-      client: null,
-    },
-  },
-}
 
 export default Order
