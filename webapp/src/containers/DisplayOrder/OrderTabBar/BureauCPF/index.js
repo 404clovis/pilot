@@ -2,12 +2,12 @@ import React from 'react'
 
 const BureauCPF = props => (
   <div>
-    {props.cpf}
+    {props.cpfJSON}
   </div>
 )
 
 BureauCPF.propTypes = {
-  cpf: React.PropTypes.string.isRequired,
+  cpfJSON: React.PropTypes.string.isRequired,
 }
 
 export default BureauCPF

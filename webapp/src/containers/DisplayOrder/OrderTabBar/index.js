@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { TabItem, TabBar } from '../../../components/TabBar/index'
 import Order from '../../Order/index'
 import BureauCPF from './BureauCPF'
+import BureauArkowl from './BureauArkowl'
 import Button from '../../../components/Button'
 
 const variantList = [
@@ -22,22 +23,22 @@ class OrderTabBar extends React.Component {
     super(props)
     this.state = {
       theChosen: 0,
-      bureau: {},
+      procob: {},
+      arkowl: {},
     }
     this.changeTab = this.changeTab.bind(this)
-    this.handleBureau = this.handleBureau.bind(this)
+    this.handleProcob = this.handleProcob.bind(this)
+    this.handleArkowl = this.handleArkowl.bind(this)
   }
 
   changeTab (theChosen) {
     this.setState({ theChosen })
   }
 
-  handleBureau () {
+  handleProcob () {
     let cpf = ''
     const documents = this.props.source.customer.documents
     console.log(documents)
-    const email = this.props.source.customer.email
-    console.log(email)
 
     for (let i = 0; i < documents.length; i += 1) {
       if (documents[i].document_type === 'CPF') {
@@ -53,9 +54,27 @@ class OrderTabBar extends React.Component {
         },
       })
       .then(response => response.json())
-      .then(response => this.setState({ bureau: response }))
+      .then(response => this.setState({ procob: response }))
       .catch(errors => this.setState({ errors }))
     console.log('http://test.bureau.bigbrother.antifraudestone.com.br/procob/document/'.concat(cpf))
+    console.log('fiz request no botão!')
+  }
+
+  handleArkowl () {
+    const email = this.props.source.customer.email
+    console.log(email)
+
+    fetch('http://test.bureau.bigbrother.antifraudestone.com.br/arkowl/email/'.concat(email),
+      {
+        method: 'GET',
+        headers: {
+          Authorization: 'c2VudGluZWxhX2FwaV9rZXk=',
+        },
+      })
+      .then(response => response.json())
+      .then(response => this.setState({ arkowl: response }))
+      .catch(errors => this.setState({ errors }))
+    console.log('http://test.bureau.bigbrother.antifraudestone.com.br/arkowl/email/'.concat(email))
     console.log('fiz request no botão!')
   }
 
@@ -70,14 +89,21 @@ class OrderTabBar extends React.Component {
           onClick={clicked}
         >
           <br />
-          <Button onClick={this.handleBureau}>Procurar Bureau</Button>
+          <Button onClick={this.handleProcob}>Procurar Procob</Button>
+          <Button onClick={this.handleArkowl}>Procurar Arkowl</Button>
           <Order request={this.props.source} />
         </TabItem>
         <TabItem
           text={'Procob'}
           onClick={clicked}
         >
-          <BureauCPF cpf={JSON.stringify(this.state.bureau)} />
+          <BureauCPF cpfJSON={JSON.stringify(this.state.procob)} />
+        </TabItem>
+        <TabItem
+          text={'Arkowl'}
+          onClick={clicked}
+        >
+          <BureauArkowl emailJSON={JSON.stringify(this.state.arkowl)} />
         </TabItem>
       </TabBar>
     )
