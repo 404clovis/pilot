@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactJson from 'react-json-view'
 import Customer from './Customer'
 import Billing from './Billing'
 import Payment from './Payment'
@@ -142,9 +141,6 @@ const Order = props => (
           </Row>
         </Grid>
         <Analysis />
-        <div className="order-source-json-view">
-          <ReactJson src={props.request} />
-        </div>
       </div>
     </div>
   </div>

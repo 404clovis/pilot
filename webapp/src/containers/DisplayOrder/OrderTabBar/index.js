@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { TabItem, TabBar } from '../../../components/TabBar/index'
 import Order from '../../Order/index'
 import BureauCPF from './BureauCPF'
+import Button from '../../../components/Button'
 
 const variantList = [
   { name: 'Order', code: 'just-text' },
@@ -19,15 +20,19 @@ variantList.forEach((variant) => {
 class OrderTabBar extends React.Component {
   constructor (props) {
     super(props)
-    this.state = { theChosen: 0 }
+    this.state = {
+      theChosen: 0,
+      bureau: {},
+    }
     this.changeTab = this.changeTab.bind(this)
+    this.handleBureau = this.handleBureau.bind(this)
   }
 
   changeTab (theChosen) {
     this.setState({ theChosen })
   }
 
-  render () {
+  handleBureau () {
     let cpf = ''
     const documents = this.props.source.customer.documents
     console.log(documents)
@@ -40,6 +45,21 @@ class OrderTabBar extends React.Component {
       }
     }
 
+    fetch('http://test.bureau.bigbrother.antifraudestone.com.br/procob/document/'.concat(cpf),
+      {
+        method: 'GET',
+        headers: {
+          Authorization: 'c2VudGluZWxhX2FwaV9rZXk=',
+        },
+      })
+      .then(response => response.json())
+      .then(response => this.setState({ bureau: response }))
+      .catch(errors => this.setState({ errors }))
+    console.log('http://test.bureau.bigbrother.antifraudestone.com.br/procob/document/'.concat(cpf))
+    console.log('fiz request no botão!')
+  }
+
+  render () {
     return (
       <TabBar
         index={this.state.theChosen}
@@ -49,13 +69,15 @@ class OrderTabBar extends React.Component {
           text={'Dados do Pedido'}
           onClick={clicked}
         >
+          <br />
+          <Button onClick={this.handleBureau}>Procurar Bureau</Button>
           <Order request={this.props.source} />
         </TabItem>
         <TabItem
-          text={'Pesquisa no Bureau'}
+          text={'Procob'}
           onClick={clicked}
         >
-          <BureauCPF cpf={cpf} />
+          <BureauCPF cpf={JSON.stringify(this.state.bureau)} />
         </TabItem>
       </TabBar>
     )

@@ -23,7 +23,6 @@ class DisplayOrder extends React.Component {
     if (!this.state.order.source) {
       return false
     }
-
     const orders = this.state.order
     const source = orders.source
 
