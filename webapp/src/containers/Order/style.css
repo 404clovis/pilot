@@ -260,29 +260,43 @@ span.shippingMethod {
 }
 
 .facebookIcon {
-  font-size: 14px;
+  font-size: 20px;
   padding-left: 2px;
-  margin: 0;
-  color: var(--color-dark-silver-100);
-}
-
-.facebookIcon:hover {
-  font-size: 14px;
-  padding-left: 2px;
-  margin: 0;
+  margin-left: 10px;
   color: rgb(74,110,169);
 }
 
+.facebookIcon:hover {
+  font-size: 20px;
+  padding-left: 2px;
+  margin-left: 10px;
+  color: var(--color-light-blue-300);
+}
+
 .mapsIcon {
-  font-size: 14px;
+  font-size: 20px;
   padding: 0;
-  margin: 0;
-  color: var(--color-dark-silver-100);
+  margin-left: 10px;
+  color: rgb(232,30,37);
 }
 
 .mapsIcon:hover {
-  font-size: 14px;
+  font-size: 20px;
   padding: 0;
-  margin: 0;
-  color: rgb(232,30,37);
+  margin-left: 10px;
+  color: var(--color-dark-red-200);
+}
+
+.skypeIcon {
+  font-size: 20px;
+  padding-left: 2px;
+  margin: 10px;
+  color: #0095CC;
+}
+
+.skypeIcon:hover {
+  font-size: 20px;
+  padding-left: 2px;
+  margin: 10px;
+  color: var(--color-dark-blue-accent-200);
 }

@@ -56,19 +56,7 @@ class Address extends React.Component {
           this.props.address.zip_code)}
         <a
           className={style.mapsIcon}
-          href={'https://maps.google.com/?q='
-            .concat(this.props.address.street)
-            .concat(', ')
-            .concat(this.props.address.number)
-            .concat(', ')
-            .concat(this.props.address.zip_code)
-            .concat(', ')
-            .concat(this.props.address.city)
-            .concat(', ')
-            .concat(this.props.address.state)
-            .concat(', ')
-            .concat(this.props.address.country)
-          }
+          href={`https://maps.google.com/?q=${this.props.address.street},${this.props.address.number},${this.props.address.zip_code},${this.props.address.city},${this.props.address.state},${this.props.address.country}`}
           target="_blank"
         >
           <MapsIcon />

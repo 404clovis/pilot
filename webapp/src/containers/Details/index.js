@@ -5,12 +5,12 @@ import Moment from 'react-moment'
 import 'moment-timezone'
 import 'moment/locale/pt-br'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import ReactScrollbar from 'react-scrollbar-js'
 import style from '../style.css'
 import clearsale from '../../icons/clearsale.svg'
 import rexlab from '../../icons/rexlab.svg'
 import konduto from '../../icons/konduto.svg'
-import Summary from '../Summary'
 
 
 const AntifraudServiceIcon = (name) => {
@@ -110,14 +110,17 @@ class Details extends React.Component {
                           </span>
                         </td>
                         <td>
+                          {console.log(JSON.stringify(hist))}
                           <span className={style.transactionStatus}>
                             {AntifraudStatus(hist.antifraud_status.status)}
                           </span>
                         </td>
                         <td>
-                          <Moment element="span" format="DD/MM/YY HH:mm">
-                            {hist.transaction_date}
-                          </Moment>
+                          <Link to={('/orders/').concat(hist.sentinela_id)} target="_blank">
+                            <Moment element="span" format="DD/MM/YY HH:mm">
+                              {hist.transaction_date}
+                            </Moment>
+                          </Link>
                         </td>
                         <td>
                           <span>{hist.customer_name.toUpperCase()}</span>
@@ -177,7 +180,6 @@ class Details extends React.Component {
             </div>
           </ReactScrollbar>
         </div>
-        <Summary />
       </div>
     )
   }

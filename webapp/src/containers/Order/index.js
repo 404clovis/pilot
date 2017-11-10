@@ -1,5 +1,6 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
+import ReactLoading from 'react-loading'
 import Customer from './Customer'
 import Billing from './Billing'
 import Payment from './Payment'
@@ -40,6 +41,7 @@ class Order extends React.Component {
 
     this.state = {
       orders: {},
+      loading: true,
       isAuthenticated: false,
       userName: '',
       token: '',
@@ -54,11 +56,19 @@ class Order extends React.Component {
         SessionId: sessionId,
       },
     }).then(response => response.json())
-      .then(response => this.setState({ orders: response }))
+      .then(response => this.setState({ orders: response, loading: false }))
       .catch(errors => this.setState({ errors, isAuthenticated: false }))
   }
 
   render () {
+    if (this.state.loading) {
+      return (
+        <div className={style.loading}>
+          <ReactLoading type="spin" color="#a9d25d" height="30" width="30" />
+        </div>
+      )
+    }
+
     if (this.state.isAuthenticated) {
       return <Redirect to="/login" />
     }
@@ -99,7 +109,9 @@ class Order extends React.Component {
         <div id="orderID">
           <div className={style.order}>
             <div className="order-id">
-              <h5>Pedido - {source.sentinela_id}</h5>
+              <h5>
+                Pedido - {source.sentinela_id} ({source.antifraud_status.status.toUpperCase()})
+              </h5>
             </div>
             <Grid>
               <Row>
@@ -223,6 +235,7 @@ class Order extends React.Component {
                       emailAddress={customer.email}
                       sentinelaId={source.sentinela_id}
                       orderId={source.order_id}
+                      orderStatus={source.antifraud_status.status}
                     />
                   </div>
                 </Col>

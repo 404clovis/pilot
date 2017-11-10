@@ -16,21 +16,21 @@ class SearchMaps extends React.Component {
 
   componentDidMount () {
     if (this.props.shippingAddress) {
-      fetch(('https://maps.googleapis.com/maps/api/geocode/json?address=').concat(this.props.shippingAddress).concat('&key=AIzaSyBsKqfrtyruZZJFrFa5BxEYoNRZ3IE0v4c'))
+      fetch(process.env.REACT_APP_MAPS_API.concat('/geocode/json?address=').concat(this.props.shippingAddress).concat('&key=').concat(process.env.REACT_APP_MAPS_API))
         .then(response => response.json())
         .then(response => console.log(JSON.stringify(response)))
         .catch(errors => this.setState({ errors }))
     }
 
     if (this.props.billingAddress) {
-      fetch(('https://maps.googleapis.com/maps/api/geocode/json?address=').concat(this.props.billingAddress).concat('&key=AIzaSyBsKqfrtyruZZJFrFa5BxEYoNRZ3IE0v4c'))
+      fetch(process.env.REACT_APP_MAPS_API.concat('/geocode/json?address=').concat(this.props.billingAddress).concat('&key=').concat(process.env.REACT_APP_MAPS_API))
         .then(response => response.json())
         .then(response => this.setState({ billingAddress: response }))
         .catch(errors => this.setState({ errors }))
     }
 
     if (this.props.customerAddress) {
-      fetch(('https://maps.googleapis.com/maps/api/geocode/json?address=').concat(this.props.customerAddress).concat('&key=AIzaSyBsKqfrtyruZZJFrFa5BxEYoNRZ3IE0v4c'))
+      fetch(process.env.REACT_APP_MAPS_API.concat('/geocode/json?address=').concat(this.props.customerAddress).concat('&key=').concat(process.env.REACT_APP_MAPS_API))
         .then(response => response.json())
         .then(response => this.setState({ customerAddress: response }))
         .catch(errors => this.setState({ errors }))
@@ -75,11 +75,6 @@ class SearchMaps extends React.Component {
       centerLat = billingLat
       centerLng = billingLng
     }
-
-    console.log(centerLat)
-    console.log(shippingLng)
-    console.log(customerLng)
-    console.log(billingLng)
 
     return (
       <LocalizationMap

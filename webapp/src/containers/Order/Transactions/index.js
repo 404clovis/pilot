@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import PaymentType from '../Converter/'
+import CardInfo from './CardInfo'
 import style from './style.css'
 
 const CentsToDollar = value => (
@@ -39,6 +40,9 @@ const Transactions = props => (
           <span className={style.paymentCard}>
             {transaction.bin} **** {transaction.last_4}
             {FormatExpirationDate(transaction.expiration_date)}
+          </span>
+          <span className={style.cardInfo}>
+            <CardInfo />
           </span>
           <span className={style.paymentCardName}>
             {transaction.card_name}

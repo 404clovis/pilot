@@ -25,8 +25,6 @@ class Orders extends React.Component {
   constructor (props) {
     super(props)
 
-    console.log(process.env.REACT_APP_DASH_API.concat('/orders/'))
-
     this.state = {
       orders: [],
       loading: true,
@@ -56,9 +54,9 @@ class Orders extends React.Component {
     return (
       <div>
         <div>
-          <h3>
+          <h4>
             Número de Pedidos {Object.keys(this.state.orders).length}
-          </h3>
+          </h4>
         </div>
         <Grid>
           <Row>
@@ -66,13 +64,17 @@ class Orders extends React.Component {
               <table className={style.rexTable}>
                 <thead>
                   <tr>
-                    <th><h3>Identificador do pedido</h3></th>
-                    <th><h3>Nome do comprador</h3></th>
-                    <th><h3>Email do comprador</h3></th>
-                    <th><h3>REXcore</h3></th>
-                    <th><h3>Score</h3></th>
-                    <th className={style.tableItemRight}><h3>Valor do pedido</h3></th>
-                    <th className={style.tableItemRight}><h3>Data do pedido</h3></th>
+                    <th><span className={style.headerTitle}>Identificador do pedido</span></th>
+                    <th><span className={style.headerTitle}>Nome do comprador</span></th>
+                    <th><span className={style.headerTitle}>Email do comprador</span></th>
+                    <th><span className={style.headerTitle}>REXcore</span></th>
+                    <th><span className={style.headerTitle}>Score</span></th>
+                    <th className={style.tableItemRight}>
+                      <span className={style.headerTitle}>Valor do pedido</span>
+                    </th>
+                    <th className={style.tableItemRight}>
+                      <span className={style.headerTitle}>Data do pedido</span>
+                    </th>
                   </tr>
                 </thead>
                 <tbody>

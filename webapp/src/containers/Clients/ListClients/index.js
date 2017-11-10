@@ -5,9 +5,7 @@ import 'moment-timezone'
 import 'moment/locale/pt-br'
 import { NavLink } from 'react-router-dom'
 import { Grid, Row, Col } from '../../../components/Grid'
-
 import style from '../style.css'
-
 
 class ListClients extends React.Component {
   constructor (props) {
@@ -15,21 +13,21 @@ class ListClients extends React.Component {
     this.state = {
       clients: [],
       loading: true,
+      authorized: true,
       errors: null,
     }
   }
 
   componentDidMount () {
     const sessionId = localStorage.getItem('sessionId')
-    console.log(sessionId, null, 2)
-    fetch(process.env.REACT_APP_DASH_API.concat('/clients'), {
+    console.log(sessionId)
+
+    fetch(`${process.env.REACT_APP_DASH_API}/clients`, {
       headers: {
         SessionId: sessionId,
       },
     }).then(response => response.json())
-      .then(response => this.setState({ clients: response, loading: false }))
-      .then(response => console.log(response, null, 2))
-      .catch(errors => this.setState({ errors }))
+      .then(response => this.setState({ clients: response, authorized: true, loading: false }))
   }
 
   render () {
@@ -48,11 +46,11 @@ class ListClients extends React.Component {
             <table className={style.rexTable}>
               <thead>
                 <tr>
-                  <th><h3>Nome do cliente</h3></th>
-                  <th><h3>Chave do cliente</h3></th>
-                  <th><h3>Numero de pedidos</h3></th>
-                  <th><h3>SLA médio</h3></th>
-                  <th><h3>SLA máximo</h3></th>
+                  <th><span className={style.headerTitle}>Nome do cliente</span></th>
+                  <th><span className={style.headerTitle}>Chave do cliente</span></th>
+                  <th><span className={style.headerTitle}>Numero de pedidos</span></th>
+                  <th><span className={style.headerTitle}>SLA médio</span></th>
+                  <th><span className={style.headerTitle}>SLA máximo</span></th>
                 </tr>
               </thead>
               <tbody>

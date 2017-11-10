@@ -19,14 +19,6 @@ class Summary extends React.Component {
     this.setState({ value: event.target.value })
   }
 
-  handleSubmit (event) {
-    fetch('https://api.rexlab.com.br:8000/orders/192718271-867588837232-784121212')
-      .then(response => response.json())
-      .then(response => this.setState({ updateStatus: response }))
-      .catch(errors => this.setState({ errors }))
-    event.preventDefault()
-  }
-
   render () {
     return (
       <div>

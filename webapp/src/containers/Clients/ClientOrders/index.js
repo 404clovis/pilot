@@ -26,8 +26,6 @@ class ClientOrders extends React.Component {
   constructor (props) {
     super(props)
 
-    console.log(process.env.REACT_APP_DASH_API.concat('/clients/').concat(this.props.match.params.client.toString()).concat('/orders'))
-
     this.state = {
       client_orders: [],
       loading: true,

@@ -13,7 +13,9 @@ const Main = () => (
         <Col desk={4} tv={4} tablet={9} palm={9}>
           <main>
             <div className={style.logo}>
-              <img src={logo} className="Rexlab-logo" alt="RexLab Logotipo" />
+              <a href="/clients">
+                <img src={logo} className="Rexlab-logo" alt="RexLab Logotipo" />
+              </a>
             </div>
           </main>
         </Col>
