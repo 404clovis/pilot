@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import ClientOrders from '../../containers/Clients/ClientOrders'
 import ListClients from '../../containers/Clients/ListClients'
 import Client from '../../containers/Clients/Client'
-import OrderTabBar from '../../containers/OrderTabBar'
+import DisplayOrder from '../../containers/DisplayOrder'
 import NotFound from '../../containers/NotFound'
 
 
@@ -13,7 +13,7 @@ const Clients = props => (
       <Route exact path={`${props.match.url}`} component={ListClients} />
       <Route exact path={`${props.match.url}/:client`} component={Client} />
       <Route exact path={`${props.match.url}/:client/orders`} component={ClientOrders} />
-      <Route exact path={`${props.match.url}/:client/orders/:sentinela`} component={OrderTabBar} />
+      <Route exact path={`${props.match.url}/:client/orders/:sentinela`} component={DisplayOrder} />
       <Route component={NotFound} />
     </Switch>
   </div>

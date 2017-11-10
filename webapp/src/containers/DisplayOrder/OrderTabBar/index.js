@@ -1,8 +1,9 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { storiesOf } from '@storybook/react'
-import { TabItem, TabBar } from '../../components/TabBar'
-import Order from '../Order'
+import { TabItem, TabBar } from '../../../components/TabBar/index'
+import Order from '../../Order/index'
+import BureauCPF from './BureauCPF'
 
 const variantList = [
   { name: 'Order', code: 'just-text' },
@@ -27,6 +28,18 @@ class OrderTabBar extends React.Component {
   }
 
   render () {
+    let cpf = ''
+    const documents = this.props.source.customer.documents
+    console.log(documents)
+    const email = this.props.source.customer.email
+    console.log(email)
+
+    for (let i = 0; i < documents.length; i += 1) {
+      if (documents[i].document_type === 'CPF') {
+        cpf = documents[i].number
+      }
+    }
+
     return (
       <TabBar
         index={this.state.theChosen}
@@ -36,13 +49,13 @@ class OrderTabBar extends React.Component {
           text={'Dados do Pedido'}
           onClick={clicked}
         >
-          <Order request={this.props.match.params.sentinela.toString()} />
+          <Order request={this.props.source} />
         </TabItem>
         <TabItem
           text={'Pesquisa no Bureau'}
           onClick={clicked}
         >
-          HI
+          <BureauCPF cpf={cpf} />
         </TabItem>
       </TabBar>
     )
@@ -50,21 +63,7 @@ class OrderTabBar extends React.Component {
 }
 
 OrderTabBar.propTypes = {
-  match: React.PropTypes.shape({
-    params: React.PropTypes.shape({
-      sentinela: React.PropTypes.string,
-      client: React.PropTypes.string,
-    }),
-  }),
-}
-
-OrderTabBar.defaultProps = {
-  match: {
-    params: {
-      sentinela: null,
-      client: null,
-    },
-  },
+  source: React.PropTypes.string.isRequired,
 }
 
 export default OrderTabBar
