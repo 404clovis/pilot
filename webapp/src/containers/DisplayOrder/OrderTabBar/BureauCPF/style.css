@@ -300,3 +300,9 @@ span.shippingMethod {
   margin: 10px;
   color: var(--color-dark-blue-accent-200);
 }
+
+.familyTitle {
+  font-size: 13px;
+  font-weight: bolder;
+  color: var(--color-light-plumb-300);
+}
