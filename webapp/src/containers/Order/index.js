@@ -20,16 +20,12 @@ import {
 } from '../../components/Card'
 
 function concatAddress (address) {
-  const addressCon = address.street.concat(', ')
-    .concat(address.number)
-    .concat(', ')
-    .concat(address.zip_code)
-    .concat(', ')
-    .concat(address.city)
-    .concat(', ')
-    .concat(address.state)
-    .concat(', ')
-    .concat(address.country)
+  const addressCon = `${address.street},
+    ${address.number},
+    ${address.zip_code},
+    ${address.city},
+    ${address.state},
+    ${address.country}`
 
   return addressCon
 }
@@ -51,7 +47,7 @@ class Order extends React.Component {
 
   componentDidMount () {
     const sessionId = localStorage.getItem('sessionId')
-    fetch(process.env.REACT_APP_DASH_API.concat('/orders/').concat(this.props.match.params.sentinela.toString()), {
+    fetch(`${process.env.REACT_APP_DASH_API}/v1/orders/${this.props.match.params.sentinela}`, {
       headers: {
         SessionId: sessionId,
       },
@@ -73,12 +69,12 @@ class Order extends React.Component {
       return <Redirect to="/login" />
     }
 
-    if (!this.state.orders.source) {
+    if (!this.state.orders.data) {
       return false
     }
 
     const orders = this.state.orders
-    const source = orders.source
+    const source = orders.data
     const customer = source.customer
     const billing = source.billing
     const shipping = source.shipping
@@ -108,11 +104,6 @@ class Order extends React.Component {
       <div>
         <div id="orderID">
           <div className={style.order}>
-            <div className="order-id">
-              <h5>
-                Pedido - {source.sentinela_id} ({source.antifraud_status.status.toUpperCase()})
-              </h5>
-            </div>
             <Grid>
               <Row>
                 <Col tv={8} desk={8} tablet={12} palm={12}>
@@ -189,7 +180,7 @@ class Order extends React.Component {
                       </div>
                     </Col>
                     }
-                    {seller &&
+                    {seller && !seller &&
                     <Col>
                       <div className="order-seller">
                         <Card>
@@ -235,7 +226,7 @@ class Order extends React.Component {
                       emailAddress={customer.email}
                       sentinelaId={source.sentinela_id}
                       orderId={source.order_id}
-                      orderStatus={source.antifraud_status.status}
+                      orderStatus="pending_analysis"
                     />
                   </div>
                 </Col>

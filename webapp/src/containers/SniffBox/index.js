@@ -16,6 +16,7 @@ const StatusConverter = {
   suspeito: 'man_declined',
   fraude: 'man_declined',
   ataque: 'man_declined',
+  agendar: 'schedule',
 }
 
 const Status = input => StatusConverter[input]
@@ -32,27 +33,42 @@ class SniffBox extends React.Component {
 
     this.handleFinalization = this.handleFinalization.bind(this)
     this.handleUnlock = this.handleUnlock.bind(this)
+    this.handleSchedule = this.handleSchedule.bind(this)
   }
 
   handleFinalization (event) {
     const sessionId = localStorage.getItem('sessionId')
-    fetch(process.env.REACT_APP_DASH_API.concat('/orders/').concat(this.props.sentinelaId), {
+    fetch(`${process.env.REACT_APP_DASH_API}/v1/order/${this.props.sentinelaId}`, {
       method: 'PUT',
       headers: {
         SessionId: sessionId,
       },
       body: JSON.stringify({
-        sentinela_id: this.props.sentinelaId,
-        order_id: this.props.orderId,
+        decision_by: this.props.sentinelaId,
+        comments: this.state.commented,
         status: Status(this.state.selected.toLowerCase()) }),
     }).then(res => console.log(res))
       .then(() => this.setState({ redirect: true, analized: true }))
     event.preventDefault()
   }
 
-  handleUnlock (event, sentinelaId) {
+  handleSchedule (event) {
     const sessionId = localStorage.getItem('sessionId')
-    fetch(process.env.REACT_APP_DASH_API.concat('/order/unlock/').concat(sentinelaId), {
+    fetch(`${process.env.REACT_APP_DASH_API}/v1/orders/schedule/PEDIDOSJA-bc481f20c90145e082a1c988a2804d9e/2017-11-23T00:00:00.1234`, {
+      method: 'PUT',
+      headers: {
+        SessionId: sessionId,
+      },
+      body: JSON.stringify({
+        comment: this.state.commented }),
+    }).then(res => console.log(res))
+      .then(() => this.setState({ redirect: true, analized: true }))
+    event.preventDefault()
+  }
+
+  handleUnlock (event) {
+    const sessionId = localStorage.getItem('sessionId')
+    fetch(`${process.env.REACT_APP_DASH_API}/v1/order/unlock/${this.props.sentinelaId}`, {
       method: 'PUT',
       headers: {
         SessionId: sessionId,
@@ -88,10 +104,14 @@ class SniffBox extends React.Component {
         name: 'Ataque',
         value: 'Ataque/Fraude',
       },
+      {
+        name: 'Agendar',
+        value: 'Agendamento',
+      },
     ]
 
     if (this.state.redirect) {
-      return <Redirect to="/clients" />
+      return <Redirect to="/queues" />
     }
 
     return (
@@ -139,6 +159,11 @@ class SniffBox extends React.Component {
             </form>
           </div>
         </div>
+        {(this.state.selected === 'Agendamento') &&
+          <span>
+            Agendar
+          </span>
+        }
         {(this.props.orderStatus === 'pending_analysis') &&
         <span className={style.sniffBoxButton}>
           <Button onClick={this.handleFinalization} size="micro" color="blue">
@@ -146,6 +171,11 @@ class SniffBox extends React.Component {
           </Button>
         </span>
         }
+        <span className={style.sniffBoxButton}>
+          <Button onClick={this.handleSchedule} size="micro" color="blue">
+            Agendar Pedido
+          </Button>
+        </span>
       </div>
     )
   }

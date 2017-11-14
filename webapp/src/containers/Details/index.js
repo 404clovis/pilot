@@ -50,7 +50,7 @@ class Details extends React.Component {
 
   componentDidMount () {
     const sessionId = localStorage.getItem('sessionId')
-    fetch(process.env.REACT_APP_DASH_API.concat('/history/document/').concat(this.props.documentNumber), {
+    fetch(process.env.REACT_APP_DASH_API.concat('/v1/history/document/').concat(this.props.documentNumber), {
       headers: {
         SessionId: sessionId,
       },
@@ -58,7 +58,7 @@ class Details extends React.Component {
       .then(response => this.setState({ historical: response, loading: false }))
       .catch(errors => this.setState({ errors }))
 
-    fetch(process.env.REACT_APP_DASH_API.concat('/history/email/').concat(this.props.emailAddress), {
+    fetch(process.env.REACT_APP_DASH_API.concat('/v1/history/email/').concat(this.props.emailAddress), {
       headers: {
         SessionId: sessionId,
       },
@@ -123,7 +123,7 @@ class Details extends React.Component {
                           </Link>
                         </td>
                         <td>
-                          <span>{hist.customer_name.toUpperCase()}</span>
+                          <span>{hist.customer_name}</span>
                         </td>
                         <td>
                           <span>{hist.customer_email}</span>
@@ -164,10 +164,10 @@ class Details extends React.Component {
                           </Moment>
                         </td>
                         <td>
-                          <span>{hist.customer_name.toUpperCase()}</span>
+                          <span>{hist.customer.name}</span>
                         </td>
                         <td>
-                          <span>{hist.customer_email}</span>
+                          <span>{hist.customer.email}</span>
                         </td>
                         <td>
                           <span>{CentsToDollar(hist.total_amount)}</span>

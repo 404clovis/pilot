@@ -1,4 +1,11 @@
-@import "./fixed-data-table.css";
 @import "./colors.css";
 @import "./spacing.css";
 @import "./typography.css";
+
+/* stylelint-disable */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+

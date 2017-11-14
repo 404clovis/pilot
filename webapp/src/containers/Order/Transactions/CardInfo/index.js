@@ -14,7 +14,7 @@ class CardInfo extends React.Component {
 
   componentDidMount () {
     const sessionId = localStorage.getItem('sessionId')
-    fetch(process.env.REACT_APP_DASH_API.concat('/card/222647'), {
+    fetch(`${process.env.REACT_APP_DASH_API}/v1/card/222647`, {
       headers: {
         SessionId: sessionId,
       },

@@ -3,7 +3,7 @@
 // Do this as the first thing so that any code reading it knows the right env.
 process.env.BABEL_ENV = 'development';
 process.env.NODE_ENV = 'development';
-process.env.REACT_APP_DASH_API = 'http://localhost:8000';
+process.env.REACT_APP_DASH_API = 'http://172.16.197.48:3000';
 process.env.REACT_APP_MAPS_API_KEY = 'AIzaSyBsKqfrtyruZZJFrFa5BxEYoNRZ3IE0v4c';
 process.env.REACT_APP_MAPS_API = 'https://maps.googleapis.com/maps/api';
 
