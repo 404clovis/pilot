@@ -19,8 +19,39 @@ class Personal extends React.Component {
       <div className={style.address}>
         <Grid>
           <Row>
-            <Col tv={1} desk={1} tablet={2} palm={4} >
-
+            <Col tv={4} desk={4} tablet={4} palm={7} >
+              {this.props.personal.document_number}
+            </Col>
+          </Row>
+          <Row>
+            <Col tv={3} desk={3} tablet={3} palm={5} >
+              {this.props.personal.name}
+            </Col>
+            <Col tv={1} desk={1} tablet={1} palm={2} >
+              {this.props.personal.gender}
+            </Col>
+          </Row>
+          <Row>
+            <Col tv={3} desk={3} tablet={3} palm={5} >
+              {this.props.personal.date_of_birth}
+            </Col>
+            <Col tv={1} desk={1} tablet={1} palm={2} >
+              AGE
+            </Col>
+          </Row>
+          <Row>
+            <Col tv={4} desk={4} tablet={4} palm={7} >
+              {this.props.personal.sign}
+            </Col>
+          </Row>
+          <Row>
+            <Col tv={4} desk={4} tablet={4} palm={7} >
+              {this.props.personal.rip}
+            </Col>
+          </Row>
+          <Row>
+            <Col tv={4} desk={4} tablet={4} palm={7} >
+              {this.props.personal.status_federal_revenue}
             </Col>
           </Row>
         </Grid>
@@ -30,7 +61,7 @@ class Personal extends React.Component {
 }
 
 Personal.propTypes = {
-  Personal: PropTypes.shape({
+  personal: PropTypes.shape({
     date_of_birth: PropTypes.string,
     document_number: PropTypes.string,
     document_type: PropTypes.string,
@@ -45,7 +76,7 @@ Personal.propTypes = {
 }
 
 Personal.defaultProps = {
-  Personal: {
+  personal: {
     name: null,
   },
 }

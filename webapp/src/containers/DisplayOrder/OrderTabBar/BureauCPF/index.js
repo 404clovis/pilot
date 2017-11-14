@@ -5,6 +5,7 @@ import Address from './Addresses'
 import Family from './Family'
 import FamilyTitle from './FamilyTitle'
 import Phones from './Phones'
+import Personal from './Personal'
 
 import { Grid, Row, Col } from '../../../../components/Grid'
 import {
@@ -29,17 +30,38 @@ class BureauCPF extends React.Component {
     }
 
     const address = procob.addresses
-    console.log(address)
     const family = procob.family
-    console.log(family)
     const cellphone = procob.phones.cellphone
-    console.log(cellphone)
     const residential = procob.phones.residential
     const others = procob.phones.others
     const commercial = procob.phones.commercial
+    const personal = procob.personal_data
+    console.log(personal)
+    const emails = procob.emails
+    console.log(emails)
 
     return (
       <div>
+        {personal &&
+        <Card>
+          <CardTitle title="Dados Pessoais" />
+          <CardContent>
+            {personal.map(data =>
+              <Personal personal={data} />
+            )}
+          </CardContent>
+        </Card>
+        }
+        {emails &&
+        <Card>
+          <CardTitle title="Emails" />
+          <CardContent>
+            {emails.map(email =>
+              <p className={style.address}>{email}</p>
+            )}
+          </CardContent>
+        </Card>
+        }
         {address &&
         <Card>
           <CardTitle title="Endereços" />
@@ -67,14 +89,14 @@ class BureauCPF extends React.Component {
           <CardContent>
             <Grid>
               <Row>
-                <Col tv={1} desk={1} tablet={1} palm={2}>
+                <Col tv={1} desk={1} tablet={2} palm={2}>
                   <div className={style.familyTitle}>RESIDENCIAL</div>
                   <br />
                   {residential.map(phone =>
                     <Phones phones={phone} />
                   )}
                 </Col>
-                <Col tv={1} desk={1} tablet={1} palm={2}>
+                <Col tv={1} desk={1} tablet={2} palm={2}>
                   <div className={style.familyTitle}>CELULAR</div>
                   <br />
                   {cellphone.map(phone =>
