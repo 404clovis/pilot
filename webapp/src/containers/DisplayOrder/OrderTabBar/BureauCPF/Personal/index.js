@@ -14,7 +14,15 @@ class Personal extends React.Component {
     }
   }
 
+
   render () {
+    let rip = 'Não Encontrado'
+    if (this.props.personal.rip === true) {
+      rip = 'SIM'
+    } else if (this.props.personal.rip === false) {
+      rip = 'NÂO'
+    }
+
     return (
       <div className={style.address}>
         <Grid>
@@ -40,18 +48,16 @@ class Personal extends React.Component {
             </Col>
           </Row>
           <Row>
-            <Col tv={4} desk={4} tablet={4} palm={7} >
+            <Col tv={3} desk={3} tablet={3} palm={5} >
+              Óbito: {rip}
+            </Col>
+            <Col tv={1} desk={1} tablet={1} palm={2} >
               {this.props.personal.sign}
             </Col>
           </Row>
           <Row>
             <Col tv={4} desk={4} tablet={4} palm={7} >
-              {this.props.personal.rip}
-            </Col>
-          </Row>
-          <Row>
-            <Col tv={4} desk={4} tablet={4} palm={7} >
-              {this.props.personal.status_federal_revenue}
+              Situação na Receita Federal: {this.props.personal.status_federal_revenue}
             </Col>
           </Row>
         </Grid>

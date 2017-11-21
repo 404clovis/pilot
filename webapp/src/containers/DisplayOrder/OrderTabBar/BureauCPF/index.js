@@ -6,6 +6,7 @@ import Family from './Family'
 import FamilyTitle from './FamilyTitle'
 import Phones from './Phones'
 import Personal from './Personal'
+import AddressTitle from './AddressTitle'
 
 import { Grid, Row, Col } from '../../../../components/Grid'
 import {
@@ -31,14 +32,12 @@ class BureauCPF extends React.Component {
 
     const address = procob.addresses
     const family = procob.family
-    const cellphone = procob.phones.cellphone
-    const residential = procob.phones.residential
-    const others = procob.phones.others
-    const commercial = procob.phones.commercial
+    const phones = procob.phones
     const personal = procob.personal_data
     console.log(personal)
     const emails = procob.emails
-    console.log(emails)
+    const housemates = procob.housemates
+    console.log(housemates)
 
     return (
       <div>
@@ -46,9 +45,7 @@ class BureauCPF extends React.Component {
         <Card>
           <CardTitle title="Dados Pessoais" />
           <CardContent>
-            {personal.map(data =>
-              <Personal personal={data} />
-            )}
+            <Personal personal={personal[0]} />
           </CardContent>
         </Card>
         }
@@ -62,10 +59,21 @@ class BureauCPF extends React.Component {
           </CardContent>
         </Card>
         }
+        {housemates &&
+        <Card>
+          <CardTitle title="Moram na mesma residência" />
+          <CardContent>
+            {housemates.map(house =>
+              <p className={style.address}>{house.document_number} - {house.name}</p>
+            )}
+          </CardContent>
+        </Card>
+        }
         {address &&
         <Card>
           <CardTitle title="Endereços" />
           <CardContent>
+            <AddressTitle address={address} />
             {address.map(addresses =>
               <Address address={addresses} />
             )}
@@ -83,7 +91,7 @@ class BureauCPF extends React.Component {
           </CardContent>
         </Card>
         }
-        {(cellphone || residential || others || commercial) &&
+        {(phones) &&
         <Card>
           <CardTitle title="Telefones" />
           <CardContent>
@@ -92,24 +100,24 @@ class BureauCPF extends React.Component {
                 <Col tv={1} desk={1} tablet={2} palm={2}>
                   <div className={style.familyTitle}>RESIDENCIAL</div>
                   <br />
-                  {residential.map(phone =>
+                  {phones.residential.map(phone =>
                     <Phones phones={phone} />
                   )}
                 </Col>
                 <Col tv={1} desk={1} tablet={2} palm={2}>
                   <div className={style.familyTitle}>CELULAR</div>
                   <br />
-                  {cellphone.map(phone =>
+                  {phones.cellphone.map(phone =>
                     <Phones phones={phone} />
                   )}
                 </Col>
                 <Col tv={1} desk={1} tablet={1} palm={2}>
                   <div className={style.familyTitle}>OUTROS</div>
                   <br />
-                  {others.map(phone =>
+                  {phones.others.map(phone =>
                     <Phones phones={phone} />
                   )}
-                  {commercial.map(phone =>
+                  {phones.commercial.map(phone =>
                     <Phones phones={phone} />
                   )}
                 </Col>

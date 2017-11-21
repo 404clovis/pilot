@@ -1,18 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import MapsIcon from 'react-icons/lib/fa/map-marker'
 import style from './../style.css'
-
 import { Grid, Row, Col } from '../../../../../components/Grid'
 
 
-const FormatZipCode = zip => (
-  <div>
-    {zip.substring(0, 5).concat('-').concat(zip.substring(5))}
-  </div>
-)
-
-class Address extends React.Component {
+class AddressTitle extends React.Component {
   constructor (props) {
     super(props)
 
@@ -25,49 +17,30 @@ class Address extends React.Component {
 
   render () {
     return (
-      <div className={style.address}>
-        { this.props.address.street &&
+      <div>
+        {this.props.address[0] &&
         <Grid>
           <Row>
             <Col tv={2} desk={2} tablet={2} palm={2}>
-              {this.props.address.street}
+              <div className={style.familyTitle}>RUA</div>
             </Col>
             <Col tv={1} desk={1} tablet={2} palm={2}>
-              {this.props.address.number}
+              <div className={style.familyTitle}>NÚMERO</div>
             </Col>
             <Col tv={2} desk={2} tablet={2} palm={2}>
-              {this.props.address.complement}
+              <div className={style.familyTitle}>COMPLEMENTO</div>
             </Col>
             <Col tv={2} desk={2} tablet={2} palm={2}>
-              {this.props.address.neighborhood}
+              <div className={style.familyTitle}>BAIRRO</div>
             </Col>
             <Col tv={2} desk={2} tablet={2} palm={2}>
-              {this.props.address.city}
+              <div className={style.familyTitle}>CIDADE</div>
             </Col>
             <Col tv={1} desk={1} tablet={2} palm={2}>
-              {this.props.address.state}
+              <div className={style.familyTitle}>ESTADO</div>
             </Col>
             <Col tv={1} desk={1} tablet={2} palm={2}>
-              {FormatZipCode(this.props.address.zip_code)}
-            </Col>
-            <Col tv={1} desk={1} tablet={2} palm={2}>
-              <a
-                className={style.mapsIcon}
-                href={'https://maps.google.com/?q='
-                  .concat(this.props.address.street)
-                  .concat(', ')
-                  .concat(this.props.address.number)
-                  .concat(', ')
-                  .concat(this.props.address.zip_code)
-                  .concat(', ')
-                  .concat(this.props.address.city)
-                  .concat(', ')
-                  .concat(this.props.address.state)
-                }
-                target="_blank"
-              >
-                <MapsIcon />
-              </a>
+              <div className={style.familyTitle}>CEP</div>
             </Col>
           </Row>
         </Grid>
@@ -77,7 +50,7 @@ class Address extends React.Component {
   }
 }
 
-Address.propTypes = {
+AddressTitle.propTypes = {
   address: PropTypes.shape({
     allotment: PropTypes.string,
     apartment: PropTypes.string,
@@ -94,10 +67,10 @@ Address.propTypes = {
   }),
 }
 
-Address.defaultProps = {
+AddressTitle.defaultProps = {
   address: {
     zip_code: null,
   },
 }
 
-export default Address
+export default AddressTitle

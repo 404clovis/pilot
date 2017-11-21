@@ -21,7 +21,7 @@ class Family extends React.Component {
         <Grid>
           <Row>
             {this.props.family.document_number &&
-            <Col tv={1} desk={1} tablet={1} palm={2}>
+            <Col tv={1} desk={1} tablet={2} palm={2}>
               {this.props.family.document_number}
             </Col>
             }
@@ -31,17 +31,17 @@ class Family extends React.Component {
             </Col>
             }
             {this.props.family.retired &&
-            <Col tv={1} desk={1} tablet={1} palm={2}>
+            <Col tv={1} desk={1} tablet={2} palm={2}>
               {this.props.family.retired}
             </Col>
             }
             {this.props.family.rip &&
-            <Col tv={1} desk={1} tablet={1} palm={2}>
+            <Col tv={1} desk={1} tablet={2} palm={2}>
               {this.props.family.rip}
             </Col>
             }
             {this.props.family.type &&
-            <Col tv={1} desk={1} tablet={1} palm={2}>
+            <Col tv={1} desk={1} tablet={2} palm={2}>
               {this.props.family.type}
             </Col>
             }
