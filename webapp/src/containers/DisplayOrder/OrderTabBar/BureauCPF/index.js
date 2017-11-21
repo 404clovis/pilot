@@ -9,6 +9,8 @@ import Phones from './Phones'
 import Personal from './Personal'
 import WorkPlace from './WorkPlaces'
 import WorkTitle from './WorkTitle'
+import Contacts from './Contacts'
+import ContactsTitle from './ContactsTitle'
 
 import { Grid, Row, Col } from '../../../../components/Grid'
 import {
@@ -40,107 +42,142 @@ class BureauCPF extends React.Component {
     const emails = procob.emails
     const housemates = procob.housemates
     const work = procob.work_places
+    const contacts = procob.person_contacts
 
     return (
-      <div>
-        {personal &&
-        <Card>
-          <CardTitle title="Dados Pessoais" />
-          <CardContent>
-            <Personal personal={personal[0]} />
-          </CardContent>
-        </Card>
-        }
-        {emails[0] &&
-        <Card>
-          <CardTitle title="Emails" />
-          <CardContent>
-            {emails.map(email =>
-              <p className={style.address}>{email}</p>
-            )}
-          </CardContent>
-        </Card>
-        }
-        {work &&
-        <Card>
-          <CardTitle title="Locais de Trabalho" />
-          <CardContent>
-            <WorkTitle work_places={work} />
-            {work.map(works =>
-              <WorkPlace work_places={works} />
-            )}
-          </CardContent>
-        </Card>
-        }
-        {housemates[0] &&
-        <Card>
-          <CardTitle title="Moram na mesma residência" />
-          <CardContent>
-            {housemates.map(house =>
-              <p className={style.address}>{house.document_number} - {house.name}</p>
-            )}
-          </CardContent>
-        </Card>
-        }
-        {address &&
-        <Card>
-          <CardTitle title="Endereços" />
-          <CardContent>
-            <AddressTitle address={address} />
-            {address.map(addresses =>
-              <Address address={addresses} />
-            )}
-          </CardContent>
-        </Card>
-        }
-        {family &&
-        <Card>
-          <CardTitle title="Familiares" />
-          <CardContent>
-            <FamilyTitle family={family} />
-            {family.map(relatives =>
-              <Family family={relatives} />
-            )}
-          </CardContent>
-        </Card>
-        }
-        {(phones) &&
-        <Card>
-          <CardTitle title="Telefones" />
-          <CardContent>
-            <Grid>
-              <Row>
-                <Col tv={1} desk={1} tablet={2} palm={2}>
-                  <div className={style.familyTitle}>RESIDENCIAL</div>
-                  <br />
-                  {phones.residential.map(phone =>
-                    <Phones phones={phone} />
-                  )}
-                </Col>
-                <Col tv={1} desk={1} tablet={2} palm={2}>
-                  <div className={style.familyTitle}>CELULAR</div>
-                  <br />
-                  {phones.cellphone.map(phone =>
-                    <Phones phones={phone} />
-                  )}
-                </Col>
-                <Col tv={1} desk={1} tablet={1} palm={2}>
-                  <div className={style.familyTitle}>OUTROS</div>
-                  <br />
-                  {phones.others.map(phone =>
-                    <Phones phones={phone} />
-                  )}
-                  {phones.commercial.map(phone =>
-                    <Phones phones={phone} />
-                  )}
-                </Col>
-              </Row>
-            </Grid>
-          </CardContent>
-        </Card>
-        }
-        {this.props.cpfJSON}
-      </div>
+      <Grid>
+        <Row>
+          <Col tv={5} desk={5} tablet={2} palm={2}>
+            {personal[0] &&
+            <Card>
+              <CardTitle title="Dados Pessoais" />
+              <CardContent>
+                <Personal personal={personal[0]} />
+              </CardContent>
+            </Card>
+            }
+          </Col>
+          <Col tv={4} desk={4} tablet={2} palm={2}>
+            {(phones) &&
+            <Card>
+              <CardTitle title="Telefones" />
+              <CardContent>
+                <Grid>
+                  <Row>
+                    <Col tv={4} desk={4} tablet={12} palm={12}>
+                      <div className={style.familyTitle}>RESIDENCIAIS</div>
+                      <br />
+                      {phones.residential.map(phone =>
+                        <Phones phones={phone} />
+                      )}
+                    </Col>
+                    <Col tv={4} desk={4} tablet={12} palm={12}>
+                      <div className={style.familyTitle}>CELULARES</div>
+                      <br />
+                      {phones.cellphone.map(phone =>
+                        <Phones phones={phone} />
+                      )}
+                    </Col>
+                    <Col tv={4} desk={4} tablet={12} palm={12}>
+                      <div className={style.familyTitle}>OUTROS TELEFONES</div>
+                      <br />
+                      {phones.others.map(phone =>
+                        <Phones phones={phone} />
+                      )}
+                      {phones.commercial.map(phone =>
+                        <Phones phones={phone} />
+                      )}
+                    </Col>
+                  </Row>
+                </Grid>
+              </CardContent>
+            </Card>
+            }
+          </Col>
+          <Col tv={3} desk={3} tablet={2} palm={2}>
+            <Card>
+              <CardTitle title="Emails" />
+              <CardContent>
+                {emails.map(email =>
+                  <p className={style.address}>{email}</p>
+                )}
+              </CardContent>
+            </Card>
+          </Col>
+        </Row>
+        <Row>
+          <Col tv={12} desk={12} tablet={2} palm={2}>
+            {address[0] &&
+            <Card>
+              <CardTitle title="Endereços" />
+              <CardContent>
+                <AddressTitle address={address} />
+                {address.map(addresses =>
+                  <Address address={addresses} />
+                )}
+              </CardContent>
+            </Card>
+            }
+          </Col>
+        </Row>
+        <Row>
+          <Col tv={6} desk={6} tablet={2} palm={2}>
+            {family &&
+            <Card>
+              <CardTitle title="Familiares" />
+              <CardContent>
+                <FamilyTitle family={family} />
+                {family.map(relatives =>
+                  <Family family={relatives} />
+                )}
+              </CardContent>
+            </Card>
+            }
+          </Col>
+          <Col tv={6} desk={6} tablet={2} palm={2}>
+            {contacts &&
+            <Card>
+              <CardTitle title="Contatos" />
+              <CardContent>
+                <ContactsTitle person_contacts={contacts} />
+                {contacts.map(relatives =>
+                  <Contacts person_contacts={relatives} />
+                )}
+              </CardContent>
+            </Card>
+            }
+          </Col>
+        </Row>
+        <Row>
+          <Col tv={6} desk={6} tablet={2} palm={2}>
+            {work &&
+            <Card>
+              <CardTitle title="Locais de Trabalho" />
+              <CardContent>
+                <WorkTitle work_places={work} />
+                {work.map(works =>
+                  <WorkPlace work_places={works} />
+                )}
+              </CardContent>
+            </Card>
+            }
+          </Col>
+          <Col tv={6} desk={6} tablet={2} palm={2}>
+            {housemates &&
+            <Card>
+              <CardTitle title="Moram na mesma residência" />
+              <CardContent>
+                {housemates.map(house =>
+                  <p className={style.address}>{house.document_number} - {house.name}</p>
+                )}
+              </CardContent>
+            </Card>
+            }
+          </Col>
+        </Row>
+        {/* {this.props.cpfJSON} */}
+      </Grid>
+
     )
   }
 }

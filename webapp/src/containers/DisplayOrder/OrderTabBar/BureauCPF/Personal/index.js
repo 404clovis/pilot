@@ -27,36 +27,36 @@ class Personal extends React.Component {
       <div className={style.address}>
         <Grid>
           <Row>
-            <Col tv={4} desk={4} tablet={4} palm={7} >
+            <Col tv={12} desk={12} tablet={12} palm={12} >
               {this.props.personal.document_number}
             </Col>
           </Row>
           <Row>
-            <Col tv={3} desk={3} tablet={3} palm={5} >
+            <Col tv={6} desk={6} tablet={6} palm={6} >
               {this.props.personal.name}
             </Col>
-            <Col tv={1} desk={1} tablet={1} palm={2} >
+            <Col className={style.addressmiddle} tv={6} desk={6} tablet={6} palm={6} >
               {this.props.personal.gender}
             </Col>
           </Row>
           <Row>
-            <Col tv={3} desk={3} tablet={3} palm={5} >
+            <Col tv={6} desk={6} tablet={6} palm={6} >
               {this.props.personal.date_of_birth}
             </Col>
-            <Col tv={1} desk={1} tablet={1} palm={2} >
+            <Col className={style.addressmiddle} tv={6} desk={6} tablet={6} palm={6} >
               AGE
             </Col>
           </Row>
           <Row>
-            <Col tv={3} desk={3} tablet={3} palm={5} >
+            <Col tv={6} desk={6} tablet={6} palm={6} >
               Óbito: {rip}
             </Col>
-            <Col tv={1} desk={1} tablet={1} palm={2} >
+            <Col className={style.addressmiddle} tv={6} desk={6} tablet={6} palm={6} >
               {this.props.personal.sign}
             </Col>
           </Row>
           <Row>
-            <Col tv={4} desk={4} tablet={4} palm={7} >
+            <Col tv={12} desk={12} tablet={12} palm={12} >
               Situação na Receita Federal: {this.props.personal.status_federal_revenue}
             </Col>
           </Row>

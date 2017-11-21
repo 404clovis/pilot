@@ -20,17 +20,16 @@ class WorkPlace extends React.Component {
       <div className={style.address}>
         <Grid>
           <Row>
-            <Col tv={2} desk={2} tablet={2} palm={2} >
+            <Col tv={2} desk={2} tablet={12} palm={12} >
               {this.props.work_places.document_number}
             </Col>
-            <Col tv={2} desk={2} tablet={2} palm={2} >
+            <Col tv={4} desk={4} tablet={12} palm={12} >
               {this.props.work_places.name}
             </Col>
-            <Col tv={2} desk={2} tablet={2} palm={2} >
-              {this.props.work_places.city}
-            </Col>
-            <Col tv={1} desk={1} tablet={2} palm={2} >
-              {this.props.work_places.state}
+            <Col tv={6} desk={6} tablet={12} palm={12} >
+              {this.props.work_places.street} {this.props.work_places.number}
+              {this.props.work_places.neighborhood} {this.props.work_places.city}
+              {this.props.work_places.state} {this.props.work_places.zip_code}
             </Col>
           </Row>
         </Grid>

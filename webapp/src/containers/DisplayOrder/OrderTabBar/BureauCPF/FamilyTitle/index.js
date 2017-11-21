@@ -22,27 +22,27 @@ class FamilyTitle extends React.Component {
         <Grid>
           <Row>
             {this.props.family[0].document_number &&
-            <Col tv={1} desk={1} tablet={2} palm={4}>
+            <Col tv={2} desk={2} tablet={6} palm={12}>
               <div className={style.familyTitle}>CPF</div>
             </Col>
             }
             {this.props.family[0].name &&
-            <Col tv={2} desk={2} tablet={2} palm={4}>
+            <Col tv={4} desk={4} tablet={12} palm={12}>
               <div className={style.familyTitle}>NOME</div>
             </Col>
             }
             {this.props.family[0].retired &&
-            <Col tv={1} desk={1} tablet={2} palm={4}>
+            <Col tv={2} desk={2} tablet={6} palm={12}>
               <div className={style.familyTitle}>APOSENTADO</div>
             </Col>
             }
             {this.props.family[0].rip &&
-            <Col tv={1} desk={1} tablet={2} palm={4}>
+            <Col tv={2} desk={2} tablet={6} palm={12}>
               <div className={style.familyTitle}>ÓBITO</div>
             </Col>
             }
             {this.props.family[0].type &&
-            <Col tv={1} desk={1} tablet={2} palm={4}>
+            <Col tv={2} desk={2} tablet={6} palm={12}>
               <div className={style.familyTitle}>PARENTESCO</div>
             </Col>
             }

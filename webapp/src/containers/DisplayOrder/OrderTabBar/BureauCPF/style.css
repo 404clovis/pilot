@@ -193,6 +193,16 @@ span.shippingMethod {
   display: block;
 }
 
+.addressmiddle {
+  font-style: normal;
+  font-size: 14px;
+  text-align: center;
+  margin: var(--spacing-nano) 0;
+  color: var(--color-light-plumb-100);
+  word-wrap: break-word;
+  display: block;
+}
+
 .addressTitle {
   font-style: normal;
   font-size: 16px;

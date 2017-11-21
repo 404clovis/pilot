@@ -21,17 +21,14 @@ class WorkTitle extends React.Component {
         {this.props.work_places[0] &&
         <Grid>
           <Row>
-            <Col tv={2} desk={2} tablet={2} palm={2} >
+            <Col tv={2} desk={2} tablet={12} palm={12} >
               <div className={style.familyTitle}>CNPJ</div>
             </Col>
-            <Col tv={2} desk={2} tablet={2} palm={2} >
+            <Col tv={4} desk={4} tablet={12} palm={12} >
               <div className={style.familyTitle}>EMPRESA</div>
             </Col>
-            <Col tv={2} desk={2} tablet={2} palm={2} >
-              <div className={style.familyTitle}>CIDADE</div>
-            </Col>
-            <Col tv={1} desk={1} tablet={2} palm={2} >
-              <div className={style.familyTitle}>ESTADO</div>
+            <Col tv={6} desk={6} tablet={12} palm={12} >
+              <div className={style.familyTitle}>ENDEREÇO</div>
             </Col>
           </Row>
         </Grid>

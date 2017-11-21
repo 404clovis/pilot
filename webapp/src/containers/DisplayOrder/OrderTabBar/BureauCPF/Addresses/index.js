@@ -5,13 +5,6 @@ import style from './../style.css'
 
 import { Grid, Row, Col } from '../../../../../components/Grid'
 
-
-const FormatZipCode = zip => (
-  <div>
-    {zip.substring(0, 5).concat('-').concat(zip.substring(5))}
-  </div>
-)
-
 class Address extends React.Component {
   constructor (props) {
     super(props)
@@ -48,7 +41,7 @@ class Address extends React.Component {
               {this.props.address.state}
             </Col>
             <Col tv={1} desk={1} tablet={2} palm={2}>
-              {FormatZipCode(this.props.address.zip_code)}
+              {this.props.address.zip_code}
             </Col>
             <Col tv={1} desk={1} tablet={2} palm={2}>
               <a
