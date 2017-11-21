@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import style from './../style.css'
 import { Grid, Row, Col } from '../../../../../components/Grid'
 
-class WorkPlace extends React.Component {
+
+class WorkTitle extends React.Component {
   constructor (props) {
     super(props)
 
@@ -14,32 +15,33 @@ class WorkPlace extends React.Component {
     }
   }
 
-
   render () {
     return (
-      <div className={style.address}>
+      <div>
+        {this.props.work_places[0] &&
         <Grid>
           <Row>
             <Col tv={2} desk={2} tablet={2} palm={2} >
-              {this.props.work_places.document_number}
+              <div className={style.familyTitle}>CNPJ</div>
             </Col>
             <Col tv={2} desk={2} tablet={2} palm={2} >
-              {this.props.work_places.name}
+              <div className={style.familyTitle}>EMPRESA</div>
             </Col>
             <Col tv={2} desk={2} tablet={2} palm={2} >
-              {this.props.work_places.city}
+              <div className={style.familyTitle}>CIDADE</div>
             </Col>
             <Col tv={1} desk={1} tablet={2} palm={2} >
-              {this.props.work_places.state}
+              <div className={style.familyTitle}>ESTADO</div>
             </Col>
           </Row>
         </Grid>
+        }
       </div>
     )
   }
 }
 
-WorkPlace.propTypes = {
+WorkTitle.propTypes = {
   work_places: PropTypes.shape({
     document_number: PropTypes.string,
     name: PropTypes.string,
@@ -58,10 +60,10 @@ WorkPlace.propTypes = {
   }),
 }
 
-WorkPlace.defaultProps = {
+WorkTitle.defaultProps = {
   work_places: {
     name: null,
   },
 }
 
-export default WorkPlace
+export default WorkTitle

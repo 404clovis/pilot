@@ -2,11 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import style from './style.css'
 import Address from './Addresses'
+import AddressTitle from './AddressTitle'
 import Family from './Family'
 import FamilyTitle from './FamilyTitle'
 import Phones from './Phones'
 import Personal from './Personal'
-import AddressTitle from './AddressTitle'
+import WorkPlace from './WorkPlaces'
+import WorkTitle from './WorkTitle'
 
 import { Grid, Row, Col } from '../../../../components/Grid'
 import {
@@ -37,7 +39,7 @@ class BureauCPF extends React.Component {
     console.log(personal)
     const emails = procob.emails
     const housemates = procob.housemates
-    console.log(housemates)
+    const work = procob.work_places
 
     return (
       <div>
@@ -49,7 +51,7 @@ class BureauCPF extends React.Component {
           </CardContent>
         </Card>
         }
-        {emails &&
+        {emails[0] &&
         <Card>
           <CardTitle title="Emails" />
           <CardContent>
@@ -59,7 +61,18 @@ class BureauCPF extends React.Component {
           </CardContent>
         </Card>
         }
-        {housemates &&
+        {work &&
+        <Card>
+          <CardTitle title="Locais de Trabalho" />
+          <CardContent>
+            <WorkTitle work_places={work} />
+            {work.map(works =>
+              <WorkPlace work_places={works} />
+            )}
+          </CardContent>
+        </Card>
+        }
+        {housemates[0] &&
         <Card>
           <CardTitle title="Moram na mesma residência" />
           <CardContent>
