@@ -22,6 +22,22 @@ class Personal extends React.Component {
     } else if (this.props.personal.rip === false) {
       rip = 'NÂO'
     }
+    let birth = this.props.personal.date_of_birth
+    const splited = birth.split('-')
+
+    birth = splited[2]
+      .concat('-')
+      .concat(splited[1])
+      .concat('-')
+      .concat(splited[0])
+      .concat('T00:00:00Z')
+    console.log(birth)
+    const ageDifMs = Date.now() - new Date(birth)
+    console.log(ageDifMs)
+    const ageDate = new Date(ageDifMs)
+    console.log(ageDate)
+    const age = Math.abs(ageDate.getUTCFullYear() - 1970)
+    console.log(age)
 
     return (
       <div className={style.address}>
@@ -44,7 +60,7 @@ class Personal extends React.Component {
               {this.props.personal.date_of_birth}
             </Col>
             <Col className={style.addressmiddle} tv={6} desk={6} tablet={6} palm={6} >
-              AGE
+              {age}
             </Col>
           </Row>
           <Row>
